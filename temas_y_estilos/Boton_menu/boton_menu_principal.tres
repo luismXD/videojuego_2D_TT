@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://dcyl8330j7prj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsgss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwl1m"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxEmpty_fsgss")
+Button/styles/normal = SubResource("StyleBoxEmpty_pwl1m")

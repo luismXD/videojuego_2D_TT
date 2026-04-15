@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c6klwlxrp0gom"]
+
+[ext_resource type="PackedScene" uid="uid://c57g1ds0mhinl" path="res://escenas/mundo_abierto/lobby/lobby.tscn" id="1_j4sny"]
+
+[node name="escenario_principal" type="Node2D" unique_id=960814541]
+
+[node name="lobby" parent="." unique_id=172173245 instance=ExtResource("1_j4sny")]

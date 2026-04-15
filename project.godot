@@ -11,14 +11,30 @@ config_version=5
 [application]
 
 config/name="juego_tt"
-run/main_scene="res://prueba_fisicas/prueba_fisicas.tscn"
+run/main_scene="uid://bcmfkei4dysnf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://prueba_fisicas/icon.svg"
+
+[autoload]
+
+ControladorPartidaGlobal="*uid://c2llog2c0fn0n"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://cah8lxyqjnm3r"
 
 [input]
 
@@ -43,6 +59,10 @@ izquierda={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogos/dialogos_escena_1/probando_dialogos.dialogue")
+
 [layer_names]
 
 2d_render/layer_1="piso"
@@ -61,3 +81,4 @@ izquierda={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
