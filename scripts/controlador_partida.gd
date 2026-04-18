@@ -34,7 +34,7 @@ func borrar_datos():
 	if ResourceLoader.exists(_ruta_jugador):
 		DirAccess.remove_absolute(_ruta_jugador)
 		print("Archivo de guardado eliminado")
-	
+
 
 #func deteccion_emocional():
 	#

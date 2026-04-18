@@ -1,22 +1,31 @@
 [gd_scene format=3 uid="uid://bcmfkei4dysnf"]
 
-[ext_resource type="Texture2D" uid="uid://d3gejnxspi2d7" path="res://temas_y_estilos/Border/panel-border-015.png" id="1_fo3ur"]
 [ext_resource type="Script" uid="uid://bc2acdgt75tea" path="res://escenas/menu_principal/Escena_principal/boton_jugar.gd" id="1_fsgss"]
-[ext_resource type="Theme" uid="uid://dcyl8330j7prj" path="res://temas_y_estilos/Boton_menu/boton_menu_principal.tres" id="1_pwl1m"]
+[ext_resource type="Shader" uid="uid://bakbe84b0m3ah" path="res://temas_y_estilos/shaders/luna_shaders/luna_shader.gdshader" id="1_lgmo3"]
 [ext_resource type="PackedScene" uid="uid://b0gl7vr4kp1ie" path="res://escenas/menu_principal/Escena_particulas/escena_particulas.tscn" id="1_s3bed"]
-[ext_resource type="Texture2D" uid="uid://cwd8mvk8m4d4t" path="res://temas_y_estilos/Divider_fade/divider-fade-003.png" id="1_u44hp"]
+[ext_resource type="Texture2D" uid="uid://dv3fst7rwbr3r" path="res://temas_y_estilos/menu_assets_nuevos/imagenes_menu/moon.png" id="2_lgmo3"]
+[ext_resource type="Theme" uid="uid://dx4r0mviklhsx" path="res://theme_1/theme_1.tres" id="3_lgmo3"]
 [ext_resource type="Script" uid="uid://b8751un63ql8k" path="res://escenas/menu_principal/Escena_principal/boton_opciones.gd" id="4_dy07j"]
 [ext_resource type="Script" uid="uid://dgm0rame23jl8" path="res://escenas/menu_principal/Escena_principal/boton_salir.gd" id="5_s3bed"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="6_s3bed"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsgss"]
-texture = ExtResource("1_fo3ur")
-expand_margin_left = 25.0
-expand_margin_right = 25.0
-region_rect = Rect2(3.0072749, 2.496611, 42.288395, 44.503387)
-modulate_color = Color(0.94938904, 0.94938904, 0.94938904, 1)
+[sub_resource type="Gradient" id="Gradient_s3bed"]
+colors = PackedColorArray(0.1764706, 0.22745098, 0.16470589, 1, 0, 0, 0, 1)
 
-[sub_resource type="Theme" id="Theme_fo3ur"]
-Label/styles/normal = SubResource("StyleBoxTexture_fsgss")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lgmo3"]
+gradient = SubResource("Gradient_s3bed")
+fill_from = Vector2(0, 0.38235295)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ef3t"]
+shader = ExtResource("1_lgmo3")
+shader_parameter/glow_radius = 0.2150000102125
+shader_parameter/glow_intensity = 2.38800011343
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Environment" id="Environment_lgmo3"]
+glow_enabled = true
+glow_intensity = 1.0
 
 [node name="Menu_principal" type="Control" unique_id=872625876]
 layout_mode = 3
@@ -26,12 +35,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1267995438]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_lgmo3")
+
 [node name="Particulas" parent="." unique_id=39963554 instance=ExtResource("1_s3bed")]
 layout_mode = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1478111546]
+material = SubResource("ShaderMaterial_4ef3t")
+position = Vector2(955, 275.00012)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_lgmo3")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1803220633]
 clip_contents = true
-custom_minimum_size = Vector2(400, 400)
+custom_minimum_size = Vector2(400, 1200)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,86 +70,53 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 15
+theme_override_constants/separation = 22
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=396772491]
 layout_mode = 2
 alignment = 1
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=82798174]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-
 [node name="jugar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1337449734 node_paths=PackedStringArray("icon_izq", "icon_der")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("1_pwl1m")
+theme = ExtResource("6_s3bed")
 theme_override_font_sizes/font_size = 100
 text = "Jugar"
 script = ExtResource("1_fsgss")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=635866232]
-layout_mode = 2
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=170309838]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1733617631]
-layout_mode = 2
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-
 [node name="opciones" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1178052238 node_paths=PackedStringArray("icon_izq", "icon_der")]
 layout_mode = 2
-theme = ExtResource("1_pwl1m")
+theme = ExtResource("6_s3bed")
 theme_override_font_sizes/font_size = 100
 text = "Opciones"
 script = ExtResource("4_dy07j")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2087597140]
-layout_mode = 2
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1703666332]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1072400027]
-layout_mode = 2
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-
 [node name="salir" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=896555912 node_paths=PackedStringArray("icon_izq", "icon_der")]
 layout_mode = 2
-theme = ExtResource("1_pwl1m")
+size_flags_vertical = 8
+theme = ExtResource("6_s3bed")
 theme_override_font_sizes/font_size = 100
 text = "Salir
 "
 script = ExtResource("5_s3bed")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=924366653]
-layout_mode = 2
-texture = ExtResource("1_u44hp")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1885144474]
 layout_mode = 2
@@ -136,7 +127,10 @@ mouse_behavior_recursive = 1
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_behavior_recursive = 1
-theme = SubResource("Theme_fo3ur")
+theme = ExtResource("3_lgmo3")
 theme_override_font_sizes/font_size = 200
 text = "Emotional"
 horizontal_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=646339984]
+environment = SubResource("Environment_lgmo3")
