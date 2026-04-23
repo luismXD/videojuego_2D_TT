@@ -25,12 +25,9 @@ extends Button
 
 func _ready():
 
-	mouse_entered.connect(_mostrar_iconos)
-	mouse_exited.connect(_ocultar_iconos)
-	
 	pressed.connect(_on_boton_nueva_partida_pressed)
 	
-	_ocultar_iconos()
+
 
 	if popup_mensajes_error:
 		popup_mensajes_error.hide()
@@ -113,16 +110,3 @@ func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
 		get_tree().change_scene_to_file("res://escenas/mundo_abierto/escenario_principal/escenario_principal.tscn")
-
-
-
-
-
-
-func _mostrar_iconos():
-	icon_izq.visible = true
-	icon_der.visible = true
-
-func _ocultar_iconos():
-	icon_izq.visible = false
-	icon_der.visible = false
