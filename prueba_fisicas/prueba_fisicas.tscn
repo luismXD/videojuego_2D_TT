@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bnj3yqnufhmh5"]
+
+[ext_resource type="Texture2D" uid="uid://d3x8evm07icxo" path="res://prueba_fisicas/icon.svg" id="1_86vn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvhpv"]
+size = Vector2(129, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4vqi"]
+radius = 70.0
+
+[node name="Node2D" type="Node2D" unique_id=102049413]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1074410305]
+position = Vector2(1, -163)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=375751017]
+texture = ExtResource("1_86vn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1753174902]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_wvhpv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1278341165]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1555512519]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=642495338]
+texture = ExtResource("1_86vn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=983585229]
+shape = SubResource("CircleShape2D_k4vqi")

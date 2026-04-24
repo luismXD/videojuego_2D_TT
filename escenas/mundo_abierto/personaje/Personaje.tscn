@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bh5alu1d7tih2"]
 
-[ext_resource type="Script" uid="uid://dmmst4pq35cp1" path="res://escenas/mundo_abierto/Player/personaje.gd" id="1_qbvwa"]
-[ext_resource type="SpriteFrames" uid="uid://gwal5a84stxo" path="res://escenas/mundo_abierto/personaje/sprite_frames_personaje.tres" id="2_7v4y4"]
+[ext_resource type="SpriteFrames" uid="uid://gwal5a84stxo" path="res://escenas/mundo_abierto/personaje/sprite_frames_personaje.tres" id="1_lfb71"]
+[ext_resource type="Script" uid="uid://dmmst4pq35cp1" path="res://escenas/mundo_abierto/personaje/personaje.gd" id="1_qbvwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbvwa"]
 size = Vector2(102, 145)
@@ -13,7 +13,7 @@ script = ExtResource("1_qbvwa")
 animacion = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=619847552]
-sprite_frames = ExtResource("2_7v4y4")
+sprite_frames = ExtResource("1_lfb71")
 animation = &"caminar_x"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=186828775]

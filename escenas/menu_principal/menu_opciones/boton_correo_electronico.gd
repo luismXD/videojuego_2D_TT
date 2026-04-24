@@ -19,12 +19,10 @@ extends Button
 
 
 func _ready():
-	mouse_entered.connect(_mostrar_iconos)
-	mouse_exited.connect(_ocultar_iconos)
 	
 	pressed.connect(_on_boton_reporte_emocional_pressed)
 	
-	_ocultar_iconos()
+
 
 	if popup_layer:
 		popup_layer.hide()
@@ -54,6 +52,7 @@ func _on_boton_comenzar_pressed():
 func _on_boton_regresar_pressed():
 	popup_layer.hide()
 
+#creo que esta funcion detecta emociones
 func _on_request_completed(result, response_code, headers, body):
 	print("codigo:", response_code)
 	print("result:", result)
@@ -79,13 +78,3 @@ func _on_request_completed(result, response_code, headers, body):
 	##controlador_partida.borrar_partida()
 	#if escena == true:
 		#get_tree().change_scene_to_file("res://escenas/mundo_abierto/escenario_principal/escenario_principal.tscn")
-
-
-
-func _mostrar_iconos():
-	icon_izq.visible = true
-	icon_der.visible = true
-
-func _ocultar_iconos():
-	icon_izq.visible = false
-	icon_der.visible = false

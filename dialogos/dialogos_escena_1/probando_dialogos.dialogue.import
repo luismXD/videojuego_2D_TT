@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cj4maklgkoj04"
+path="res://.godot/imported/probando_dialogos.dialogue-71e7c6edd5f6f7a4751c95bbce179006.tres"
+
+[deps]
+
+source_file="res://dialogos/dialogos_escena_1/probando_dialogos.dialogue"
+dest_files=["res://.godot/imported/probando_dialogos.dialogue-71e7c6edd5f6f7a4751c95bbce179006.tres"]
+
+[params]
+
+defaults=true
