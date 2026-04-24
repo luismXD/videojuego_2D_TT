@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bh5alu1d7tih2"]
+
+[ext_resource type="Script" uid="uid://dmmst4pq35cp1" path="res://escenas/mundo_abierto/Player/personaje.gd" id="1_ojxxm"]
+[ext_resource type="Texture2D" uid="uid://bjrdjmcev7bjl" path="res://assets_tt/personaje_principal_assets/player sprites.png" id="2_vhe1r"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1783857790 node_paths=PackedStringArray("animacion")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ojxxm")
+animacion = NodePath("")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=108149506]
+texture = ExtResource("2_vhe1r")
