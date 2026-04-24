@@ -235,7 +235,7 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("4_e3pai")
 theme_override_font_sizes/font_size = 98
-text = "NUEVA PARTIDA"
+text = "NUEVA  PARTIDA"
 script = ExtResource("4_m3sck")
 popup_layer = NodePath("../../../../CanvasLayer")
 popup_mensajes_error = NodePath("../../../../CanvasLayer2")
@@ -259,7 +259,7 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("4_e3pai")
 theme_override_font_sizes/font_size = 98
-text = "CARGAR PARTIDA"
+text = "CARGAR  PARTIDA"
 script = ExtResource("5_grlea")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=139207164]
@@ -270,7 +270,7 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("4_e3pai")
 theme_override_font_sizes/font_size = 98
-text = "OPCIONES DE USUARIO"
+text = "OPCIONES  DE  USUARIO"
 script = ExtResource("6_e3pai")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1718680890]
