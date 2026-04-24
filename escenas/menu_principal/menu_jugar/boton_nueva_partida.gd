@@ -19,14 +19,11 @@ extends Button
 @export var boton_aceptar_error_general: Button
 
 
-@export var icon_izq: TextureRect
-@export var icon_der: TextureRect
 
 
 func _ready():
 
 	pressed.connect(_on_boton_nueva_partida_pressed)
-	
 
 
 	if popup_mensajes_error:

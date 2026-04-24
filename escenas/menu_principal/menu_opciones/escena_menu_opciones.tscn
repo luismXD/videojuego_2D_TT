@@ -1,16 +1,32 @@
 [gd_scene format=3 uid="uid://cstufg5xlhrtl"]
 
-[ext_resource type="PackedScene" uid="uid://b0gl7vr4kp1ie" path="res://escenas/menu_principal/Escena_particulas/escena_particulas.tscn" id="1_fs1jq"]
-[ext_resource type="Texture2D" uid="uid://cwd8mvk8m4d4t" path="res://temas_y_estilos/Divider_fade/divider-fade-003.png" id="1_pbdyg"]
+[ext_resource type="PackedScene" uid="uid://dvitk1bnhykga" path="res://escenas/menu_principal/Escena_particulas/estrellas_parpadeantes.tscn" id="2_fs1jq"]
 [ext_resource type="Theme" uid="uid://dcyl8330j7prj" path="res://temas_y_estilos/Boton_menu/boton_menu_principal.tres" id="2_t8ov6"]
 [ext_resource type="Script" uid="uid://cohntk32gali3" path="res://escenas/menu_principal/menu_opciones/boton_sonido.gd" id="3_t8ov6"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="4_bjvxm"]
 [ext_resource type="Script" uid="uid://d3dqipc0px7lw" path="res://escenas/menu_principal/menu_opciones/boton_ventana.gd" id="4_sgq6h"]
 [ext_resource type="Script" uid="uid://bqo66j6apsnqi" path="res://escenas/menu_principal/menu_opciones/boton_correo_electronico.gd" id="5_fs1jq"]
 [ext_resource type="Script" uid="uid://c72bx85wg1nlr" path="res://escenas/menu_principal/menu_opciones/boton_regresar.gd" id="6_bjvxm"]
 
+[sub_resource type="Gradient" id="Gradient_fs1jq"]
+offsets = PackedFloat32Array(0, 0.4993046, 1)
+colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.027069625, 0.13240537, 0.15502483, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bjvxm"]
+gradient = SubResource("Gradient_fs1jq")
+fill_to = Vector2(0, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fs1jq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjvxm"]
+
+[sub_resource type="Environment" id="Environment_fs1jq"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.2
+glow_bloom = 0.35
+glow_hdr_scale = 1.0
 
 [node name="Menu_opciones" type="Control" unique_id=1457210266]
 layout_mode = 3
@@ -19,6 +35,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1783526692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bjvxm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1026785051]
 visible = false
@@ -85,7 +110,7 @@ theme = ExtResource("2_t8ov6")
 theme_override_font_sizes/font_size = 70
 text = "Regresar"
 
-[node name="Particulas" parent="." unique_id=39963554 instance=ExtResource("1_fs1jq")]
+[node name="estrellas" parent="." unique_id=672795953 instance=ExtResource("2_fs1jq")]
 layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1298708776]
@@ -100,50 +125,33 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 23
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1918699756]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1536381456]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-
 [node name="sonido" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=49807399 node_paths=PackedStringArray("icon_izq", "icon_der", "http_request")]
 layout_mode = 2
-theme = ExtResource("2_t8ov6")
+theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "Sonido"
 script = ExtResource("3_t8ov6")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
+icon_izq = NodePath("")
+icon_der = NodePath("")
 http_request = NodePath("../../../../HTTPRequest_reporte")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1398202698]
-layout_mode = 2
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-flip_h = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1788362742]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1299177142]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-
 [node name="ventana" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=509616086 node_paths=PackedStringArray("icon_izq", "icon_der")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("2_t8ov6")
+theme = ExtResource("4_bjvxm")
 theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 100
 alignment = 1
@@ -155,29 +163,17 @@ popup/item_0/id = 0
 popup/item_1/text = "Pantalla completa"
 popup/item_1/id = 1
 script = ExtResource("4_sgq6h")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1183875233]
-layout_mode = 2
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1261622585]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1269866549]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-
 [node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("popup_layer", "ventana_popup", "texto_input", "http_request", "boton_enviar", "boton_regresar", "icon_izq", "icon_der")]
 layout_mode = 2
-theme = ExtResource("2_t8ov6")
+theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "Reporte emocional"
 script = ExtResource("5_fs1jq")
@@ -187,41 +183,26 @@ texto_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/V
 http_request = NodePath("../../../../HTTPRequest_analisis")
 boton_enviar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
 boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=555377901]
-layout_mode = 2
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1838827672]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1823284010]
-layout_mode = 2
-size_flags_horizontal = 0
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-
 [node name="regresar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1501131819 node_paths=PackedStringArray("icon_izq", "icon_der")]
 layout_mode = 2
-theme = ExtResource("2_t8ov6")
+theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "Regresar"
 script = ExtResource("6_bjvxm")
-icon_izq = NodePath("../icon_l")
-icon_der = NodePath("../icon_r")
-
-[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=286468088]
-layout_mode = 2
-texture = ExtResource("1_pbdyg")
-stretch_mode = 3
-flip_h = true
+icon_izq = NodePath("")
+icon_der = NodePath("")
 
 [node name="HTTPRequest_analisis" type="HTTPRequest" parent="." unique_id=1891002751]
 
 [node name="HTTPRequest_reporte" type="HTTPRequest" parent="." unique_id=1749442821]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1073334330]
+environment = SubResource("Environment_fs1jq")
