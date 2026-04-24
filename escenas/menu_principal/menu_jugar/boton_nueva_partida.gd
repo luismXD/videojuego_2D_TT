@@ -106,4 +106,4 @@ func _on_boton_aceptar_nombre_y_correo():
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
-		get_tree().change_scene_to_file("res://escenas/mundo_abierto/escenario_principal/escenario_principal.tscn")
+		get_tree().change_scene_to_file("res://main.tscn")
