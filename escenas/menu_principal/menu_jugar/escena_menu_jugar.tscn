@@ -8,13 +8,13 @@
 [ext_resource type="Script" uid="uid://bwlbwmgmqkc8a" path="res://escenas/menu_principal/menu_jugar/boton_opciones_partida.gd" id="6_e3pai"]
 [ext_resource type="Script" uid="uid://p3l30m1ycfi1" path="res://escenas/menu_principal/menu_jugar/boton_regresar_menu.gd" id="7_bw2cg"]
 
-[sub_resource type="Gradient" id="Gradient_s3bed"]
+[sub_resource type="Gradient" id="Gradient_m3sck"]
 offsets = PackedFloat32Array(0, 0.4993046, 1)
-colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.034546528, 0.022004038, 0.14994124, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.13573259, 0.05594772, 0.1782377, 1, 0, 0, 0, 1)
 metadata/_snap_count = 2
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bw2cg"]
-gradient = SubResource("Gradient_s3bed")
+gradient = SubResource("Gradient_m3sck")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3sck"]
@@ -29,7 +29,7 @@ fill_to = Vector2(0, 1)
 background_mode = 3
 glow_enabled = true
 glow_intensity = 1.2
-glow_bloom = 0.4
+glow_bloom = 0.35
 glow_hdr_scale = 1.0
 
 [node name="Menu_jugar" type="Control" unique_id=1658871584]
@@ -231,11 +231,11 @@ theme_override_constants/separation = 23
 layout_mode = 2
 alignment = 1
 
-[node name="nueva_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1224804560 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_nombre", "ventana_error_correo", "ventana_error_general", "nombre_input", "email_input", "boton_comenzar", "boton_regresar", "boton_aceptar_nombre", "boton_aceptar_correo", "boton_aceptar_error_general", "icon_izq", "icon_der")]
+[node name="nueva_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1224804560 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_nombre", "ventana_error_correo", "ventana_error_general", "nombre_input", "email_input", "boton_comenzar", "boton_regresar", "boton_aceptar_nombre", "boton_aceptar_correo", "boton_aceptar_error_general")]
 layout_mode = 2
 theme = ExtResource("4_e3pai")
-theme_override_font_sizes/font_size = 100
-text = "Nueva partida"
+theme_override_font_sizes/font_size = 98
+text = "NUEVA  PARTIDA"
 script = ExtResource("4_m3sck")
 popup_layer = NodePath("../../../../CanvasLayer")
 popup_mensajes_error = NodePath("../../../../CanvasLayer2")
@@ -250,47 +250,39 @@ boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContaine
 boton_aceptar_nombre = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer/Button")
 boton_aceptar_correo = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer/Button")
 boton_aceptar_error_general = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_error/VBoxContainer/Button")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=415512688]
 layout_mode = 2
 alignment = 1
 
-[node name="cargar_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1418090127 node_paths=PackedStringArray("icon_izq", "icon_der")]
+[node name="cargar_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1418090127]
 layout_mode = 2
 theme = ExtResource("4_e3pai")
-theme_override_font_sizes/font_size = 100
-text = "Cargar partida"
+theme_override_font_sizes/font_size = 98
+text = "CARGAR  PARTIDA"
 script = ExtResource("5_grlea")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=139207164]
 layout_mode = 2
 alignment = 1
 
-[node name="opciones_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=226694938 node_paths=PackedStringArray("icon_izq", "icon_der")]
+[node name="opciones_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=226694938]
 layout_mode = 2
 theme = ExtResource("4_e3pai")
-theme_override_font_sizes/font_size = 100
-text = "Opciones de partida"
+theme_override_font_sizes/font_size = 98
+text = "OPCIONES  DE  USUARIO"
 script = ExtResource("6_e3pai")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1718680890]
 layout_mode = 2
 alignment = 1
 
-[node name="regresar_menu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1494426059 node_paths=PackedStringArray("icon_izq", "icon_der")]
+[node name="regresar_menu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1494426059]
 layout_mode = 2
 theme = ExtResource("4_e3pai")
-theme_override_font_sizes/font_size = 100
-text = "Regresar"
+theme_override_font_sizes/font_size = 98
+text = "REGRESAR"
 script = ExtResource("7_bw2cg")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1697547820]
 environment = SubResource("Environment_vf2mx")

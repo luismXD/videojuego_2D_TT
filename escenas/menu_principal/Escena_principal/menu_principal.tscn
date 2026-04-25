@@ -11,7 +11,7 @@
 
 [sub_resource type="Gradient" id="Gradient_s3bed"]
 offsets = PackedFloat32Array(0, 0.4993046, 1)
-colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.034546528, 0.022004038, 0.14994124, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.045114554, 0.028893106, 0.1745553, 1, 0, 0, 0, 1)
 metadata/_snap_count = 2
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lgmo3"]
@@ -52,6 +52,7 @@ texture = SubResource("GradientTexture2D_lgmo3")
 layout_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1478111546]
+visible = false
 material = SubResource("ShaderMaterial_4ef3t")
 position = Vector2(955, 275.00012)
 scale = Vector2(0.21, 0.21)

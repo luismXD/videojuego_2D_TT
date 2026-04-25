@@ -210,6 +210,9 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4bp6"]
+bg_color = Color(1, 0.6784314, 0.33333334, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7x53"]
 texture = ExtResource("6_1fy21")
 texture_margin_left = 5.0
@@ -310,7 +313,7 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [resource]
 default_font = ExtResource("1_itlnu")
-default_font_size = 9
+default_font_size = 50
 Button/colors/font_pressed_color = Color(1, 0.678431, 0.333333, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_yqgdd")
 Button/styles/focus = SubResource("StyleBoxEmpty_osfks")
@@ -339,7 +342,11 @@ ItemList/styles/selected = SubResource("StyleBoxTexture_qvrij")
 ItemList/styles/selected_focus = SubResource("StyleBoxTexture_rtjil")
 LineEdit/styles/focus = SubResource("StyleBoxTexture_qh8fu")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_pefr2")
+OptionButton/font_sizes/font_size = 60
 Panel/styles/panel = SubResource("StyleBoxTexture_d63jr")
+PopupMenu/colors/font_accelerator_color = Color(1, 0.6784314, 0.33333334, 1)
+PopupMenu/colors/font_disabled_color = Color(1, 0.6784314, 0.33333334, 1)
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_a4bp6")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_j7x53")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_6u3wi")
 TextEdit/styles/focus = SubResource("StyleBoxTexture_so3vk")

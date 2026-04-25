@@ -19,14 +19,11 @@ extends Button
 @export var boton_aceptar_error_general: Button
 
 
-@export var icon_izq: TextureRect
-@export var icon_der: TextureRect
 
 
 func _ready():
 
 	pressed.connect(_on_boton_nueva_partida_pressed)
-	
 
 
 	if popup_mensajes_error:
@@ -109,4 +106,4 @@ func _on_boton_aceptar_nombre_y_correo():
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
-		get_tree().change_scene_to_file("res://escenas/mundo_abierto/escenario_principal/escenario_principal.tscn")
+		get_tree().change_scene_to_file("res://main.tscn")
