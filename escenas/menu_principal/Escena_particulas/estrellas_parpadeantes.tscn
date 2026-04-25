@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dvitk1bnhykga"]
+
+[ext_resource type="Texture2D" uid="uid://vf3xd84ensvs" path="res://temas_y_estilos/estrellas/strar_1.png" id="1_amu37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l7ht"]
+atlas = ExtResource("1_amu37")
+region = Rect2(249, 430, 120, 123)
+
+[sub_resource type="Curve" id="Curve_bsvec"]
+_data = [Vector2(0, 0.2), 0.0, -3.3333333, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_amu37"]
+curve = SubResource("Curve_bsvec")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jia8i"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1920, 1080, 1)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_amu37")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddxg"]
+atlas = ExtResource("1_amu37")
+region = Rect2(428, 421, 136, 143)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n6wpl"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1920, 1080, 1)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_amu37")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amu37"]
+atlas = ExtResource("1_amu37")
+region = Rect2(81, 268, 90, 95)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bsvec"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1920, 1080, 1)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_amu37")
+
+[node name="estrellas" type="Control" unique_id=672795953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=333028140]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="star1" type="GPUParticles2D" parent="MarginContainer" unique_id=2028045053]
+amount = 140
+texture = SubResource("AtlasTexture_3l7ht")
+lifetime = 4.0
+preprocess = 5.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_jia8i")
+
+[node name="star2" type="GPUParticles2D" parent="MarginContainer" unique_id=480299248]
+amount = 140
+texture = SubResource("AtlasTexture_uddxg")
+lifetime = 4.0
+preprocess = 5.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_n6wpl")
+
+[node name="star3" type="GPUParticles2D" parent="MarginContainer" unique_id=1187819979]
+amount = 140
+texture = SubResource("AtlasTexture_amu37")
+lifetime = 4.0
+preprocess = 5.0
+speed_scale = 0.8
+process_material = SubResource("ParticleProcessMaterial_bsvec")

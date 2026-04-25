@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://cnf8ewrpeqanq"]
+
+[ext_resource type="PackedScene" uid="uid://b0gl7vr4kp1ie" path="res://escenas/menu_principal/Escena_particulas/escena_particulas.tscn" id="1_vhmuq"]
+[ext_resource type="Texture2D" uid="uid://cwd8mvk8m4d4t" path="res://temas_y_estilos/Divider_fade/divider-fade-003.png" id="2_cvno6"]
+[ext_resource type="Theme" uid="uid://dcyl8330j7prj" path="res://temas_y_estilos/Boton_menu/boton_menu_principal.tres" id="3_dv8kw"]
+[ext_resource type="Script" uid="uid://c62e5ol37ks1" path="res://escenas/menu_principal/menu_jugar/boton_nueva_partida.gd" id="4_m3sck"]
+[ext_resource type="Script" uid="uid://b7seog2y0pow8" path="res://escenas/menu_principal/menu_jugar/boton_cargar_partida.gd" id="5_grlea"]
+[ext_resource type="Script" uid="uid://bwlbwmgmqkc8a" path="res://escenas/menu_principal/menu_jugar/boton_opciones_partida.gd" id="6_e3pai"]
+[ext_resource type="Script" uid="uid://p3l30m1ycfi1" path="res://escenas/menu_principal/menu_jugar/boton_regresar_menu.gd" id="7_bw2cg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3sck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw2cg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grlea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3pai"]
+
+[node name="Menu_jugar" type="Control" unique_id=1658871584]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=310410235]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1556045214]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9137255)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=360086083]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -350.0
+offset_bottom = 713.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.705, 0)
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 450
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer" unique_id=314391674]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=394938976]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=750005883]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=792258254]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Igrese su usuario"
+
+[node name="usuario" type="LineEdit" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2095491145]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m3sck")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bw2cg")
+placeholder_text = "Nombre de usuario"
+max_length = 15
+
+[node name="correo_electronico" type="LineEdit" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=457877343]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_grlea")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e3pai")
+placeholder_text = "Correo electronico"
+
+[node name="aceptar" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=759127890]
+layout_mode = 2
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 70
+text = "Aceptar"
+
+[node name="regresar" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2076310378]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 70
+text = "Regresar"
+
+[node name="Particulas" parent="." unique_id=39963554 instance=ExtResource("1_vhmuq")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1662666401]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1871298107]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=541746007]
+layout_mode = 2
+alignment = 1
+
+[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=728365572]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+
+[node name="nueva_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1224804560 node_paths=PackedStringArray("popup_layer", "ventana_popup", "nombre_input", "email_input", "boton_comenzar", "boton_regresar", "icon_izq", "icon_der")]
+layout_mode = 2
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 100
+text = "Nueva partida"
+script = ExtResource("4_m3sck")
+popup_layer = NodePath("../../../../CanvasLayer")
+ventana_popup = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer")
+nombre_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/usuario")
+email_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/correo_electronico")
+boton_comenzar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
+boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
+icon_izq = NodePath("../icon_l")
+icon_der = NodePath("../icon_r")
+
+[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=108763969]
+layout_mode = 2
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=415512688]
+layout_mode = 2
+alignment = 1
+
+[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=919897961]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+
+[node name="cargar_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1418090127 node_paths=PackedStringArray("icon_izq", "icon_der")]
+layout_mode = 2
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 100
+text = "Cargar partida"
+script = ExtResource("5_grlea")
+icon_izq = NodePath("../icon_l")
+icon_der = NodePath("../icon_r")
+
+[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1068802010]
+layout_mode = 2
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+flip_h = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=139207164]
+layout_mode = 2
+alignment = 1
+
+[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1771323982]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+
+[node name="opciones_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=226694938 node_paths=PackedStringArray("icon_izq", "icon_der")]
+layout_mode = 2
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 100
+text = "Opciones de partidas"
+script = ExtResource("6_e3pai")
+icon_izq = NodePath("../icon_l")
+icon_der = NodePath("../icon_r")
+
+[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=931112261]
+layout_mode = 2
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+flip_h = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1718680890]
+layout_mode = 2
+alignment = 1
+
+[node name="icon_l" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2015624681]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+
+[node name="regresar_menu" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1494426059 node_paths=PackedStringArray("icon_izq", "icon_der")]
+layout_mode = 2
+theme = ExtResource("3_dv8kw")
+theme_override_font_sizes/font_size = 100
+text = "Regresar"
+script = ExtResource("7_bw2cg")
+icon_izq = NodePath("../icon_l")
+icon_der = NodePath("../icon_r")
+
+[node name="icon_r" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1337758889]
+layout_mode = 2
+texture = ExtResource("2_cvno6")
+stretch_mode = 3
+flip_h = true

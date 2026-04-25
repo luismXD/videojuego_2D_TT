@@ -1,0 +1,359 @@
+[gd_scene format=3 uid="uid://dp7uhp675uqdu"]
+
+[ext_resource type="PackedScene" uid="uid://dvitk1bnhykga" path="res://escenas/menu_principal/Escena_particulas/estrellas_parpadeantes.tscn" id="1_fxj81"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="2_a8fvn"]
+[ext_resource type="Script" uid="uid://dovn6myk7xvdu" path="res://escenas/menu_principal/opciones_usuario/boton_cambiar_nombre.gd" id="3_k0hs4"]
+[ext_resource type="Script" uid="uid://l5kejpgajyu2" path="res://escenas/menu_principal/opciones_usuario/boton_cambiar_correo.gd" id="4_a8fvn"]
+[ext_resource type="Script" uid="uid://camjagyi6tuc3" path="res://escenas/menu_principal/opciones_usuario/boton_regresar_jugar.gd" id="4_te2k6"]
+
+[sub_resource type="Gradient" id="Gradient_s3bed"]
+offsets = PackedFloat32Array(0, 0.4993046, 1)
+colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.14024287, 0.031239105, 0.049223214, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6clga"]
+gradient = SubResource("Gradient_s3bed")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Environment" id="Environment_y0f4j"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.2
+glow_strength = 0.6
+glow_bloom = 0.35
+glow_hdr_scale = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivggv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fal7k"]
+
+[node name="Control" type="Control" unique_id=1161661552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=533396065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_6clga")
+
+[node name="estrellas" parent="." unique_id=672795953 instance=ExtResource("1_fxj81")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1484255214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1583083506]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="cambiar_nombre" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1392125881 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_nombre", "nombre_input", "boton_aceptar_nombre", "boton_regresar", "boton_aceptar_error", "subviewport_container")]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "CAMBIAR   NOMBRE
+ DE   USUARIO"
+script = ExtResource("3_k0hs4")
+popup_layer = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre")
+popup_mensajes_error = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error")
+ventana_popup = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer")
+ventana_error_nombre = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre")
+nombre_input = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer/usuario")
+boton_aceptar_nombre = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer/aceptar")
+boton_regresar = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer/regresar")
+boton_aceptar_error = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre/VBoxContainer/Button")
+subviewport_container = NodePath("../../../WorldEnvironment/SubViewportContainer")
+
+[node name="cambiar_correo" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1438988927 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_correo", "email_input", "boton_aceptar_correo", "boton_regresar", "boton_aceptar_error", "subviewport_container")]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "CAMBIAR   CORREO
+ ELECTRONICO"
+script = ExtResource("4_a8fvn")
+popup_layer = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo")
+popup_mensajes_error = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error")
+ventana_popup = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer")
+ventana_error_correo = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo")
+email_input = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer/correo")
+boton_aceptar_correo = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer/aceptar")
+boton_regresar = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer/regresar")
+boton_aceptar_error = NodePath("../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo/VBoxContainer/Button")
+subviewport_container = NodePath("../../../WorldEnvironment/SubViewportContainer")
+
+[node name="regresar_jugar" type="Button" parent="MarginContainer/VBoxContainer" unique_id=712483259]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+script = ExtResource("4_te2k6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1273157379]
+environment = SubResource("Environment_y0f4j")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=158086031]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="WorldEnvironment/SubViewportContainer" unique_id=1836935935]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="CanvasLayer_nombre" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1727371374]
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre" unique_id=1564513051]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre" unique_id=1855395653]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -350.0
+offset_bottom = 713.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.705, 0)
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 450
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer" unique_id=264372638]
+layout_mode = 2
+color = Color(0, 0, 0, 0.88000005)
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer" unique_id=1935936533]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer" unique_id=1033904823]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer" unique_id=585219525]
+modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "INGRESE   SU   NUEVO   NOMBRE 
+DE   USUARIO"
+horizontal_alignment = 1
+
+[node name="usuario" type="LineEdit" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer" unique_id=106782028]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ivggv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fal7k")
+placeholder_text = "NOMBRE   DE   USUARIO"
+alignment = 1
+max_length = 15
+
+[node name="aceptar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer" unique_id=277848872]
+modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "ACEPTAR"
+
+[node name="regresar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer" unique_id=1514670135]
+modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "REGRESAR"
+
+[node name="CanvasLayer_correo" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2026167904]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo" unique_id=1745105211]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58000004)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo" unique_id=627351973]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -403.5
+offset_right = 114.5
+offset_bottom = 766.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.705, 0)
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 450
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer" unique_id=1611232179]
+layout_mode = 2
+color = Color(0, 0, 0, 0.88000005)
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer" unique_id=144665374]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer" unique_id=903596630]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer" unique_id=15798595]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "INGRESE   SU   NUEVO   
+CORREO   ELECTRONICO"
+horizontal_alignment = 1
+
+[node name="correo" type="LineEdit" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer" unique_id=1404010239]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ivggv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fal7k")
+placeholder_text = "CORREO   ELECTRONICO"
+alignment = 1
+max_length = 30
+
+[node name="aceptar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer" unique_id=1740623836]
+modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "ACEPTAR"
+
+[node name="regresar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer" unique_id=1219420470]
+modulate = Color(1.2, 1.2, 1.2, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 70
+text = "REGRESAR"
+
+[node name="CanvasLayer_nombre_error" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=474283496]
+layer = 2
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error" unique_id=1146393431]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.90000004)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error" unique_id=1321304750]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel_nombre" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer" unique_id=2139693969]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre" unique_id=1994715793]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre/VBoxContainer" unique_id=2089908679]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 84
+text = "POR   FAVOR   LLENAR   EL
+ESPACIO   DEL   NOMBRE"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre/VBoxContainer" unique_id=2139908444]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 90
+text = "ACEPTAR"
+
+[node name="CanvasLayer_correo_error" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1416583089]
+layer = 2
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error" unique_id=141048342]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.90000004)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error" unique_id=1275307965]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel_correo" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer" unique_id=2079093084]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo" unique_id=1860488986]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo/VBoxContainer" unique_id=1779112669]
+layout_mode = 2
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 85
+text = "POR   FAVOR   LLENAR   EL 
+CORREO   ELECTRONICO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo/VBoxContainer" unique_id=2031242367]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_a8fvn")
+theme_override_font_sizes/font_size = 90
+text = "ACEPTAR"
