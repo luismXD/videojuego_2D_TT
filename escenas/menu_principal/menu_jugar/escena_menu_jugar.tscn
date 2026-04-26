@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cnf8ewrpeqanq"]
 
 [ext_resource type="PackedScene" uid="uid://dvitk1bnhykga" path="res://escenas/menu_principal/Escena_particulas/estrellas_parpadeantes.tscn" id="1_grlea"]
-[ext_resource type="Theme" uid="uid://dcyl8330j7prj" path="res://temas_y_estilos/Boton_menu/boton_menu_principal.tres" id="3_dv8kw"]
 [ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="4_e3pai"]
 [ext_resource type="Script" uid="uid://c62e5ol37ks1" path="res://escenas/menu_principal/menu_jugar/boton_nueva_partida.gd" id="4_m3sck"]
 [ext_resource type="Script" uid="uid://b7seog2y0pow8" path="res://escenas/menu_principal/menu_jugar/boton_cargar_partida.gd" id="5_grlea"]
@@ -17,6 +16,14 @@ metadata/_snap_count = 2
 gradient = SubResource("Gradient_m3sck")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="Environment" id="Environment_mnj4i"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.2
+glow_strength = 0.6
+glow_bloom = 0.35
+glow_hdr_scale = 1.0
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3sck"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw2cg"]
@@ -24,13 +31,6 @@ fill_to = Vector2(0, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grlea"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3pai"]
-
-[sub_resource type="Environment" id="Environment_vf2mx"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 1.2
-glow_bloom = 0.35
-glow_hdr_scale = 1.0
 
 [node name="Menu_jugar" type="Control" unique_id=1658871584]
 layout_mode = 3
@@ -52,167 +52,6 @@ texture = SubResource("GradientTexture2D_bw2cg")
 [node name="Control" parent="." unique_id=672795953 instance=ExtResource("1_grlea")]
 layout_mode = 1
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=183232339]
-layer = 2
-visible = false
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2" unique_id=462726369]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.8352941)
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=358601321]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer2/MarginContainer" unique_id=649251415]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/MarginContainer/Panel_nombre" unique_id=1178443223]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer" unique_id=331619268]
-layout_mode = 2
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 100
-text = "Por favor llene correctamente el 
-espacio del nombre"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer" unique_id=2116713340]
-layout_mode = 2
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 120
-text = "Aceptar"
-
-[node name="Panel_correo" type="PanelContainer" parent="CanvasLayer2/MarginContainer" unique_id=1014031996]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/MarginContainer/Panel_correo" unique_id=1610376024]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer" unique_id=561446264]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Por favor llene correctamente
-el espacio de correo electronico"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer" unique_id=1516684379]
-layout_mode = 2
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 120
-text = "Aceptar"
-
-[node name="Panel_error" type="PanelContainer" parent="CanvasLayer2/MarginContainer" unique_id=997120555]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/MarginContainer/Panel_error" unique_id=110691531]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2/MarginContainer/Panel_error/VBoxContainer" unique_id=780051295]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Por favor llene correctamente
-el espacio del nombre y 
-correo electronico"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="CanvasLayer2/MarginContainer/Panel_error/VBoxContainer" unique_id=222569329]
-layout_mode = 2
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 120
-text = "Aceptar"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=310410235]
-visible = false
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1556045214]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.84705883)
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=360086083]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -350.0
-offset_bottom = 713.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(2.705, 0)
-theme_override_constants/margin_left = 600
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 600
-theme_override_constants/margin_bottom = 450
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer" unique_id=314391674]
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=394938976]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=750005883]
-layout_mode = 2
-theme_override_constants/separation = 13
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=792258254]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 70
-text = "Igrese su usuario"
-
-[node name="usuario" type="LineEdit" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2095491145]
-layout_mode = 2
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxEmpty_m3sck")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bw2cg")
-placeholder_text = "Nombre de usuario"
-max_length = 15
-
-[node name="correo_electronico" type="LineEdit" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=457877343]
-layout_mode = 2
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxEmpty_grlea")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_e3pai")
-placeholder_text = "Correo electronico"
-
-[node name="aceptar" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=759127890]
-layout_mode = 2
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 70
-text = "Aceptar"
-
-[node name="regresar" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2076310378]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme = ExtResource("3_dv8kw")
-theme_override_font_sizes/font_size = 70
-text = "Regresar"
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1662666401]
 layout_mode = 1
 anchors_preset = 15
@@ -231,25 +70,26 @@ theme_override_constants/separation = 23
 layout_mode = 2
 alignment = 1
 
-[node name="nueva_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1224804560 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_nombre", "ventana_error_correo", "ventana_error_general", "nombre_input", "email_input", "boton_comenzar", "boton_regresar", "boton_aceptar_nombre", "boton_aceptar_correo", "boton_aceptar_error_general")]
+[node name="nueva_partida" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1224804560 node_paths=PackedStringArray("popup_layer", "popup_mensajes_error", "ventana_popup", "ventana_error_nombre", "ventana_error_correo", "ventana_error_general", "nombre_input", "email_input", "boton_comenzar", "boton_regresar", "boton_aceptar_nombre", "boton_aceptar_correo", "boton_aceptar_error_general", "subviewport_container")]
 layout_mode = 2
 theme = ExtResource("4_e3pai")
 theme_override_font_sizes/font_size = 98
 text = "NUEVA  PARTIDA"
 script = ExtResource("4_m3sck")
-popup_layer = NodePath("../../../../CanvasLayer")
-popup_mensajes_error = NodePath("../../../../CanvasLayer2")
-ventana_popup = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer")
-ventana_error_nombre = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_nombre")
-ventana_error_correo = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_correo")
-ventana_error_general = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_error")
-nombre_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/usuario")
-email_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/correo_electronico")
-boton_comenzar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
-boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
-boton_aceptar_nombre = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer/Button")
-boton_aceptar_correo = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer/Button")
-boton_aceptar_error_general = NodePath("../../../../CanvasLayer2/MarginContainer/Panel_error/VBoxContainer/Button")
+popup_layer = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer")
+popup_mensajes_error = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2")
+ventana_popup = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer")
+ventana_error_nombre = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_nombre")
+ventana_error_correo = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_correo")
+ventana_error_general = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_error")
+nombre_input = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/usuario")
+email_input = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/correo_electronico")
+boton_comenzar = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
+boton_regresar = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
+boton_aceptar_nombre = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer/Button")
+boton_aceptar_correo = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer/Button")
+boton_aceptar_error_general = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_error/VBoxContainer/Button")
+subviewport_container = NodePath("../../../../WorldEnvironment/SubViewportContainer")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=415512688]
 layout_mode = 2
@@ -284,5 +124,203 @@ theme_override_font_sizes/font_size = 98
 text = "REGRESAR"
 script = ExtResource("7_bw2cg")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1697547820]
-environment = SubResource("Environment_vf2mx")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=354464528]
+environment = SubResource("Environment_mnj4i")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=384176472]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="WorldEnvironment/SubViewportContainer" unique_id=1813720529]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=183232339]
+layer = 2
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2" unique_id=462726369]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2" unique_id=358601321]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -183.0
+offset_right = 489.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=385635278]
+layout_mode = 2
+color = Color(0, 0, 0, 0.8784314)
+
+[node name="Panel_nombre" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=649251415]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_nombre" unique_id=1178443223]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer" unique_id=331619268]
+layout_mode = 2
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 80
+text = "POR FAVOR LLENE EL 
+ESPACIO DE NOMBRE"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_nombre/VBoxContainer" unique_id=2116713340]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 75
+text = "ACEPTAR"
+
+[node name="Panel_correo" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=1014031996]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_correo" unique_id=1610376024]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer" unique_id=561446264]
+layout_mode = 2
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 80
+text = "POR FAVOR   LLENE   EL   ESPACIO 
+DE   CORREO   ELECTRONICO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_correo/VBoxContainer" unique_id=1516684379]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 75
+text = "ACEPTAR"
+
+[node name="Panel_error" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=997120555]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_error" unique_id=110691531]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_error/VBoxContainer" unique_id=780051295]
+layout_mode = 2
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 75
+text = "POR   FAVOR   LLENE   EL   ESPACIO
+DE   NOMBRE   Y   CORREO   ELECTRONICO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer/Panel_error/VBoxContainer" unique_id=222569329]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_e3pai")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "ACEPTAR"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=310410235]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer" unique_id=1556045214]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer" unique_id=360086083]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -350.0
+offset_bottom = 713.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.705, 0)
+theme_override_constants/margin_left = 600
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 450
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=314391674]
+layout_mode = 2
+color = Color(0, 0, 0, 0.8784314)
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=394938976]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer" unique_id=750005883]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=792258254]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 70
+text = "     INGRESE   SU   USUARIO     "
+horizontal_alignment = 1
+
+[node name="usuario" type="LineEdit" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2095491145]
+layout_mode = 2
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m3sck")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bw2cg")
+placeholder_text = "NOMBRE   DE   USUARIO"
+alignment = 1
+max_length = 15
+
+[node name="correo_electronico" type="LineEdit" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=457877343]
+layout_mode = 2
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_grlea")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e3pai")
+placeholder_text = "CORREO   ELECTRONICO"
+alignment = 1
+
+[node name="aceptar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=759127890]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 70
+text = "ACEPTAR"
+
+[node name="regresar" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=2076310378]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_e3pai")
+theme_override_font_sizes/font_size = 70
+text = "REGRESAR"

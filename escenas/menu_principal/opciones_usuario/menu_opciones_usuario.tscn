@@ -19,6 +19,7 @@ fill_to = Vector2(0, 1)
 background_mode = 3
 glow_enabled = true
 glow_intensity = 1.2
+glow_strength = 0.6
 glow_bloom = 0.35
 glow_hdr_scale = 1.0
 
@@ -119,7 +120,6 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="CanvasLayer_nombre" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1727371374]
-visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre" unique_id=1564513051]
 anchors_preset = 15
@@ -127,7 +127,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.58000004)
+color = Color(0, 0, 0, 0.5803922)
 
 [node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre" unique_id=1855395653]
 anchors_preset = 14
@@ -153,9 +153,10 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer" unique_id=1033904823]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer/VBoxContainer" unique_id=585219525]
+modulate = Color(1.2, 1.2, 1.2, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -229,7 +230,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer" unique_id=903596630]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer/VBoxContainer" unique_id=15798595]
 layout_mode = 2

@@ -25,6 +25,7 @@ fill_to = Vector2(0, 1)
 background_mode = 3
 glow_enabled = true
 glow_intensity = 1.2
+glow_strength = 0.6
 glow_bloom = 0.35
 glow_hdr_scale = 1.0
 
@@ -132,14 +133,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="sonido" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=49807399 node_paths=PackedStringArray("icon_izq", "icon_der", "http_request")]
+[node name="sonido" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=49807399 node_paths=PackedStringArray("http_request")]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
-text = "Sonido"
+text = "SONIDO"
 script = ExtResource("3_t8ov6")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 http_request = NodePath("../../../../HTTPRequest_reporte")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1788362742]
@@ -147,7 +146,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ventana" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=509616086 node_paths=PackedStringArray("icon_izq", "icon_der")]
+[node name="ventana" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=509616086]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -158,24 +157,22 @@ alignment = 1
 selected = 0
 fit_to_longest_item = false
 item_count = 2
-popup/item_0/text = "Ventana"
+popup/item_0/text = "VENTANA"
 popup/item_0/id = 0
-popup/item_1/text = "Pantalla completa"
+popup/item_1/text = "FULL   SCREEN"
 popup/item_1/id = 1
 script = ExtResource("4_sgq6h")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1261622585]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("popup_layer", "ventana_popup", "texto_input", "http_request", "boton_enviar", "boton_regresar", "icon_izq", "icon_der")]
+[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("popup_layer", "ventana_popup", "texto_input", "http_request", "boton_enviar", "boton_regresar")]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
-text = "Reporte emocional"
+text = "REPORTE   EMOCIONAL"
 script = ExtResource("5_fs1jq")
 popup_layer = NodePath("../../../../CanvasLayer")
 ventana_popup = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer")
@@ -183,22 +180,18 @@ texto_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/V
 http_request = NodePath("../../../../HTTPRequest_analisis")
 boton_enviar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
 boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1838827672]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="regresar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1501131819 node_paths=PackedStringArray("icon_izq", "icon_der")]
+[node name="regresar" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1501131819]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
-text = "Regresar"
+text = "REGRESAR"
 script = ExtResource("6_bjvxm")
-icon_izq = NodePath("")
-icon_der = NodePath("")
 
 [node name="HTTPRequest_analisis" type="HTTPRequest" parent="." unique_id=1891002751]
 

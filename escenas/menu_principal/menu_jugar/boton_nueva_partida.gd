@@ -18,7 +18,7 @@ extends Button
 @export var boton_aceptar_correo: Button
 @export var boton_aceptar_error_general: Button
 
-
+@export var subviewport_container: SubViewportContainer
 
 
 func _ready():
@@ -32,6 +32,9 @@ func _ready():
 	if popup_layer:
 		popup_layer.hide()
 	
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 	if boton_comenzar:
 		boton_comenzar.pressed.connect(_on_boton_comenzar_pressed)
 	if boton_regresar:
@@ -45,6 +48,9 @@ func _on_boton_nueva_partida_pressed():
 	if popup_layer:
 		popup_layer.show()
 		print("Popup mostrado")
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
+
 
 func mostrar_error(tipo: String):
 	if popup_mensajes_error:
@@ -90,20 +96,30 @@ func _on_boton_comenzar_pressed():
 	
 	ControladorPartidaGlobal.guardar_partida()
 	
-	print("nombre: ", ControladorPartidaGlobal.partida.jugador["nombre"], "correo: ", ControladorPartidaGlobal.partida.jugador["correo_electronico"])
+	print("nombre: ", ControladorPartidaGlobal.partida.jugador["nombre"], " correo: ", ControladorPartidaGlobal.partida.jugador["correo_electronico"])
 	
 	popup_layer.hide()
 	_cambiar_escena(true)
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 	
 func _on_boton_regresar_pressed():
 	popup_layer.hide()
+	
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 
 func _on_boton_aceptar_nombre_y_correo():
 	popup_mensajes_error.hide()
 	#popup_mensajes_error.hide()
+	#if subviewport_container:
+		#subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 
 
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://escenas/mundo_abierto/escenario_principal/escenario_principal.tscn")

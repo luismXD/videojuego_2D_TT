@@ -28,6 +28,7 @@ shader_parameter/glow_color = Color(1, 1, 1, 1)
 background_mode = 3
 glow_enabled = true
 glow_intensity = 1.2
+glow_strength = 0.6
 glow_bloom = 0.4
 glow_hdr_scale = 1.0
 
@@ -122,7 +123,7 @@ size_flags_horizontal = 4
 mouse_behavior_recursive = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer2" unique_id=1235624226]
-modulate = Color(2.2, 2.2, 2.2, 1)
+modulate = Color(1.2, 1.2, 1.2, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_behavior_recursive = 1
