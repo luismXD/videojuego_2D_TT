@@ -7,10 +7,10 @@ class_name HumanController
 		active = v
 		update_process()
 
-@export var action_left := "move_left"
-@export var action_right := "move_right"
-@export var action_up := "move_up"
-@export var action_down := "move_down"
+@export var action_left := "izquierda"
+@export var action_right := "derecha"
+@export var action_up := "arriba"
+@export var action_down := "abajo"
 
 var parent:Node2D
 
