@@ -6,13 +6,13 @@
 [ext_resource type="Script" uid="uid://l5kejpgajyu2" path="res://escenas/menu_principal/opciones_usuario/boton_cambiar_correo.gd" id="4_a8fvn"]
 [ext_resource type="Script" uid="uid://camjagyi6tuc3" path="res://escenas/menu_principal/opciones_usuario/boton_regresar_jugar.gd" id="4_te2k6"]
 
-[sub_resource type="Gradient" id="Gradient_s3bed"]
+[sub_resource type="Gradient" id="Gradient_a8fvn"]
 offsets = PackedFloat32Array(0, 0.4993046, 1)
 colors = PackedColorArray(0.008272678, 0.011807955, 0.086812176, 1, 0.14024287, 0.031239105, 0.049223214, 1, 0, 0, 0, 1)
 metadata/_snap_count = 2
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6clga"]
-gradient = SubResource("Gradient_s3bed")
+gradient = SubResource("Gradient_a8fvn")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="Environment" id="Environment_y0f4j"]
@@ -120,6 +120,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="CanvasLayer_nombre" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=1727371374]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre" unique_id=1564513051]
 anchors_preset = 15
