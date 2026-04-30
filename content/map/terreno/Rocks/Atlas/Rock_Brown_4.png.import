@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duhgqg6jho6bp"
-path="res://.godot/imported/TilesetDesert.png-de993374a2d338e06eaf387e0e2b069d.ctex"
+uid="uid://diu6jee4c32u1"
+path="res://.godot/imported/Rock_Brown_4.png-b047b4b929a50ba8bb1ad41f27da754a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/map/TilesetDesert.png"
-dest_files=["res://.godot/imported/TilesetDesert.png-de993374a2d338e06eaf387e0e2b069d.ctex"]
+source_file="res://content/map/terreno/Rocks/Atlas/Rock_Brown_4.png"
+dest_files=["res://.godot/imported/Rock_Brown_4.png-b047b4b929a50ba8bb1ad41f27da754a.ctex"]
 
 [params]
 

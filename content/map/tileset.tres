@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://c2luabs7im5ji" path="res://content/map/terrenos_agua/water/beach_sand_woa3.png" id="3_53wl7"]
 [ext_resource type="Texture2D" uid="uid://dseocn2by32rs" path="res://content/map/tileset_wall_simple.png" id="4_dtrnm"]
 [ext_resource type="Texture2D" uid="uid://hylsm6328bme" path="res://content/map/assets_casas/casas_abandonadas/TilesetHouse.png" id="4_jqxoe"]
-[ext_resource type="Texture2D" uid="uid://44k1t5e1t2uo" path="res://content/map/tileset_animated.png" id="4_tkv0l"]
 [ext_resource type="PackedScene" uid="uid://dc2otpemqpad2" path="res://content/destroyable/crate.tscn" id="6_02y58"]
+[ext_resource type="Texture2D" uid="uid://44k1t5e1t2uo" path="res://content/map/animaciones/tileset_animated.png" id="6_j4xoe"]
 [ext_resource type="PackedScene" uid="uid://domrx1cgi35kg" path="res://content/destroyable/grass.tscn" id="7_5llc0"]
 [ext_resource type="PackedScene" uid="uid://dxma3r6xd3454" path="res://content/destroyable/pot.tscn" id="8_aa2g8"]
 [ext_resource type="Texture2D" uid="uid://cw0eu1q5jw3ex" path="res://content/map/TilesetElement.png" id="9_00gnx"]
-[ext_resource type="Texture2D" uid="uid://duhgqg6jho6bp" path="res://content/map/TilesetDesert.png" id="10_1admm"]
 [ext_resource type="Texture2D" uid="uid://dk2y6ltnm4akk" path="res://content/map/terrenos_agua/water/TilesetWater.png" id="11_kr5ap"]
+[ext_resource type="Texture2D" uid="uid://duhgqg6jho6bp" path="res://content/map/assets_casas/casas_desierto/TilesetDesert.png" id="13_53wl7"]
 [ext_resource type="Texture2D" uid="uid://bgjysxo5hlijh" path="res://content/map/terrenos_agua/water/beach_sand_woa.png" id="14_e6doy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5tek"]
@@ -2256,7 +2256,7 @@ texture = ExtResource("3_0t6wa")
 19:16/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvx6d"]
-texture = ExtResource("4_tkv0l")
+texture = ExtResource("6_j4xoe")
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/animation_frame_2/duration = 1.0
@@ -2774,7 +2774,7 @@ texture = ExtResource("9_00gnx")
 9:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asegi"]
-texture = ExtResource("10_1admm")
+texture = ExtResource("13_53wl7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://44k1t5e1t2uo"
-path="res://.godot/imported/tileset_animated.png-bcb2742920f79d2f18e6308195dfc06b.ctex"
+uid="uid://cn4txasaxta1p"
+path="res://.godot/imported/TX Tileset Wall.png-0bfd7eee905c655fbeeebde479ecd7f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/map/tileset_animated.png"
-dest_files=["res://.godot/imported/tileset_animated.png-bcb2742920f79d2f18e6308195dfc06b.ctex"]
+source_file="res://content/map/assets_casas/casas_modernas/TX Tileset Wall.png"
+dest_files=["res://.godot/imported/TX Tileset Wall.png-0bfd7eee905c655fbeeebde479ecd7f3.ctex"]
 
 [params]
 
