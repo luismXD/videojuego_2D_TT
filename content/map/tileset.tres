@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfa7eykkf3o07" path="res://content/map/tileset_floor.png" id="2_tswpv"]
 [ext_resource type="Texture2D" uid="uid://dga8b4mbpf0ch" path="res://content/map/tileset_interior_floor.png" id="3_0t6wa"]
 [ext_resource type="Texture2D" uid="uid://c2luabs7im5ji" path="res://content/map/terrenos_agua/water/beach_sand_woa3.png" id="3_53wl7"]
+[ext_resource type="Texture2D" uid="uid://c5w0sn0uqe4gd" path="res://content/map/terreno/arboles_plantas_etc/TX Plant with Shadow.png" id="4_53wl7"]
 [ext_resource type="Texture2D" uid="uid://dseocn2by32rs" path="res://content/map/tileset_wall_simple.png" id="4_dtrnm"]
 [ext_resource type="Texture2D" uid="uid://hylsm6328bme" path="res://content/map/assets_casas/casas_abandonadas/TilesetHouse.png" id="4_jqxoe"]
 [ext_resource type="PackedScene" uid="uid://dc2otpemqpad2" path="res://content/destroyable/crate.tscn" id="6_02y58"]
@@ -1907,6 +1908,10 @@ separation = Vector2i(16, 0)
 0:31/animation_frame_4/duration = 1.0
 0:31/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kr5ap"]
+texture = ExtResource("4_53wl7")
+texture_region_size = Vector2i(139, 16)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41v5f"]
 texture = ExtResource("4_jqxoe")
 20:6/0 = 0
@@ -3112,3 +3117,4 @@ sources/10 = SubResource("TileSetAtlasSource_j4xoe")
 sources/11 = SubResource("TileSetAtlasSource_53wl7")
 sources/6 = SubResource("TileSetAtlasSource_36u1c")
 sources/15 = SubResource("TileSetAtlasSource_41v5f")
+sources/12 = SubResource("TileSetAtlasSource_kr5ap")
