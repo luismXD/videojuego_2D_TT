@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blisphvmuiydg"
-path="res://.godot/imported/tileset_village_abandoned.png-717daae2fe0893872fad184e07865146.ctex"
+uid="uid://diu6jee4c32u1"
+path="res://.godot/imported/Rock_Brown_4.png-b047b4b929a50ba8bb1ad41f27da754a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/map/tileset_village_abandoned.png"
-dest_files=["res://.godot/imported/tileset_village_abandoned.png-717daae2fe0893872fad184e07865146.ctex"]
+source_file="res://content/map/terreno/Rocks/Atlas/Rock_Brown_4.png"
+dest_files=["res://.godot/imported/Rock_Brown_4.png-b047b4b929a50ba8bb1ad41f27da754a.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://co5qpuj3hns3e"]
+[gd_scene format=3 uid="uid://co5qpuj3hns3e"]
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_gjf68"]
 [ext_resource type="Texture2D" uid="uid://cb1puhmg81h5p" path="res://content/character/ninja_blue/sprite.png" id="2_hnmtc"]
@@ -10,16 +10,16 @@ radius = 10.0499
 [sub_resource type="CircleShape2D" id="CircleShape2D_hi2a4"]
 radius = 7.0
 
-[node name="NinjaBlue" instance=ExtResource("1_gjf68")]
+[node name="NinjaBlue" unique_id=539292014 instance=ExtResource("1_gjf68")]
 team = ExtResource("3_as7xg")
 
-[node name="Shape" type="CollisionShape2D" parent="Hitbox" index="0"]
+[node name="Shape" type="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1047518769) index="0" unique_id=1004750843]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_0we05")
 
-[node name="Sprite" parent="." index="2"]
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
 texture = ExtResource("2_hnmtc")
 
-[node name="Shape" type="CollisionShape2D" parent="." index="3"]
+[node name="Shape" type="CollisionShape2D" parent="." index="3" unique_id=616736006]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_hi2a4")

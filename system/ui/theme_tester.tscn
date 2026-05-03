@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvaddpu4odleb"]
+[gd_scene format=3 uid="uid://cvaddpu4odleb"]
 
-[ext_resource type="Theme" uid="uid://dx4r0mviklhsx" path="res://theme/theme_1/theme_1.tres" id="1_2k4c6"]
+[ext_resource type="Theme" uid="uid://dx4r0mviklhsx" path="res://theme_1/theme_1.tres" id="1_2k4c6"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="2_i41im"]
 
-[node name="ThemeTester" type="Control"]
+[node name="ThemeTester" type="Control" unique_id=2046839157]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,69 +13,85 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_2k4c6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=753958888]
 layout_mode = 0
 offset_right = 358.0
 offset_bottom = 202.0
 color = Color(0.407843, 0.396078, 0.341176, 1)
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 4.0
-offset_right = 165.0
-offset_bottom = 107.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=533829462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1536.0
+offset_bottom = -864.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextEdit" type="PanelContainer" parent="Panel"]
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=61220094]
+layout_mode = 2
+
+[node name="TextEdit" type="PanelContainer" parent="MarginContainer/Panel" unique_id=1546168377]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 9.0
 offset_top = 9.0
-offset_right = -9.0
+offset_right = -8.645
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LabelTitle" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 12.0
-offset_right = 157.0
-offset_bottom = 24.0
-text = "PAUSED"
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel" unique_id=1893656637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -399
+
+[node name="ButtonQuit" type="Button" parent="MarginContainer/Panel/VBoxContainer" unique_id=2100525436]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_i41im")
+theme_override_font_sizes/font_size = 18
+toggle_mode = true
+text = "SALIR"
+
+[node name="ButtonOptions" type="Button" parent="MarginContainer/Panel/VBoxContainer" unique_id=1393868818]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_i41im")
+theme_override_font_sizes/font_size = 18
+toggle_mode = true
+text = "OPCIONES"
+
+[node name="ButtonResume" type="Button" parent="MarginContainer/Panel/VBoxContainer" unique_id=190834455]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_i41im")
+theme_override_font_sizes/font_size = 18
+text = "REANUDAR"
+
+[node name="LabelTitle" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=1424375122]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_i41im")
+theme_override_font_sizes/font_size = 18
+text = "JUEGO   EN   PAUSA"
 horizontal_alignment = 1
 
-[node name="ButtonResume" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 28.0
-offset_right = 112.0
-offset_bottom = 46.0
-text = "Resume"
-
-[node name="ButtonOptions" type="Button" parent="Panel"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 112.0
-offset_bottom = 66.0
-toggle_mode = true
-text = "Options"
-
-[node name="ButtonQuit" type="Button" parent="Panel"]
-auto_translate_mode = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 68.0
-offset_right = 112.0
-offset_bottom = 86.0
-disabled = true
-text = "Quit"
-
-[node name="ItemList" type="ItemList" parent="."]
+[node name="ItemList" type="ItemList" parent="." unique_id=182947234]
+visible = false
 layout_mode = 0
 offset_left = 7.0
 offset_top = 111.0
@@ -88,49 +105,56 @@ item_3/text = "Herb"
 item_4/text = "Bottle"
 item_5/text = "Arrow"
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="TextEdit" parent="." unique_id=989875435]
+visible = false
 layout_mode = 0
 offset_left = 110.0
 offset_top = 111.0
 offset_right = 214.0
 offset_bottom = 175.0
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEdit" type="LineEdit" parent="." unique_id=622229240]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_top = 150.0
 offset_right = 313.0
 offset_bottom = 175.0
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="HSlider" type="HSlider" parent="." unique_id=854890336]
+visible = false
 layout_mode = 0
 offset_left = 173.0
 offset_top = 7.0
 offset_right = 302.0
 offset_bottom = 18.0
 
-[node name="VSlider" type="VSlider" parent="."]
+[node name="VSlider" type="VSlider" parent="." unique_id=1456040916]
+visible = false
 layout_mode = 0
 offset_left = 175.0
 offset_top = 24.0
 offset_right = 191.0
 offset_bottom = 104.0
 
-[node name="HScrollBar" type="HScrollBar" parent="."]
+[node name="HScrollBar" type="HScrollBar" parent="." unique_id=1531083181]
+visible = false
 layout_mode = 0
 offset_left = 207.0
 offset_top = 23.0
 offset_right = 300.0
 offset_bottom = 31.0
 
-[node name="VScrollBar" type="VScrollBar" parent="."]
+[node name="VScrollBar" type="VScrollBar" parent="." unique_id=917588071]
+visible = false
 layout_mode = 0
 offset_left = 192.0
 offset_top = 24.0
 offset_right = 201.0
 offset_bottom = 104.0
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="CheckBox" type="CheckBox" parent="." unique_id=1471388121]
+visible = false
 layout_mode = 0
 offset_left = 210.0
 offset_top = 36.0
@@ -139,8 +163,9 @@ offset_bottom = 58.0
 button_pressed = true
 text = "Checkbox"
 
-[node name="CheckBox2" type="CheckBox" parent="."]
+[node name="CheckBox2" type="CheckBox" parent="." unique_id=1729868713]
 auto_translate_mode = 1
+visible = false
 layout_mode = 0
 offset_left = 210.0
 offset_top = 64.0
@@ -150,7 +175,8 @@ disabled = true
 button_pressed = true
 text = "Disabled"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1700689273]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_top = 127.0
