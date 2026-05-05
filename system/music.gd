@@ -4,10 +4,18 @@ extends AudioStreamPlayer
 signal music_stopped
 
 const VOLUME_MIN = -60
-const VOLUME_MORMAL = 0
+var VOLUME_MORMAL =  ControladorPartidaGlobal.partida.jugador["volumen"]
 
 var tween:Tween
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	GameManager.volumen_cambiado.connect(_on_volumen_cambiado)
+
+
+func _on_volumen_cambiado(valor: float) -> void:
+	VOLUME_MORMAL = valor
+	volume_db = valor
 
 func change_music(audio_stream:AudioStream):
 	if stream:

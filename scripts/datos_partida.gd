@@ -5,5 +5,7 @@ extends Resource
 @export var jugador: Dictionary = {
 	"nombre": "",
 	"correo_electronico": "",
-	"analisis": []
+	"analisis": [],
+	"volumen": 0,
+	"ventana": 0
 }

@@ -173,6 +173,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 0.8784314)
 
 [node name="Panel_nombre" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=649251415]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -197,6 +198,7 @@ theme_override_font_sizes/font_size = 75
 text = "ACEPTAR"
 
 [node name="Panel_correo" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer2/MarginContainer" unique_id=1014031996]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
