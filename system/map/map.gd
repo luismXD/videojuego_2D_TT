@@ -7,5 +7,5 @@ class_name Map
 
 
 func _ready() -> void:
-	#ready
-	screen_grid_ref.visible = false
+	ready
+	#screen_grid_ref.visible = false
