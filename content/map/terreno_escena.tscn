@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_0nw6s"]
 [ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_41njb"]
 [ext_resource type="PackedScene" uid="uid://1g7sblynk7tp" path="res://content/map/escenarios_escenas/escenario_01.tscn" id="3_41njb"]
-[ext_resource type="PackedScene" uid="uid://8hdy5e16galx" path="res://content/map/escenarios_escenas/escena 5.tscn" id="4_ap1bu"]
 
 [node name="Map2" type="Node2D" unique_id=563215348]
 script = ExtResource("1_0nw6s")
@@ -34,6 +33,3 @@ layer_3/tile_data = PackedInt32Array(-27, 1, 12, 65509, 131073, 12, 131045, 1, 1
 
 [node name="Map" parent="." unique_id=298701026 instance=ExtResource("3_41njb")]
 visible = false
-
-[node name="Map2" parent="." unique_id=219756505 instance=ExtResource("4_ap1bu")]
-position = Vector2(-3061, -1433)
