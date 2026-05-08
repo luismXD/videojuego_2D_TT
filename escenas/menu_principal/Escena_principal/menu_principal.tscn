@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dvitk1bnhykga" path="res://escenas/menu_principal/Escena_particulas/estrellas_parpadeantes.tscn" id="1_4ef3t"]
 [ext_resource type="Script" uid="uid://bc2acdgt75tea" path="res://escenas/menu_principal/Escena_principal/boton_jugar.gd" id="1_fsgss"]
 [ext_resource type="Shader" uid="uid://bakbe84b0m3ah" path="res://temas_y_estilos/shaders/luna_shaders/luna_shader.gdshader" id="1_lgmo3"]
+[ext_resource type="Script" uid="uid://b4dwwjlsxudnm" path="res://escenas/menu_principal/Escena_principal/menu_principal_script.gd" id="1_sw7rk"]
 [ext_resource type="Texture2D" uid="uid://dv3fst7rwbr3r" path="res://temas_y_estilos/menu_assets_nuevos/imagenes_menu/moon.png" id="2_lgmo3"]
 [ext_resource type="Script" uid="uid://b8751un63ql8k" path="res://escenas/menu_principal/Escena_principal/boton_opciones.gd" id="4_dy07j"]
 [ext_resource type="FontFile" uid="uid://c5njwpf6voi0b" path="res://theme_1/font_normal.ttf" id="5_4ef3t"]
@@ -39,6 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sw7rk")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1267995438]
 layout_mode = 1

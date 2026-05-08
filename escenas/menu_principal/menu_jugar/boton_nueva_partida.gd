@@ -93,10 +93,13 @@ func _on_boton_comenzar_pressed():
 	
 	ControladorPartidaGlobal.partida.jugador["nombre"] = nombre
 	ControladorPartidaGlobal.partida.jugador["correo_electronico"] = email
+	# Si no existe la clave "volumen", la crea con valor 0
+	if not ControladorPartidaGlobal.partida.jugador.has("volumen"):
+		ControladorPartidaGlobal.partida.jugador["volumen"] = 0
 	
 	ControladorPartidaGlobal.guardar_partida()
 	
-	print("nombre: ", ControladorPartidaGlobal.partida.jugador["nombre"], " correo: ", ControladorPartidaGlobal.partida.jugador["correo_electronico"])
+	print("nombre: ", ControladorPartidaGlobal.partida.jugador["nombre"], " correo: ", ControladorPartidaGlobal.partida.jugador["correo_electronico"], ", volumen: ", ControladorPartidaGlobal.partida.jugador["volumen"])
 	
 	popup_layer.hide()
 	_cambiar_escena(true)

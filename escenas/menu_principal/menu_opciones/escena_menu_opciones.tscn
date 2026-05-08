@@ -29,6 +29,24 @@ glow_strength = 0.6
 glow_bloom = 0.35
 glow_hdr_scale = 1.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs1jq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 15
+
 [node name="Menu_opciones" type="Control" unique_id=1457210266]
 layout_mode = 3
 anchors_preset = 15
@@ -154,7 +172,7 @@ theme = ExtResource("4_bjvxm")
 theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 100
 alignment = 1
-selected = 0
+selected = 1
 fit_to_longest_item = false
 item_count = 2
 popup/item_0/text = "VENTANA"
@@ -199,3 +217,82 @@ script = ExtResource("6_bjvxm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1073334330]
 environment = SubResource("Environment_fs1jq")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=1627108898]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="WorldEnvironment/SubViewportContainer" unique_id=284167767]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2015370108]
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer" unique_id=289630024]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=324205414]
+layout_mode = 2
+color = Color(0, 0, 0, 0.7019608)
+
+[node name="Panel_nombre" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=1255449697]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_fs1jq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre" unique_id=955581729]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=133268525]
+layout_mode = 2
+theme = ExtResource("4_bjvxm")
+theme_override_font_sizes/font_size = 105
+text = "VOLUMEN"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=362979102]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer/PanelContainer" unique_id=1760973771]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("4_bjvxm")
+min_value = -30.0
+max_value = 0.0
+value = -10.0
+
+[node name="ProgressBar" type="ProgressBar" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer/PanelContainer" unique_id=1105128106]
+layout_mode = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("4_bjvxm")
+min_value = -30.0
+max_value = 0.0
+step = 1.0
+
+[node name="salir" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=524197651]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_bjvxm")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 75
+text = "REGRESAR"
+icon_alignment = 1

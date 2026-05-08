@@ -12,10 +12,11 @@ func _ready():
 func _jugar():
 	var correo_electronico =  ControladorPartidaGlobal.partida.jugador["correo_electronico"]
 	var nombre = ControladorPartidaGlobal.partida.jugador["nombre"]
+	var volumen = ControladorPartidaGlobal.partida.jugador["volumen"]
 	ControladorPartidaGlobal.cargar_partida()
 
 	_cambiar_escena(true)
-	print("nombre: ", nombre, ", correo:", correo_electronico)
+	print("nombre: ", nombre, ", correo:", correo_electronico, ", volumen: ", volumen)
 	
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
