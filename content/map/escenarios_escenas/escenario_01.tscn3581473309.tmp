@@ -35,4 +35,3 @@ layer_3/tile_data = PackedInt32Array(-1113867, 1, 12, -1179403, 131073, 12, -124
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Tilemap/red-snake" unique_id=514694296]
-position = Vector2(87, 86)
