@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_hncl0"]
 [ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_vrivb"]
 
-[node name="Map" type="Node2D" unique_id=219756505]
+[node name="escena_5" type="Node2D" unique_id=219756505]
 script = ExtResource("1_hncl0")
 metadata/_custom_type_script = "uid://fg6aean1ylsx"
 
