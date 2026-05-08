@@ -73,11 +73,12 @@ metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33ht2")
 
-[node name="Teleporter4" type="Area2D" parent="." unique_id=1189258543]
+[node name="Teleporter4" type="Area2D" parent="." unique_id=1189258543 node_paths=PackedStringArray("target")]
 position = Vector2(3159, -6055)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("3_wipce")
+target = NodePath("../Teleporter3")
 direction = Vector2(0, -1)
 metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 
