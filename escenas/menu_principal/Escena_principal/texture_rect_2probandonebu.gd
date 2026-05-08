@@ -17,8 +17,8 @@ func crear_fondo_gradiente():
 	
 	var gradient_texture = GradientTexture2D.new()
 	gradient_texture.gradient = gradient
-	#gradient_texture.fill = GradientTexture2D.FILL_LINEAR_VERTICAL
-	#
+	gradient_texture.fill = GradientTexture2D.FILL_LINEAR_VERTICAL
+	
 	fondo.texture = gradient_texture
 	add_child(fondo)
 	move_child(fondo, 0)
