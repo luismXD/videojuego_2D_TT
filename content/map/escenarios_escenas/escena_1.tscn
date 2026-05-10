@@ -49,7 +49,7 @@ layer_3/tile_data = PackedInt32Array(5570599, 196609, 12, 5505063, 196609, 12, 5
 [node name="escena_3" parent="." unique_id=219756505 instance=ExtResource("3_vvrrj")]
 
 [node name="Teleporter" type="Area2D" parent="." unique_id=299087102 node_paths=PackedStringArray("target")]
-position = Vector2(1422, 1495)
+position = Vector2(1427, 1097)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("4_1oqbs")
@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_1oqbs")
 [node name="escena_4" parent="." unique_id=1172909582 instance=ExtResource("5_1oqbs")]
 
 [node name="Teleporter3" type="Area2D" parent="." unique_id=80193407 node_paths=PackedStringArray("target")]
-position = Vector2(1757, 1650)
+position = Vector2(2070, 1018)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("4_1oqbs")
