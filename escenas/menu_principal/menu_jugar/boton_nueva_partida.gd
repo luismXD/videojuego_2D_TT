@@ -96,7 +96,7 @@ func _on_boton_comenzar_pressed():
 	# Si no existe la clave "volumen", la crea con valor 0
 	if not ControladorPartidaGlobal.partida.jugador.has("volumen"):
 		ControladorPartidaGlobal.partida.jugador["volumen"] = 0
-	
+	ControladorPartidaGlobal.partida.jugador["posicion"] = Vector2.ZERO
 	ControladorPartidaGlobal.guardar_partida()
 	
 	print("nombre: ", ControladorPartidaGlobal.partida.jugador["nombre"], " correo: ", ControladorPartidaGlobal.partida.jugador["correo_electronico"], ", volumen: ", ControladorPartidaGlobal.partida.jugador["volumen"])

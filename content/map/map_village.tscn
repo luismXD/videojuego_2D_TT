@@ -156,7 +156,6 @@ icon_alignment = 1
 
 [node name="CanvasLayer_opciones_menu" type="CanvasLayer" parent="." index="1" unique_id=1712010356]
 layer = 2
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_opciones_menu" index="0" unique_id=911064320]
 clip_contents = true
@@ -304,9 +303,6 @@ script = ExtResource("9_vk7bb")
 path = NodePath("../../Path2D")
 wait_time = 3.0
 wait_chance = 50
-
-[node name="EnvironmentArea" parent="." index="4"]
-visible = true
 
 [node name="EnvironmentShape" type="CollisionShape2D" parent="EnvironmentArea" index="0" unique_id=1469922356]
 position = Vector2(-296, -64)

@@ -25,8 +25,15 @@ signal teleported
 @export var team:ResourceDamageTeam:
 	set(v):
 		team = v
-
-
+		
+func _ready() -> void:
+	var pos_guardada = ControladorPartidaGlobal.partida.jugador["posicion"]
+	if pos_guardada != Vector2.ZERO:
+		global_position = pos_guardada
+# Espera un frame para que la cámara ya esté en el árbol
+		#await get_tree().process_frame
+		for camera in get_tree().get_nodes_in_group("camera"):
+			camera.teleport_to(global_position)
 var actor:ActorSprite
 var move_vector := Vector2.ZERO:
 	set(v):

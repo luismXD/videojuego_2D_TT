@@ -37,4 +37,6 @@ func _process(delta: float) -> void:
 
 
 func toggle_menu():
+	ControladorPartidaGlobal.partida.jugador["posicion"] = parent.global_position
+	ControladorPartidaGlobal.guardar_partida()
 	GameManager.toggle_menu()
