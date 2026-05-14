@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg7jk1tqvkyv8"
-path="res://.godot/imported/SpriteSheetWhite.png-4ab7b2c8c93e732cc63333954413abe8.ctex"
+uid="uid://n0gu5d3c4k8q"
+path="res://.godot/imported/chicken_asset_brown.png-bd2bf01505571a47cc3c65f58b9dd9b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/character/animals/chicken/SpriteSheetWhite.png"
-dest_files=["res://.godot/imported/SpriteSheetWhite.png-4ab7b2c8c93e732cc63333954413abe8.ctex"]
+source_file="res://content/character/animals/chicken/chicken_asset_brown.png"
+dest_files=["res://.godot/imported/chicken_asset_brown.png-bd2bf01505571a47cc3c65f58b9dd9b4.ctex"]
 
 [params]
 

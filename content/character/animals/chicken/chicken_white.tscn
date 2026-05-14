@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckx1iuqvlln6t"]
+
+[ext_resource type="Script" uid="uid://dqg2s2lxffjat" path="res://system/character/animal.gd" id="1_5kaxw"]
+[ext_resource type="Texture2D" uid="uid://btryd5g3oajow" path="res://content/character/Shadow.png" id="2_yliil"]
+[ext_resource type="Texture2D" uid="uid://dg7jk1tqvkyv8" path="res://content/character/animals/chicken/chicken_asset_white.png" id="3_83l0b"]
+
+[node name="chicken_white" type="Node2D" unique_id=1702246291]
+script = ExtResource("1_5kaxw")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=688625129]
+position = Vector2(0, 7)
+texture = ExtResource("2_yliil")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=310989560]
+texture = ExtResource("3_83l0b")
+hframes = 2
