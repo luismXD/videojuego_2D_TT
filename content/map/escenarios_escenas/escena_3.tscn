@@ -3,12 +3,21 @@
 [ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_s0dd6"]
 [ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_wipce"]
 [ext_resource type="Script" uid="uid://cnuxju0tl6cry" path="res://system/teleporter/teleporter.gd" id="3_wipce"]
+[ext_resource type="PackedScene" uid="uid://bxyw6ndwxqf88" path="res://content/character/NPCs/Hunter/hunter.tscn" id="4_hg7cb"]
+[ext_resource type="Resource" uid="uid://xjlbmbimxaaq" path="res://content/team/npc_team.tres" id="5_gwm8f"]
+[ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="6_15hpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33ht2"]
 size = Vector2(11, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vskx"]
 size = Vector2(14, 13)
+
+[sub_resource type="Curve2D" id="Curve2D_oo5ra"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 80, 0, 0, 0, 0, 0, -62, -17, 0, 0, 0, 0, -59, 13, 0, 0, 0, 0, -16, 17, 0, 0, 0, 0, 77, 21)
+}
+point_count = 5
 
 [node name="escena_3" type="Node2D" unique_id=219756505]
 script = ExtResource("1_s0dd6")
@@ -49,12 +58,11 @@ metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33ht2")
 
-[node name="Teleporter2" type="Area2D" parent="." unique_id=483878086 node_paths=PackedStringArray("target")]
+[node name="Teleporter2" type="Area2D" parent="." unique_id=483878086]
 position = Vector2(2318, -6050)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("3_wipce")
-target = NodePath("")
 direction = Vector2(0, -1)
 metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 
@@ -108,3 +116,21 @@ metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter6" unique_id=472845160]
 shape = SubResource("RectangleShape2D_5vskx")
+
+[node name="Hunter" parent="." unique_id=1711177777 instance=ExtResource("4_hg7cb")]
+position = Vector2(2270, -6109)
+speed = 30.0
+acceleration = 100.0
+team = ExtResource("5_gwm8f")
+
+[node name="BehaviorFollowPath" type="Node2D" parent="Hunter" unique_id=381731079 node_paths=PackedStringArray("path")]
+script = ExtResource("6_15hpk")
+path = NodePath("../../Path2D")
+loop = true
+wait_time = 1.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1321263240]
+position = Vector2(2279, -6107)
+curve = SubResource("Curve2D_oo5ra")
