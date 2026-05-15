@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bxyw6ndwxqf88"]
+
+[ext_resource type="Script" uid="uid://bjyx155htjy50" path="res://system/character/character.gd" id="1_w5o5x"]
+[ext_resource type="Script" uid="uid://cxesnpebg53yb" path="res://system/damage/hitbox.gd" id="2_n78m1"]
+[ext_resource type="Script" uid="uid://dc5766v6db5ax" path="res://system/damage/resource_damage_team.gd" id="3_um2m3"]
+[ext_resource type="Texture2D" uid="uid://btryd5g3oajow" path="res://content/character/Shadow.png" id="4_k77rt"]
+[ext_resource type="Texture2D" uid="uid://cuer8tos01ls8" path="res://content/character/NPCs/Hunter/SpriteSheet_Hunter.png" id="5_b03v6"]
+[ext_resource type="Script" uid="uid://basmbrvb5u3ra" path="res://system/character/sprite_character.gd" id="6_73uxf"]
+
+[sub_resource type="Resource" id="Resource_3y32p"]
+script = ExtResource("3_um2m3")
+
+[node name="Hunter" type="CharacterBody2D" unique_id=1711177777]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_w5o5x")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1047518769]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("2_n78m1")
+team = SubResource("Resource_3y32p")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=9945859]
+texture = ExtResource("4_k77rt")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1923305892]
+texture = ExtResource("5_b03v6")
+offset = Vector2(0, -6)
+hframes = 4
+vframes = 7
+script = ExtResource("6_73uxf")
