@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bheb2v7fdghba"]
+[gd_scene format=3 uid="uid://bheb2v7fdghba"]
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_hi80i"]
 [ext_resource type="Texture2D" uid="uid://hfa5b4xd6u8x" path="res://content/character/samurai_blue/sprite.png" id="2_r6uo7"]
 
-[node name="SamuraiBlue" instance=ExtResource("1_hi80i")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
+radius = 6.0
+height = 18.0
 
-[node name="Sprite" parent="." index="2"]
+[node name="SamuraiBlue" unique_id=750470882 instance=ExtResource("1_hi80i")]
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
 texture = ExtResource("2_r6uo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1351098452]
+z_index = 1
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_k052x")

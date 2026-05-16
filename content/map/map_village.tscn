@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bheb2v7fdghba" path="res://content/character/samurai_blue/samurai_blue.tscn" id="10_kdwhh"]
 [ext_resource type="AudioStream" uid="uid://c7vlu3uu47bb5" path="res://audio/music/theme_dream.ogg" id="15_4dufa"]
 [ext_resource type="PackedScene" uid="uid://dp4jr7vakesk4" path="res://content/map/terreno_escena.tscn" id="15_alfly"]
+[ext_resource type="PackedScene" uid="uid://cslkqnmbe73py" path="res://content/interactables/dialog/dialog_interaction.tscn" id="17_ewt8g"]
 [ext_resource type="Script" uid="uid://cnuxju0tl6cry" path="res://system/teleporter/teleporter.gd" id="18_rh3ex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e35uw"]
@@ -304,6 +305,8 @@ script = ExtResource("9_vk7bb")
 path = NodePath("../../Path2D")
 wait_time = 3.0
 wait_chance = 50
+
+[node name="DialogInteraction" parent="Tilemap/SamuraiBlue" index="5" unique_id=1082828654 instance=ExtResource("17_ewt8g")]
 
 [node name="EnvironmentArea" parent="." index="4"]
 visible = true

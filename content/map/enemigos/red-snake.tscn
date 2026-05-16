@@ -138,9 +138,18 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qo6tn"]
+radius = 7.0
+height = 16.0
+
 [node name="red-snake" type="CharacterBody2D" unique_id=210853186]
+z_index = 1
 script = ExtResource("1_qo6tn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=397097889]
 sprite_frames = SubResource("SpriteFrames_qgq66")
-animation = &"walkUp"
+animation = &"walkDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490378851]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_qo6tn")
