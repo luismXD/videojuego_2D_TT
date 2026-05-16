@@ -32,6 +32,12 @@ func _ready() -> void:
 	add_to_group("camera")
 	current_cell = world_to_grid(global_position)
 	set_process(false)
+	
+	#await get_tree().process_frame
+	#if target:
+		#var pos_guardada = ControladorPartidaGlobal.partida.jugador["posicion"]
+		#if pos_guardada != Vector2.ZERO:
+			#teleport_to(pos_guardada)
 
 
 func _process(delta: float) -> void:

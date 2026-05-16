@@ -16,8 +16,7 @@ func _jugar():
 	ControladorPartidaGlobal.cargar_partida()
 
 	_cambiar_escena(true)
-	print("nombre: ", nombre, ", correo:", correo_electronico, ", volumen: ", volumen)
-	
+	#print("nombre: ", nombre, ", correo:", correo_electronico, ", volumen: ", volumen)
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
