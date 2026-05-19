@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://bltitfj2ykvhd" path="res://content/map/assets_casas/casas_modernas/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png" id="27_mef6k"]
 [ext_resource type="Texture2D" uid="uid://tmgsv13vxgc7" path="res://content/map/assets_casas/casas_modernas/Buildings.png" id="29_4aqkg"]
 [ext_resource type="Texture2D" uid="uid://cvuustblxm31u" path="res://content/map/assets_casas/casas_modernas/casas_modernas_2.png" id="30_l4n2n"]
+[ext_resource type="Texture2D" uid="uid://b3gkpo1wp75m" path="res://content/map/assets_casas/casas_modernas/lamparas.png" id="30_mef6k"]
 [ext_resource type="Texture2D" uid="uid://dfavitdvxtx8t" path="res://content/map/assets_casas/casas_modernas/casas_modernas_1.png" id="31_l4n2n"]
 [ext_resource type="Texture2D" uid="uid://q16b2dghc4kq" path="res://content/map/assets_casas/casas_modernas/fuentes_3_hdsbm.png" id="33_py3ub"]
 
@@ -4251,6 +4252,111 @@ texture = ExtResource("17_ft20i")
 0:13/0 = 0
 0:12/0 = 0
 0:11/0 = 0
+6:6/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+7:6/0 = 0
+5:6/0 = 0
+4:6/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+10:9/0 = 0
+10:8/0 = 0
+12:9/0 = 0
+9:13/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+10:13/0 = 0
+10:12/0 = 0
+9:12/0 = 0
+8:12/0 = 0
+8:13/0 = 0
+8:14/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+11:14/0 = 0
+11:13/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+15:13/0 = 0
+15:14/0 = 0
+14:14/0 = 0
+14:15/0 = 0
+13:15/0 = 0
+12:15/0 = 0
+12:14/0 = 0
+12:13/0 = 0
+13:14/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:15/0 = 0
+12:10/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+13:10/0 = 0
+13:9/0 = 0
+13:8/0 = 0
+14:9/0 = 0
+14:10/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+15:9/0 = 0
+12:8/0 = 0
+12:7/0 = 0
+12:6/0 = 0
+12:5/0 = 0
+12:4/0 = 0
+13:7/0 = 0
+13:6/0 = 0
+13:5/0 = 0
+13:4/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+15:4/0 = 0
+14:4/0 = 0
+14:3/0 = 0
+11:4/0 = 0
+11:5/0 = 0
+10:5/0 = 0
+10:4/0 = 0
+10:3/0 = 0
+10:2/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+15:2/0 = 0
+14:2/0 = 0
+13:3/0 = 0
+12:3/0 = 0
+11:3/0 = 0
+11:2/0 = 0
+15:3/0 = 0
+13:2/0 = 0
+12:2/0 = 0
+15:0/0 = 0
+14:0/0 = 0
+13:0/0 = 0
+12:0/0 = 0
+11:0/0 = 0
+10:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l8rd"]
 texture = ExtResource("19_x0m50")
@@ -5334,6 +5440,21 @@ texture = ExtResource("29_4aqkg")
 5:5/0 = 0
 6:5/0 = 0
 6:6/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olcok"]
+texture = ExtResource("30_mef6k")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 3:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tilta"]
@@ -6919,7 +7040,7 @@ texture_region_size = Vector2i(17, 17)
 0:0/animation_frame_2/duration = 1.0
 0:0/animation_frame_3/duration = 1.0
 0:0/animation_frame_4/duration = 1.0
-0:0/animation_frame_5/duration = 10.0
+0:0/animation_frame_5/duration = 15.0
 0:0/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_x038y"]
@@ -7678,3 +7799,4 @@ sources/37 = SubResource("TileSetAtlasSource_k64cv")
 sources/41 = SubResource("TileSetAtlasSource_mef6k")
 sources/42 = SubResource("TileSetAtlasSource_4aqkg")
 sources/49 = SubResource("TileSetAtlasSource_l1kj8")
+sources/38 = SubResource("TileSetAtlasSource_olcok")
