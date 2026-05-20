@@ -79,9 +79,9 @@ _data = {
 }
 
 [node name="DialogSystem" type="CanvasLayer" unique_id=629147265]
-process_mode = 3
 layer = 0
 script = ExtResource("1_lbvu4")
+backend_url = null
 
 [node name="DialogUI" type="Control" parent="." unique_id=700742603]
 layout_mode = 3
@@ -107,9 +107,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.17916666
-anchor_top = 0.6824074
+anchor_top = 0.6
 anchor_right = 0.9770833
-anchor_bottom = 0.9546296
+anchor_bottom = 0.83
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lonjw")
@@ -126,19 +126,14 @@ theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
 bbcode_enabled = true
-text = "¿Qué juego hizo [b]Willyrex[/b]?
-[wave]Contesta la pregunta![/wave]
-[shake][color=orangered]¿Qué juego hizo [b]Willyrex[/b]?[/color][/shake]
-[i]Paraaaaa paraaa paradiseeee[/i]
-
-asumakinaquesueño"
 
 [node name="NameLabel" type="Label" parent="DialogUI" unique_id=820779765]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.17916666
-anchor_top = 0.6259259
-anchor_right = 0.2390625
-anchor_bottom = 0.6787037
+anchor_top = 0.54
+anchor_right = 0.3171875
+anchor_bottom = 0.59
 theme_override_colors/font_color = Color(0.89411765, 0.8627451, 0.73333335, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -146,7 +141,6 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
-text = "Dalas Review"
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="DialogUI" unique_id=449573401]
@@ -161,15 +155,17 @@ anchor_left = 0.0072916667
 anchor_top = 0.537037
 anchor_right = 0.17708333
 anchor_bottom = 0.98055553
+grow_vertical = 2
+scale = Vector2(2, 2)
 metadata/_edit_use_anchors_ = true
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI/PanelPortrait" unique_id=519979245]
-position = Vector2(165.00006, 246)
-scale = Vector2(3.47875, 3.2719593)
+position = Vector2(120, 130)
+scale = Vector2(3.5, 3.292)
 texture = ExtResource("5_lonjw")
-hframes = 4
 
 [node name="DialogProgressIndicator" type="PanelContainer" parent="DialogUI" unique_id=479144796]
+visible = false
 self_modulate = Color(0.18888152, 0.7018584, 0.59510475, 1)
 layout_mode = 0
 anchor_left = 0.921875
@@ -183,10 +179,45 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_ovtg5")
 theme_override_font_sizes/font_size = 50
-text = "NEXT"
+text = "pensando..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DialogUI/DialogProgressIndicator" unique_id=1566396672]
 libraries/ = SubResource("AnimationLibrary_4gaq1")
 autoplay = &"default"
+
+[node name="InputContainer" type="HBoxContainer" parent="DialogUI" unique_id=1516763239]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179
+anchor_top = 0.85
+anchor_right = 0.977
+anchor_bottom = 0.93
+
+[node name="PlayerInput" type="LineEdit" parent="DialogUI/InputContainer" unique_id=1669158358]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SendButton" type="Button" parent="DialogUI/InputContainer" unique_id=1963582140]
+layout_mode = 2
+text = "Enviar"
+
+[node name="FarewellContainer" type="HBoxContainer" parent="DialogUI" unique_id=1513604792]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179
+anchor_top = 0.85
+anchor_right = 0.977
+anchor_bottom = 0.93
+
+[node name="KeepTalkingButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=1589345794]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Seguir platicando"
+
+[node name="FarewellButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=454182985]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Despedirme"
