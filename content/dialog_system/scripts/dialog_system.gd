@@ -1,0 +1,251 @@
+@tool
+@icon("res://content/dialog_system/icons/star_bubble.svg")
+class_name DialogSystemNode extends CanvasLayer
+
+signal dialog_finished(emotions_log: Array)
+
+# --- Config ---
+@export var backend_url: String = "http://127.0.0.1:8001"  # Tu servicio conversation/
+
+# --- Estado ---
+var is_active: bool = false
+var is_typing: bool = false
+var session_id: String = ""
+var current_npc_id: String = ""
+var can_extend: bool = true
+var accumulated_emotions: Array = []  # Se guarda entre sesiones (varios NPCs)
+
+# --- Nodos UI ---
+@onready var dialog_ui: Control = $DialogUI
+@onready var rich_text: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
+@onready var name_label: Label = $DialogUI/NameLabel
+@onready var portrait_sprite: Sprite2D = $DialogUI/PanelPortrait/PortraitSprite
+@onready var timer: Timer = $DialogUI/Timer
+@onready var audio: AudioStreamPlayer = $DialogUI/AudioStreamPlayer
+@onready var progress_indicator: PanelContainer = $DialogUI/DialogProgressIndicator
+
+# Nuevos
+@onready var player_input: LineEdit = $DialogUI/InputContainer/PlayerInput
+@onready var send_button: Button = $DialogUI/InputContainer/SendButton
+@onready var input_container: HBoxContainer = $DialogUI/InputContainer
+@onready var farewell_container: HBoxContainer = $DialogUI/FarewellContainer
+@onready var keep_talking_button: Button = $DialogUI/FarewellContainer/KeepTalkingButton
+@onready var farewell_button: Button = $DialogUI/FarewellContainer/FarewellButton
+
+# HTTPRequest (lo creamos por código para no ensuciar la escena)
+var http: HTTPRequest
+
+
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		if get_viewport() is Window:
+			get_parent().remove_child(self)
+		return
+	
+	http = HTTPRequest.new()
+	http.process_mode = Node.PROCESS_MODE_ALWAYS  # ← Esta línea es la clave
+	add_child(http)
+	
+	hide_dialog()
+	timer.timeout.connect(_on_typewriter_tick)
+	send_button.pressed.connect(_on_send_pressed)
+	player_input.text_submitted.connect(func(_t): _on_send_pressed())
+	keep_talking_button.pressed.connect(_on_keep_talking_pressed)
+	farewell_button.pressed.connect(_on_farewell_pressed)
+
+
+# =========================================================
+# API PÚBLICA — esto es lo que los NPC llaman
+# =========================================================
+
+func start_conversation(npc_id: String, npc_name: String, portrait: Texture2D) -> void:
+	if is_active:
+		return
+	current_npc_id = npc_id
+	name_label.text = npc_name
+	if portrait:
+		portrait_sprite.texture = portrait
+	
+	_show_dialog()
+	_set_input_state(false)  # Bloquea input mientras llega el saludo
+	_request_start(npc_id)
+
+
+# =========================================================
+# Backend
+# =========================================================
+
+func _request_start(npc_id: String) -> void:
+	var url := "%s/conversation/start" % backend_url
+	var headers := ["Content-Type: application/json"]
+	var body := JSON.stringify({"npc_id": npc_id})
+	http.request_completed.connect(_on_start_response, CONNECT_ONE_SHOT)
+	http.request(url, headers, HTTPClient.METHOD_POST, body)
+
+func _on_start_response(_result, code, _headers, body) -> void:
+	if code != 200:
+		_display_message("[i](error de conexión)[/i]")
+		_set_input_state(true)
+		return
+	var data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+	session_id = data.get("session_id", "")
+	_display_message(data.get("greeting", ""))   # ← era "greeting_message"
+	_set_input_state(true)
+
+
+func _request_chat(message: String) -> void:
+	var url := "%s/conversation/chat" % backend_url
+	var headers := ["Content-Type: application/json"]
+	var body := JSON.stringify({
+		"session_id": session_id,
+		"player_message": message
+	})
+	http.request_completed.connect(_on_chat_response, CONNECT_ONE_SHOT)
+	http.request(url, headers, HTTPClient.METHOD_POST, body)
+
+func _on_chat_response(_result, code, _headers, body) -> void:
+	if code != 200:
+		_display_message("[i](el NPC no respondió)[/i]")
+		_set_input_state(true)
+		return
+	var data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+	_display_message(data.get("npc_message", ""))
+	
+	if data.get("should_end", false):
+		# El NPC corta la conversación (ej. detectó enojo)
+		await get_tree().create_timer(2.0).timeout
+		_request_end()
+		return
+	
+	if data.get("offer_farewell", false):
+		can_extend = data.get("can_extend", false)
+		_show_farewell_options()
+	else:
+		_set_input_state(true)
+
+
+func _request_end() -> void:
+	var url := "%s/conversation/end" % backend_url
+	var headers := ["Content-Type: application/json"]
+	var body := JSON.stringify({"session_id": session_id})
+	http.request_completed.connect(_on_end_response, CONNECT_ONE_SHOT)
+	http.request(url, headers, HTTPClient.METHOD_POST, body)
+
+func _on_end_response(_result, _code, _headers, body) -> void:
+	var data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
+	var emotions_log: Array = data.get("emotions_log", [])
+	accumulated_emotions.append({
+		"npc_id": current_npc_id,
+		"log": emotions_log
+	})
+	# Mostrar la despedida antes de cerrar
+	var farewell: String = data.get("farewell", "")
+	if farewell != "":
+		_display_message(farewell)
+		await get_tree().create_timer(3.0).timeout
+	hide_dialog()
+
+
+# =========================================================
+# Flujo UI
+# =========================================================
+
+func _on_send_pressed() -> void:
+	var msg := player_input.text.strip_edges()
+	if msg.is_empty() or is_typing:
+		return
+	player_input.text = ""
+	_set_input_state(false)
+	# Opcional: mostrar lo que el jugador dijo arriba antes de la respuesta
+	rich_text.text = "[color=#7a7a7a][i]Tú: %s[/i][/color]" % msg
+	_request_chat(msg)
+
+func _on_keep_talking_pressed() -> void:
+	farewell_container.visible = false
+	if can_extend:
+		_request_extend()
+	else:
+		_request_end()
+
+func _request_extend() -> void:
+	var url := "%s/conversation/extend" % backend_url
+	var headers := ["Content-Type: application/json"]
+	var body := JSON.stringify({"session_id": session_id})
+	http.request_completed.connect(_on_extend_response, CONNECT_ONE_SHOT)
+	http.request(url, headers, HTTPClient.METHOD_POST, body)
+
+func _on_extend_response(_result, code, _headers, _body) -> void:
+	if code != 200:
+		_display_message("[i](no se pudo extender)[/i]")
+	_set_input_state(true)
+
+func _on_farewell_pressed() -> void:
+	farewell_container.visible = false
+	_request_end()
+
+func _show_farewell_options() -> void:
+	input_container.visible = false
+	farewell_container.visible = true
+	keep_talking_button.disabled = not can_extend
+	keep_talking_button.text = "Seguir platicando" if can_extend else "(no se puede extender)"
+
+
+# =========================================================
+# Mostrar texto del NPC (typewriter)
+# =========================================================
+
+func _display_message(text: String) -> void:
+	rich_text.text = text
+	rich_text.visible_characters = 0
+	is_typing = true
+	progress_indicator.visible = false
+	timer.wait_time = 0.03
+	timer.start()
+
+func _on_typewriter_tick() -> void:
+	rich_text.visible_characters += 1
+	if rich_text.visible_characters >= rich_text.get_total_character_count():
+		_finish_typing()
+
+func _finish_typing() -> void:
+	timer.stop()
+	is_typing = false
+	rich_text.visible_characters = -1
+
+
+# =========================================================
+# Mostrar / ocultar
+# =========================================================
+
+func _show_dialog() -> void:
+	is_active = true
+	dialog_ui.visible = true
+	dialog_ui.process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
+
+func hide_dialog() -> void:
+	is_active = false
+	dialog_ui.visible = false
+	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
+	get_tree().paused = false
+	session_id = ""
+	current_npc_id = ""
+	farewell_container.visible = false
+	input_container.visible = true
+	dialog_finished.emit(accumulated_emotions)
+
+func _set_input_state(enabled: bool) -> void:
+	input_container.visible = true
+	farewell_container.visible = false
+	player_input.editable = enabled
+	send_button.disabled = not enabled
+	if enabled:
+		player_input.grab_focus()
+
+
+# =========================================================
+# Al cerrar el juego — para mandar al servicio de reportes
+# =========================================================
+
+func get_all_emotions() -> Array:
+	return accumulated_emotions
