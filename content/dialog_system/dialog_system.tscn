@@ -81,7 +81,6 @@ _data = {
 [node name="DialogSystem" type="CanvasLayer" unique_id=629147265]
 layer = 0
 script = ExtResource("1_lbvu4")
-backend_url = null
 
 [node name="DialogUI" type="Control" parent="." unique_id=700742603]
 layout_mode = 3
@@ -160,6 +159,7 @@ scale = Vector2(2, 2)
 metadata/_edit_use_anchors_ = true
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI/PanelPortrait" unique_id=519979245]
+visible = false
 position = Vector2(120, 130)
 scale = Vector2(3.5, 3.292)
 texture = ExtResource("5_lonjw")
@@ -198,9 +198,11 @@ anchor_bottom = 0.93
 [node name="PlayerInput" type="LineEdit" parent="DialogUI/InputContainer" unique_id=1669158358]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
 
 [node name="SendButton" type="Button" parent="DialogUI/InputContainer" unique_id=1963582140]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Enviar"
 
 [node name="FarewellContainer" type="HBoxContainer" parent="DialogUI" unique_id=1513604792]

@@ -93,6 +93,7 @@ func _on_boton_comenzar_pressed():
 	
 	ControladorPartidaGlobal.partida.jugador["nombre"] = nombre
 	ControladorPartidaGlobal.partida.jugador["correo_electronico"] = email
+	ControladorPartidaGlobal.partida.jugador["analisis"] = []
 	# Si no existe la clave "volumen", la crea con valor 0
 	if not ControladorPartidaGlobal.partida.jugador.has("volumen"):
 		ControladorPartidaGlobal.partida.jugador["volumen"] = 0

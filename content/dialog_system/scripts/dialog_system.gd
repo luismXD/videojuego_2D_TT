@@ -152,6 +152,15 @@ func _on_end_response(_result, _code, _headers, body) -> void:
 
 func _on_send_pressed() -> void:
 	var msg := player_input.text.strip_edges()
+
+	var json_data = JSON.parse_string(player_input.text)
+	ControladorPartidaGlobal.partida.jugador["analisis"].append(json_data)
+	ControladorPartidaGlobal.guardar_partida()
+
+	ControladorPartidaGlobal.cargar_partida()
+	print(ControladorPartidaGlobal.partida.jugador["analisis"])
+
+
 	if msg.is_empty() or is_typing:
 		return
 	player_input.text = ""
