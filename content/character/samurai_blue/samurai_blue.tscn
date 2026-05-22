@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bheb2v7fdghba"]
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_hi80i"]
-[ext_resource type="Texture2D" uid="uid://hfa5b4xd6u8x" path="res://content/character/samurai_blue/sprite.png" id="2_r6uo7"]
+[ext_resource type="Texture2D" uid="uid://dmcxw874h6yba" path="res://content/map/enemigos/faces/SpriteSheetluna.png" id="2_g5rmm"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_g5rmm"]
-[ext_resource type="Texture2D" uid="uid://c5tdhsg4gq5j6" path="res://content/character/samurai_blue/Faceset.png" id="4_p4h7s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
 radius = 6.0
 height = 18.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g5rmm"]
+load_path = "res://.godot/imported/Faceset_luna.png-e6fe990f97b5e2203c719793cc154837.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
 radius = 16.0
@@ -15,7 +17,7 @@ radius = 16.0
 [node name="SamuraiBlue" unique_id=750470882 instance=ExtResource("1_hi80i")]
 
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
-texture = ExtResource("2_r6uo7")
+texture = ExtResource("2_g5rmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1351098452]
 z_index = 1
@@ -25,7 +27,9 @@ shape = SubResource("CapsuleShape2D_k052x")
 [node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
 collision_mask = 16
 script = ExtResource("3_g5rmm")
-portrait = ExtResource("4_p4h7s")
+npc_id = "luna"
+npc_name = "Luna"
+portrait = SubResource("CompressedTexture2D_g5rmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
