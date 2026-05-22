@@ -26,7 +26,7 @@ func _on_boton_generar_reporte_pressed():
 	var headers = ["Content-Type: application/json"]
 
 	http_request.request(
-		"http://127.0.0.1:7000/generar-reporte/",
+		"http://127.0.0.1:8002/generar-reporte/",
 		headers,
 		HTTPClient.METHOD_POST,
 		json
