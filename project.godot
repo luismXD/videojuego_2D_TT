@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="juego_tt_emotional"
+config/name="juego_tt_emotional_tonio"
 run/main_scene="uid://bcmfkei4dysnf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://prueba_fisicas/icon.svg"

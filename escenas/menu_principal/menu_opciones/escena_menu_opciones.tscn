@@ -186,18 +186,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("popup_layer", "ventana_popup", "texto_input", "http_request", "boton_enviar", "boton_regresar")]
+[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("http_request")]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "REPORTE   EMOCIONAL"
 script = ExtResource("5_fs1jq")
-popup_layer = NodePath("../../../../CanvasLayer")
-ventana_popup = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer")
-texto_input = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/usuario")
-http_request = NodePath("../../../../HTTPRequest_analisis")
-boton_enviar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/aceptar")
-boton_regresar = NodePath("../../../../CanvasLayer/MarginContainer/PanelContainer/VBoxContainer/regresar")
+http_request = NodePath("../../../../HTTPRequest_reporte")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1838827672]
 layout_mode = 2

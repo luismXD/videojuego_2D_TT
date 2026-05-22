@@ -9,7 +9,7 @@ func _ready():
 	pressed.connect(_on_boton_generar_reporte_pressed)
 	
 	
-	http_request.request_completed.connect(_on_request_completed)
+	http_request.request_completed.connect(_holapapu)
 
 func _on_boton_generar_reporte_pressed():
 
@@ -33,6 +33,8 @@ func _on_boton_generar_reporte_pressed():
 	json
 )
 
+func _holapapu():
+	print("hola papu");
 
 func _on_request_completed(result, response_code, headers, body):
 	print("codigo:", response_code)
