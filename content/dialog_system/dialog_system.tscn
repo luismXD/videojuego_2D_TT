@@ -159,7 +159,6 @@ scale = Vector2(2, 2)
 metadata/_edit_use_anchors_ = true
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI/PanelPortrait" unique_id=519979245]
-visible = false
 position = Vector2(120, 130)
 scale = Vector2(3.5, 3.292)
 texture = ExtResource("5_lonjw")
