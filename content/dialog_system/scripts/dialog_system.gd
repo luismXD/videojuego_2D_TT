@@ -5,7 +5,8 @@ class_name DialogSystemNode extends CanvasLayer
 signal dialog_finished(emotions_log: Array)
 
 # --- Config ---
-@export var backend_url: String = "http://127.0.0.1:8001"  # Tu servicio conversation/
+@export var backend_url: String = "https://adorable-peace-production-a183.up.railway.app"
+@export var emotions_url: String = "https://ttbackend-production-10b3.up.railway.app"
 
 # --- Estado ---
 var is_active: bool = false
@@ -13,7 +14,8 @@ var is_typing: bool = false
 var session_id: String = ""
 var current_npc_id: String = ""
 var can_extend: bool = true
-var accumulated_emotions: Array = []  # Se guarda entre sesiones (varios NPCs)
+var accumulated_emotions: Array = []
+var pending_player_msg: String = ""  # mensaje en espera de emoción
 
 # --- Nodos UI ---
 @onready var dialog_ui: Control = $DialogUI
@@ -93,12 +95,13 @@ func _on_start_response(_result, code, _headers, body) -> void:
 	_set_input_state(true)
 
 
-func _request_chat(message: String) -> void:
+func _request_chat(message: String, emotion: Dictionary) -> void:
 	var url := "%s/conversation/chat" % backend_url
 	var headers := ["Content-Type: application/json"]
 	var body := JSON.stringify({
 		"session_id": session_id,
-		"player_message": message
+		"player_message": message,
+		"emotion": emotion  # ← NUEVO: ahora Godot le pasa la emoción al backend
 	})
 	http.request_completed.connect(_on_chat_response, CONNECT_ONE_SHOT)
 	http.request(url, headers, HTTPClient.METHOD_POST, body)
@@ -131,18 +134,28 @@ func _request_end() -> void:
 	http.request_completed.connect(_on_end_response, CONNECT_ONE_SHOT)
 	http.request(url, headers, HTTPClient.METHOD_POST, body)
 
-func _on_end_response(_result, _code, _headers, body) -> void:
-	var data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
-	var emotions_log: Array = data.get("emotions_log", [])
-	accumulated_emotions.append({
-		"npc_id": current_npc_id,
-		"log": emotions_log
-	})
-	# Mostrar la despedida antes de cerrar
-	var farewell: String = data.get("farewell", "")
-	if farewell != "":
-		_display_message(farewell)
-		await get_tree().create_timer(3.0).timeout
+func _on_end_response(_result, code, _headers, body) -> void:
+	# Aunque el backend falle, el diálogo DEBE cerrarse del lado del jugador,
+	# si no, se queda atorado para siempre.
+	
+	if code == 200:
+		var data = JSON.parse_string(body.get_string_from_utf8())
+		if data is Dictionary:
+			var emotions_log: Array = data.get("emotions_log", [])
+			accumulated_emotions.append({
+				"npc_id": current_npc_id,
+				"log": emotions_log
+			})
+			var farewell: String = data.get("farewell", "")
+			if farewell != "":
+				_display_message(farewell)
+				await get_tree().create_timer(3.0).timeout
+	else:
+		# Error del backend (500, 502, etc.). Avisamos y cerramos igual.
+		push_warning("[DialogSystem] /conversation/end falló con código %d. Cerrando diálogo." % code)
+		_display_message("[i](la conversación terminó)[/i]")
+		await get_tree().create_timer(1.5).timeout
+	
 	hide_dialog()
 
 
@@ -156,9 +169,41 @@ func _on_send_pressed() -> void:
 		return
 	player_input.text = ""
 	_set_input_state(false)
-	# Opcional: mostrar lo que el jugador dijo arriba antes de la respuesta
 	rich_text.text = "[color=#7a7a7a][i]Tú: %s[/i][/color]" % msg
-	_request_chat(msg)
+	
+	pending_player_msg = msg
+	_request_emotion(msg)
+
+func _request_emotion(text: String) -> void:
+	var url := "%s/analizar/%s" % [emotions_url, text.uri_encode()]
+	http.request_completed.connect(_on_emotion_response, CONNECT_ONE_SHOT)
+	http.request(url)
+
+func _on_emotion_response(_result, code, _headers, body) -> void:
+	var emotion_data: Dictionary = {}
+	
+	if code == 200:
+		var parsed = JSON.parse_string(body.get_string_from_utf8())
+		if parsed is Dictionary:
+			emotion_data = parsed
+			# Guardar en la partida (formato compatible con report_service)
+			ControladorPartidaGlobal.partida.jugador["analisis"].append(emotion_data)
+			ControladorPartidaGlobal.guardar_partida()
+			print("[DialogSystem] Emoción guardada: %s (%.2f)" % [
+				emotion_data.get("emocion_predicha", "?"),
+				emotion_data.get("confianza", 0.0)
+			])
+	else:
+		push_warning("[DialogSystem] /analizar falló con código %d. Continuando sin emoción." % code)
+		emotion_data = {
+			"texto_analizado": pending_player_msg,
+			"emocion_predicha": "desconocido",
+			"probabilidades": {},
+			"confianza": 0.0
+		}
+	
+	# Ahora llamamos al conversation_service con la emoción ya detectada
+	_request_chat(pending_player_msg, emotion_data)
 
 func _on_keep_talking_pressed() -> void:
 	farewell_container.visible = false
