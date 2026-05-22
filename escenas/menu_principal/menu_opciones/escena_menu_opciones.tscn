@@ -147,6 +147,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 23
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1918699756]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
