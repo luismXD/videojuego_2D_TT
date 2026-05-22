@@ -165,6 +165,15 @@ func _on_end_response(_result, code, _headers, body) -> void:
 
 func _on_send_pressed() -> void:
 	var msg := player_input.text.strip_edges()
+
+	# Guardar el mensaje directamente como string
+	#ControladorPartidaGlobal.partida.jugador["analisis"].append(msg)
+	#ControladorPartidaGlobal.guardar_partida()
+	#
+	## No necesitas cargar_partida() inmediatamente después de guardar
+	#print(ControladorPartidaGlobal.partida.jugador["analisis"])
+	#
+
 	if msg.is_empty() or is_typing:
 		return
 	player_input.text = ""

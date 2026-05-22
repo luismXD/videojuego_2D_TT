@@ -197,9 +197,11 @@ anchor_bottom = 0.93
 [node name="PlayerInput" type="LineEdit" parent="DialogUI/InputContainer" unique_id=1669158358]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
 
 [node name="SendButton" type="Button" parent="DialogUI/InputContainer" unique_id=1963582140]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Enviar"
 
 [node name="FarewellContainer" type="HBoxContainer" parent="DialogUI" unique_id=1513604792]
