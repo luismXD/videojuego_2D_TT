@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_0nw6s"]
 [ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_41njb"]
-[ext_resource type="PackedScene" uid="uid://cmqkt2sa66ls5" path="res://content/map/escenarios_escenas/escena_1.tscn" id="3_41njb"]
+[ext_resource type="PackedScene" uid="uid://cmqkt2sa66ls5" path="res://content/map/escenarios_escenas/escena_1/escena_1.tscn" id="3_41njb"]
 [ext_resource type="PackedScene" uid="uid://6hxb8ism6bi1" path="res://content/map/enemigos/red-snake.tscn" id="4_ap1bu"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="5_6vifq"]
 [ext_resource type="Texture2D" uid="uid://c2xceq6dw5ph3" path="res://content/map/enemigos/faces/Faceset_luna.png" id="6_6vifq"]

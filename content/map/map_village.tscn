@@ -79,12 +79,13 @@ size = Vector2(20, 10)
 [node name="MapVillage" unique_id=1106048378 instance=ExtResource("1_6r46d")]
 metadata/_edit_horizontal_guides_ = [-177.0]
 
-[node name="CanvasLayer_nombre_error" type="CanvasLayer" parent="." index="0" unique_id=1078581331 node_paths=PackedStringArray("boton_salir", "boton_reanudar", "boton_opciones", "popup_opciones", "ventana_popup_sonido", "barra_sonido_ajuste", "progress_bar_sonido", "boton_opciones_regresar")]
+[node name="CanvasLayer_nombre_error" type="CanvasLayer" parent="." index="0" unique_id=1078581331 node_paths=PackedStringArray("boton_salir", "boton_reanudar", "boton_opciones", "boton_ventana", "popup_opciones", "ventana_popup_sonido", "barra_sonido_ajuste", "progress_bar_sonido", "boton_opciones_regresar")]
 visible = false
 script = ExtResource("2_e35uw")
 boton_salir = NodePath("MarginContainer/Panel_nombre/VBoxContainer/salir")
 boton_reanudar = NodePath("MarginContainer/Panel_nombre/VBoxContainer/reanudar")
 boton_opciones = NodePath("MarginContainer/Panel_nombre/VBoxContainer/opciones")
+boton_ventana = NodePath("../CanvasLayer_opciones_menu/MarginContainer/Panel_nombre/VBoxContainer/ventana")
 popup_opciones = NodePath("../CanvasLayer_opciones_menu")
 ventana_popup_sonido = NodePath("../CanvasLayer_opciones_menu/MarginContainer/Panel_nombre")
 barra_sonido_ajuste = NodePath("../CanvasLayer_opciones_menu/MarginContainer/Panel_nombre/VBoxContainer/PanelContainer/HSlider")
@@ -150,8 +151,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_alfly")
 theme_override_constants/h_separation = 4
-theme_override_font_sizes/font_size = 70
-text = "REGRESAR"
+theme_override_font_sizes/font_size = 65
+text = "GUARDAR   Y   SALIR"
 icon_alignment = 1
 
 [node name="CanvasLayer_opciones_menu" type="CanvasLayer" parent="." index="1" unique_id=1712010356]

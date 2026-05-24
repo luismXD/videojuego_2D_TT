@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dr6u3f66g80mp"]
+
+[ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_q2743"]
+[ext_resource type="PackedScene" uid="uid://cmqkt2sa66ls5" path="res://content/map/escenarios_escenas/escena_1/escena_1.tscn" id="2_0v4yy"]
+[ext_resource type="PackedScene" uid="uid://bsb1a1je1b4q7" path="res://content/character/NPCs/escena_1/Guardian/guardan_1.tscn" id="3_dvyv5"]
+[ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="4_r8twe"]
+
+[sub_resource type="Curve2D" id="Curve2D_yc5ia"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -27, -25, 0, 0, 0, 0, -60, 37, 0, 0, 0, 0, 4, 30, 0, 0, 0, 0, 33, -20, 0, 0, 0, 0, 128, -19, 0, 0, 0, 0, 142, -56, 0, 0, 0, 0, 68, -66, 0, 0, 0, 0, -10, -68, 0, 0, 0, 0, -3, 11)
+}
+point_count = 9
+
+[node name="NPCs_escena_1" type="Node2D" unique_id=1807922257]
+script = ExtResource("1_q2743")
+metadata/_custom_type_script = "uid://fg6aean1ylsx"
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1337044812]
+format = 2
+
+[node name="escena_1" parent="." unique_id=1363830142 instance=ExtResource("2_0v4yy")]
+
+[node name="Guardan_1" parent="." unique_id=750470882 instance=ExtResource("3_dvyv5")]
+position = Vector2(496, 1267)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="Guardan_1" unique_id=1091002962 node_paths=PackedStringArray("path")]
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DGuardian_1")
+loop = true
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DGuardian_1" type="Path2D" parent="." unique_id=383148732]
+position = Vector2(465, 1248)
+curve = SubResource("Curve2D_yc5ia")

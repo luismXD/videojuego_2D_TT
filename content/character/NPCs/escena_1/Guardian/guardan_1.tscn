@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bsb1a1je1b4q7"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_0qu3a"]
+[ext_resource type="Texture2D" uid="uid://cq106io6vrp8i" path="res://content/character/NPCs/escena_1/Guardian/SpriteSheet_guardian.png" id="2_r2ixa"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_gb5ra"]
+[ext_resource type="Texture2D" uid="uid://d20koftax0rnm" path="res://content/character/NPCs/escena_1/Guardian/Faceset_guardian.png" id="4_7q606"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="Guardan_1" unique_id=750470882 instance=ExtResource("1_0qu3a")]
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = ExtResource("2_r2ixa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1351098452]
+z_index = 1
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_k052x")
+
+[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
+collision_mask = 16
+script = ExtResource("3_gb5ra")
+portrait = ExtResource("4_7q606")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
