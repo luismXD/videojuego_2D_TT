@@ -1,8 +1,8 @@
 class_name NPCInteraction extends Area2D
 
 #@export var ventana_popup: PanelContainer
-@export var npc_id: String = "Guardian_1"        # debe matchear con tus npc_configs/*.json
-@export var npc_name: String = "Guardian"
+@export var npc_id: String = "aldeana_mascara_azul"        # debe matchear con tus npc_configs/*.json
+@export var npc_name: String = "Aldeana de Máscara Azul"
 @export var portrait: Texture2D
 
 var player_in_range: bool = false

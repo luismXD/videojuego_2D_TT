@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dl1cgl2os5jvk"]
+
+[ext_resource type="Script" uid="uid://dqg2s2lxffjat" path="res://system/character/animal.gd" id="1_d8wxj"]
+[ext_resource type="Texture2D" uid="uid://btryd5g3oajow" path="res://content/character/Shadow.png" id="2_qukhe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5fn3e"]
+load_path = "res://.godot/imported/pig_correcto.PNG-5d8e12b8f86754e9076398dd443d0ab8.ctex"
+
+[node name="pig" type="Node2D" unique_id=1702246291]
+script = ExtResource("1_d8wxj")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=688625129]
+position = Vector2(0, 7)
+texture = ExtResource("2_qukhe")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=310989560]
+texture = SubResource("CompressedTexture2D_5fn3e")
+hframes = 2

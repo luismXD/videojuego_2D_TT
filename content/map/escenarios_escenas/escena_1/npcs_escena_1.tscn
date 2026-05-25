@@ -1,15 +1,49 @@
 [gd_scene format=3 uid="uid://dr6u3f66g80mp"]
 
 [ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_q2743"]
-[ext_resource type="PackedScene" uid="uid://cmqkt2sa66ls5" path="res://content/map/escenarios_escenas/escena_1/escena_1.tscn" id="2_0v4yy"]
 [ext_resource type="PackedScene" uid="uid://bsb1a1je1b4q7" path="res://content/character/NPCs/escena_1/Guardian/guardan_1.tscn" id="3_dvyv5"]
 [ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="4_r8twe"]
+[ext_resource type="PackedScene" uid="uid://dcjt5w7hitv76" path="res://content/character/NPCs/escena_1/Guardian/guardan_2.tscn" id="5_7obs4"]
+[ext_resource type="PackedScene" uid="uid://bu7s2gaw7b8f8" path="res://content/character/NPCs/escena_1/aldeana_mascara_azul/aldeana_mascara_azul.tscn" id="6_jleo0"]
+[ext_resource type="PackedScene" uid="uid://b00yhfb0bu715" path="res://content/character/NPCs/escena_1/Hina/hina.tscn" id="7_el8ds"]
+[ext_resource type="PackedScene" uid="uid://b2ogtlw3ixldk" path="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/maestro_ceremonial.tscn" id="8_5a3iq"]
+[ext_resource type="PackedScene" uid="uid://daa2mewiv32e2" path="res://content/character/NPCs/escena_1/Yuki/yuki.tscn" id="9_kyrou"]
 
 [sub_resource type="Curve2D" id="Curve2D_yc5ia"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -27, -25, 0, 0, 0, 0, -60, 37, 0, 0, 0, 0, 4, 30, 0, 0, 0, 0, 33, -20, 0, 0, 0, 0, 128, -19, 0, 0, 0, 0, 142, -56, 0, 0, 0, 0, 68, -66, 0, 0, 0, 0, -10, -68, 0, 0, 0, 0, -3, 11)
+"points": PackedVector2Array(0, 0, 0, 0, -27, -25, 0, 0, 0, 0, -60, 37, 0, 0, 0, 0, 4, 30, 0, 0, 0, 0, 33, -20, 0, 0, 0, 0, 128, -19, 0, 0, 0, 0, 142, -56, 0, 0, 0, 0, 68, -66, 0, 0, 0, 0, -10, -68, 0, 0, 0, 0, -3, 11, 0, 0, 0, 0, 47, -7, 0, 0, 0, 0, 51, -28, 0, 0, 0, 0, 98, -30, 0, 0, 0, 0, 110, -8, 0, 0, 0, 0, 79, -19, 0, 0, 0, 0, 48, -7)
 }
-point_count = 9
+point_count = 15
+
+[sub_resource type="Curve2D" id="Curve2D_4mfst"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -96, 30, 0, 0, 0, 0, -19, 62, 0, 0, 0, 0, 51, 86, 0, 0, 0, 0, 100, 44, 0, 0, 0, 0, -16, -41, 0, 0, 0, 0, 37, -61, 0, 0, 0, 0, 37, -35, 0, 0, 0, 0, -28, -26, 0, 0, 0, 0, -15, 35, 0, 0, 0, 0, 87, -12, 0, 0, 0, 0, 84, -67, 0, 0, 0, 0, 126, -32, 0, 0, 0, 0, 165, -33, 0, 0, 0, 0, 202, -68, 0, 0, 0, 0, 247, -54, 0, 0, 0, 0, 243, -23, 0, 0, 0, 0, 149, 1, 0, 0, 0, 0, 98, 12, 0, 0, 0, 0, 32, 15, 0, 0, 0, 0, -46, 11, 0, 0, 0, 0, -161, 72, 0, 0, 0, 0, -158, 117, 0, 0, 0, 0, -139, 61, 0, 0, 0, 0, -87, 46, 0, 0, 0, 0, 0, 50)
+}
+point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_2ygaq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -18, 20, 0, 0, 0, 0, -101, 39, 0, 0, 0, 0, -154, 34, 0, 0, 0, 0, -193, 17, 0, 0, 0, 0, -150, 46, 0, 0, 0, 0, -120, 72, 0, 0, 0, 0, -125, 111, 0, 0, 0, 0, -141, 136, 0, 0, 0, 0, -203, 131, 0, 0, 0, 0, -100, 159, 0, 0, 0, 0, -100, 126, 0, 0, 0, 0, -77, 143, 0, 0, 0, 0, -12, 141, 0, 0, 0, 0, 93, 141, 0, 0, 0, 0, 150, 178, 0, 0, 0, 0, 221, 179, 0, 0, 0, 0, 201, 117, 0, 0, 0, 0, 256, 104, 0, 0, 0, 0, 285, 140, 0, 0, 0, 0, 309, 191, 0, 0, 0, 0, 209, 200, 0, 0, 0, 0, 98, 171, 0, 0, 0, 0, 72, 60, 0, 0, 0, 0, 130, 45, 0, 0, 0, 0, 173, 11, 0, 0, 0, 0, 252, 19, 0, 0, 0, 0, 322, 27, 0, 0, 0, 0, 239, -12, 0, 0, 0, 0, 268, -71, 0, 0, 0, 0, 224, 17, 0, 0, 0, 0, 105, 49, 0, 0, 0, 0, 51, 46, 0, 0, 0, 0, 16, 6, 0, 0, 0, 0, 55, -41, 0, 0, 0, 0, -22, -2, 0, 0, 0, 0, -51, 33, 0, 0, 0, 0, -101, 35)
+}
+point_count = 37
+
+[sub_resource type="Curve2D" id="Curve2D_0h6ou"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 3, 0, 0, 0, 0, 83, 43, 0, 0, 0, 0, 46, -3, 0, 0, 0, 0, -115, -3, 0, 0, 0, 0, -144, 32, 0, 0, 0, 0, -173, 87, 0, 0, 0, 0, -170, 141, 0, 0, 0, 0, -69, 199, 0, 0, 0, 0, -85, 117, 0, 0, 0, 0, -79, 70, 0, 0, 0, 0, -29, 85, 0, 0, 0, 0, 13, 111, 0, 0, 0, 0, -32, 187, 0, 0, 0, 0, -179, 181, 0, 0, 0, 0, -193, 51, 0, 0, 0, 0, -244, 6, 0, 0, 0, 0, -322, 13, 0, 0, 0, 0, -390, 24, 0, 0, 0, 0, -393, 114, 0, 0, 0, 0, -441, 115, 0, 0, 0, 0, -261, 137, 0, 0, 0, 0, -178, 71, 0, 0, 0, 0, -117, 11, 0, 0, 0, 0, -2, -53, 0, 0, 0, 0, 5, -109, 0, 0, 0, 0, -20, 4)
+}
+point_count = 26
+
+[sub_resource type="Curve2D" id="Curve2D_pvf25"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 59, 39, 0, 0, 0, 0, 58, 89, 0, 0, 0, 0, 47, 23, 0, 0, 0, 0, -3, 8, 0, 0, 0, 0, -42, 17, 0, 0, 0, 0, -46, -32, 0, 0, 0, 0, 80, -35, 0, 0, 0, 0, 167, -54, 0, 0, 0, 0, 163, -102, 0, 0, 0, 0, 70, -102, 0, 0, 0, 0, 68, -3, 0, 0, 0, 0, -104, -57, 0, 0, 0, 0, -154, -57, 0, 0, 0, 0, -233, -64, 0, 0, 0, 0, -244, -128, 0, 0, 0, 0, -222, -165, 0, 0, 0, 0, -104, -174, 0, 0, 0, 0, -48, -140, 0, 0, 0, 0, 27, -163, 0, 0, 0, 0, 20, -200, 0, 0, 0, 0, -28, -223, 0, 0, 0, 0, -88, -189, 0, 0, 0, 0, -68, -148, 0, 0, 0, 0, -31, -69, 0, 0, 0, 0, -106, -29)
+}
+point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_cqgdo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 60, 11, 0, 0, 0, 0, 36, 104, 0, 0, 0, 0, -13, 106, 0, 0, 0, 0, -80, 98, 0, 0, 0, 0, -93, -16, 0, 0, 0, 0, -60, -83, 0, 0, 0, 0, -35, -33, 0, 0, 0, 0, 35, 11, 0, 0, 0, 0, 163, -1, 0, 0, 0, 0, 238, 43, 0, 0, 0, 0, 243, 133, 0, 0, 0, 0, 122, 115, 0, 0, 0, 0, 365, 176, 0, 0, 0, 0, 443, 119, 0, 0, 0, 0, 443, 61, 0, 0, 0, 0, 359, 76, 0, 0, 0, 0, 460, 166, 0, 0, 0, 0, 249, 179, 0, 0, 0, 0, 255, 23, 0, 0, 0, 0, 364, -14, 0, 0, 0, 0, 467, -9, 0, 0, 0, 0, 301, -10, 0, 0, 0, 0, 242, 93, 0, 0, 0, 0, 167, 126, 0, 0, 0, 0, 56, 118, 0, 0, 0, 0, 43, 3)
+}
+point_count = 26
 
 [node name="NPCs_escena_1" type="Node2D" unique_id=1807922257]
 script = ExtResource("1_q2743")
@@ -18,8 +52,6 @@ metadata/_custom_type_script = "uid://fg6aean1ylsx"
 [node name="TileMap" type="TileMap" parent="." unique_id=1337044812]
 format = 2
 
-[node name="escena_1" parent="." unique_id=1363830142 instance=ExtResource("2_0v4yy")]
-
 [node name="Guardan_1" parent="." unique_id=750470882 instance=ExtResource("3_dvyv5")]
 position = Vector2(496, 1267)
 
@@ -27,10 +59,97 @@ position = Vector2(496, 1267)
 script = ExtResource("4_r8twe")
 path = NodePath("../../Path2DGuardian_1")
 loop = true
-wait_time = 3.0
-wait_chance = 50
+wait_mode = 1
+wait_time = 2.0
+wait_chance = 80
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="Path2DGuardian_1" type="Path2D" parent="." unique_id=383148732]
+visible = false
 position = Vector2(465, 1248)
 curve = SubResource("Curve2D_yc5ia")
+
+[node name="Guardan_2" parent="." unique_id=1536445320 instance=ExtResource("5_7obs4")]
+position = Vector2(546, 1346)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="Guardan_2" unique_id=788330304 node_paths=PackedStringArray("path")]
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DGuardian_2")
+loop = true
+wait_mode = 1
+wait_time = 2.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DGuardian_2" type="Path2D" parent="." unique_id=175873332]
+visible = false
+position = Vector2(546, 1346)
+curve = SubResource("Curve2D_4mfst")
+
+[node name="aldeana_mascara_azul" parent="." unique_id=1074279367 instance=ExtResource("6_jleo0")]
+position = Vector2(548, 1484)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="aldeana_mascara_azul" unique_id=1250369868 node_paths=PackedStringArray("path")]
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DAldeana_mascara")
+loop = true
+wait_mode = 2
+wait_time = 3.0
+wait_chance = 85
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DAldeana_mascara" type="Path2D" parent="." unique_id=736656127]
+visible = false
+position = Vector2(548, 1484)
+curve = SubResource("Curve2D_2ygaq")
+
+[node name="Hina" parent="." unique_id=599482910 instance=ExtResource("7_el8ds")]
+position = Vector2(813, 1502)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="Hina" unique_id=1843476977 node_paths=PackedStringArray("path")]
+visible = false
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DHina")
+loop = true
+wait_mode = 2
+wait_time = 2.0
+wait_chance = 80
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DHina" type="Path2D" parent="." unique_id=340448744]
+position = Vector2(813, 1502)
+curve = SubResource("Curve2D_0h6ou")
+
+[node name="Maestro_ceremonial" parent="." unique_id=2068431118 instance=ExtResource("8_5a3iq")]
+position = Vector2(662, 1684)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="Maestro_ceremonial" unique_id=2099361921 node_paths=PackedStringArray("path")]
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DMaestro_ceremonial")
+loop = true
+wait_mode = 2
+wait_time = 5.0
+wait_chance = 85
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DMaestro_ceremonial" type="Path2D" parent="." unique_id=607716733]
+visible = false
+position = Vector2(662, 1684)
+curve = SubResource("Curve2D_pvf25")
+
+[node name="yuki" parent="." unique_id=1673025397 instance=ExtResource("9_kyrou")]
+position = Vector2(386, 1510)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="yuki" unique_id=887868984 node_paths=PackedStringArray("path")]
+script = ExtResource("4_r8twe")
+path = NodePath("../../Path2DYuki")
+loop = true
+wait_mode = 2
+wait_time = 3.0
+wait_chance = 85
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2DYuki" type="Path2D" parent="." unique_id=1363657739]
+visible = false
+position = Vector2(386, 1510)
+curve = SubResource("Curve2D_cqgdo")
