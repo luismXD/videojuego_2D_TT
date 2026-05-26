@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://b00yhfb0bu715"]
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_18fpc"]
+[ext_resource type="Texture2D" uid="uid://0db6jsb37rto" path="res://content/character/NPCs/escena_1/Hina/SpriteSheet_masked_hina.png" id="2_ebt10"]
+[ext_resource type="Resource" uid="uid://xjlbmbimxaaq" path="res://content/team/npc_team.tres" id="2_i58hv"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_ohx8s"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebt10"]
-load_path = "res://.godot/imported/SpriteSheet_masked_hina.png-040b3bceb5969c057fdebf744241a038.ctex"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
-radius = 6.0
-height = 18.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i58hv"]
-load_path = "res://.godot/imported/Faceset_masked_hina.png-4a72a16e9c92549ae1fe35c776ee9c93.ctex"
+[ext_resource type="Texture2D" uid="uid://lqglrikgd0ac" path="res://content/character/NPCs/escena_1/Hina/Faceset_masked_hina.png" id="5_a732y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
 radius = 16.0
@@ -19,21 +12,17 @@ radius = 16.0
 [node name="Hina" unique_id=750470882 instance=ExtResource("1_18fpc")]
 speed = 40.0
 acceleration = 100.0
+team = ExtResource("2_i58hv")
 
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
-texture = SubResource("CompressedTexture2D_ebt10")
+texture = ExtResource("2_ebt10")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1351098452]
-z_index = 1
-position = Vector2(0, -5)
-shape = SubResource("CapsuleShape2D_k052x")
-
-[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864]
 collision_mask = 16
 script = ExtResource("2_ohx8s")
 npc_id = "hina_aprendiz"
 npc_name = "Hina, la Aprendiz"
-portrait = SubResource("CompressedTexture2D_i58hv")
+portrait = ExtResource("5_a732y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")

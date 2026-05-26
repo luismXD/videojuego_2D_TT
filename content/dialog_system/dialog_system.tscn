@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dhqocvbo4ap7f" path="res://content/dialog_system/sprites/text-bubble.png" id="2_7bhfa"]
 [ext_resource type="FontFile" uid="uid://ed021aftj8ji" path="res://content/dialog_system/fonts/Abaddon Light.ttf" id="3_fkwd8"]
 [ext_resource type="FontFile" uid="uid://dah14cd5x78eg" path="res://content/dialog_system/fonts/Abaddon Bold.ttf" id="4_lonjw"]
+[ext_resource type="Texture2D" uid="uid://c8qnjoulombgn" path="res://theme_1/checked_disabled.png" id="5_ln48x"]
 [ext_resource type="Texture2D" uid="uid://jagplgpr2cly" path="res://content/dialog_system/sprites/portraits/npc_portrait_01.png" id="5_lonjw"]
+[ext_resource type="Texture2D" uid="uid://bbtyp4xub580i" path="res://theme_1/checked.png" id="6_4gaq1"]
 [ext_resource type="FontFile" uid="uid://ctj25smsrst0p" path="res://content/dialog_system/fonts/m5x7.ttf" id="6_ovtg5"]
 
 [sub_resource type="Gradient" id="Gradient_gdlmy"]
@@ -26,6 +28,15 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gaq1"]
+texture = ExtResource("6_4gaq1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uboka"]
+texture = ExtResource("5_ln48x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hq4xs"]
+texture = ExtResource("5_ln48x")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lonjw"]
 content_margin_left = 4.0
@@ -78,9 +89,10 @@ _data = {
 &"default": SubResource("Animation_ln48x")
 }
 
-[node name="DialogSystem" type="CanvasLayer" unique_id=629147265]
+[node name="DialogSystem" type="CanvasLayer" unique_id=629147265 node_paths=PackedStringArray("boton_salir_x")]
 layer = 0
 script = ExtResource("1_lbvu4")
+boton_salir_x = NodePath("DialogUI/x_salir")
 
 [node name="DialogUI" type="Control" parent="." unique_id=700742603]
 layout_mode = 3
@@ -142,11 +154,34 @@ theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
 
+[node name="x_salir" type="Button" parent="DialogUI" unique_id=1048062411]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 38.0
+offset_right = -43.0
+offset_bottom = 106.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_4gaq1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uboka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hq4xs")
+text = "ㅤ"
+icon_alignment = 1
+
 [node name="Timer" type="Timer" parent="DialogUI" unique_id=449573401]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI" unique_id=261442294]
 
 [node name="PanelPortrait" type="PanelContainer" parent="DialogUI" unique_id=20702897]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -216,9 +251,11 @@ anchor_bottom = 0.93
 [node name="KeepTalkingButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=1589345794]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
 text = "Seguir platicando"
 
 [node name="FarewellButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=454182985]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
 text = "Despedirme"
