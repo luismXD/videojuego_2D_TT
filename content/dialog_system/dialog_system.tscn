@@ -181,7 +181,6 @@ icon_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI" unique_id=261442294]
 
 [node name="PanelPortrait" type="PanelContainer" parent="DialogUI" unique_id=20702897]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1

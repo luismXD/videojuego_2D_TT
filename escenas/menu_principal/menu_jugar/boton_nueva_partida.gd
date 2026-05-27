@@ -47,7 +47,7 @@ func _ready():
 func _on_boton_nueva_partida_pressed():
 	if popup_layer:
 		popup_layer.show()
-		print("Popup mostrado")
+		#print("Popup mostrado")
 	if subviewport_container:
 		subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
 

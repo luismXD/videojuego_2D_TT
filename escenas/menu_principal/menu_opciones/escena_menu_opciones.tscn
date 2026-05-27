@@ -187,12 +187,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("http_request")]
+[node name="reporte_emocional" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=530728224 node_paths=PackedStringArray("popup_notificacion_correo", "ventana_popup_envio_exito", "boton_aceptar_correo", "subviewport_container", "http_request")]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "REPORTE   EMOCIONAL"
 script = ExtResource("5_fs1jq")
+popup_notificacion_correo = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion")
+ventana_popup_envio_exito = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo")
+boton_aceptar_correo = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo/VBoxContainer/Button")
+subviewport_container = NodePath("../../../../WorldEnvironment/SubViewportContainer")
 http_request = NodePath("../../../../HTTPRequest_reporte")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1838827672]
@@ -215,7 +219,6 @@ script = ExtResource("6_bjvxm")
 environment = SubResource("Environment_fs1jq")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="WorldEnvironment" unique_id=1627108898]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -227,9 +230,10 @@ metadata/_edit_use_anchors_ = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2015370108]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer" unique_id=289630024]
 clip_contents = true
@@ -292,3 +296,83 @@ theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 75
 text = "REGRESAR"
 icon_alignment = 1
+
+[node name="CanvasLayer_reporte_notificacion" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2052322171]
+layer = 2
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion" unique_id=1257551103]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion" unique_id=1830832254]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -183.0
+offset_right = 489.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer" unique_id=109889687]
+layout_mode = 2
+color = Color(0, 0, 0, 0.8784314)
+
+[node name="Panel_correo" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer" unique_id=71712250]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo" unique_id=955113082]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo/VBoxContainer" unique_id=662071749]
+layout_mode = 2
+theme = ExtResource("4_bjvxm")
+theme_override_font_sizes/font_size = 80
+text = "CORREO   ENVIADO   CON   EXITO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo/VBoxContainer" unique_id=1344829436]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_bjvxm")
+theme_override_font_sizes/font_size = 75
+text = "ACEPTAR"
+
+[node name="Panel_error" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer" unique_id=886445858]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_error" unique_id=433944410]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_error/VBoxContainer" unique_id=929153744]
+layout_mode = 2
+theme = ExtResource("4_bjvxm")
+theme_override_font_sizes/font_size = 75
+text = "POR   FAVOR   LLENE   EL   ESPACIO
+DE   NOMBRE   Y   CORREO   ELECTRONICO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_error/VBoxContainer" unique_id=230688142]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_bjvxm")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "ACEPTAR"

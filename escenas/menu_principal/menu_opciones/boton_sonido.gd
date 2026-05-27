@@ -6,6 +6,7 @@ extends Button
 
 
 func _ready():
+	
 	pressed.connect(_on_boton_generar_reporte_pressed)
 	
 	
