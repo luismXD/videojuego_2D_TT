@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dybty45wrj23v"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_hv0t2"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_24uwi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebt10"]
+load_path = "res://.godot/imported/SpriteSheet_masked_hina.png-040b3bceb5969c057fdebf744241a038.ctex"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i58hv"]
+load_path = "res://.godot/imported/Faceset_masked_hina.png-4a72a16e9c92549ae1fe35c776ee9c93.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="Hina_pruebas" unique_id=750470882 instance=ExtResource("1_hv0t2")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_ebt10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=1351098452]
+visibility_layer = 4
+z_index = 1
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_k052x")
+
+[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
+collision_mask = 16
+script = ExtResource("2_24uwi")
+npc_id = "hina_aprendiz"
+npc_name = "Hina, la Aprendiz"
+portrait = SubResource("CompressedTexture2D_i58hv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")

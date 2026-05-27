@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bu7s2gaw7b8f8"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_4dyis"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_0o3q0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sik7p"]
+load_path = "res://.godot/imported/SpriteSheet_mascara_azul.png-bc0847368d3ff7dadee5d67f78020b0f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wflc0"]
+load_path = "res://.godot/imported/Faceset_mascara_azul.png-fa058b577fe24929126e39a1bfe40886.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="aldeana_mascara_azul" unique_id=750470882 instance=ExtResource("1_4dyis")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_sik7p")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864]
+collision_mask = 16
+script = ExtResource("2_0o3q0")
+portrait = SubResource("CompressedTexture2D_wflc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")

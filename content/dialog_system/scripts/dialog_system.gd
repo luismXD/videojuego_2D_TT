@@ -6,8 +6,8 @@ signal dialog_finished(emotions_log: Array)
 
 # --- Config ---
 @export var backend_url: String = "https://adorable-peace-production-a183.up.railway.app"
-#@export var emotions_url: String = "https://ttbackend-production-10b3.up.railway.app"
 @export var emotions_url: String = "https://ttbackend-production-10b3.up.railway.app"
+#@export var emotions_url: String = "http://127.0.0.1:8001"
 # --- Estado ---
 var is_active: bool = false
 var is_typing: bool = false
@@ -34,6 +34,10 @@ var pending_player_msg: String = ""  # mensaje en espera de emoción
 @onready var keep_talking_button: Button = $DialogUI/FarewellContainer/KeepTalkingButton
 @onready var farewell_button: Button = $DialogUI/FarewellContainer/FarewellButton
 
+#dejense de cosas alv
+@export var boton_salir_x: Button
+
+
 # HTTPRequest (lo creamos por código para no ensuciar la escena)
 var http: HTTPRequest
 
@@ -54,6 +58,10 @@ func _ready() -> void:
 	player_input.text_submitted.connect(func(_t): _on_send_pressed())
 	keep_talking_button.pressed.connect(_on_keep_talking_pressed)
 	farewell_button.pressed.connect(_on_farewell_pressed)
+
+
+	if boton_salir_x:
+		boton_salir_x.pressed.connect(hide_dialog)
 
 
 # =========================================================

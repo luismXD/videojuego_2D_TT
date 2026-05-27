@@ -11,6 +11,7 @@ radius = 10.0499
 radius = 7.0
 
 [node name="NinjaBlue" unique_id=539292014 instance=ExtResource("1_gjf68")]
+es_jugador = true
 team = ExtResource("3_as7xg")
 
 [node name="Shape" type="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1047518769) index="0" unique_id=1004750843]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://daa2mewiv32e2"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_nixs0"]
+[ext_resource type="Texture2D" uid="uid://c4x1p6lscqp03" path="res://content/character/NPCs/escena_1/Yuki/faceset_masked_yuki.png" id="3_a6d3l"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_of73t"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1vnje"]
+load_path = "res://.godot/imported/yuki_corregido.png-a4d9a9a711b9e80a5f717f69030a6d3b.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="yuki" unique_id=750470882 instance=ExtResource("1_nixs0")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_1vnje")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864]
+collision_mask = 16
+script = ExtResource("3_of73t")
+npc_id = "yuki_tejedora"
+npc_name = "Yuki, la Tejedora"
+portrait = ExtResource("3_a6d3l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")

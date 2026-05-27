@@ -7,6 +7,7 @@ enum State{IDLE}
 
 
 signal teleported
+@export var es_jugador: bool = false
 
 @export_category("physics")
 @export var speed = 100.0
@@ -27,9 +28,12 @@ signal teleported
 		team = v
 		
 func _ready() -> void:
+	if not es_jugador:
+		return
 	var pos_guardada = ControladorPartidaGlobal.partida.jugador["posicion"]
 	if pos_guardada != Vector2.ZERO:
 		global_position = pos_guardada
+
 # Espera un frame para que la cámara ya esté en el árbol
 		#await get_tree().process_frame
 		for camera in get_tree().get_nodes_in_group("camera"):

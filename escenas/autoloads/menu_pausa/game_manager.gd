@@ -14,6 +14,7 @@ extends Node
 
 signal menu_toggled(visible: bool)
 signal volumen_cambiado(valor: float)
+signal flujo_conversacional(valor: bool)
 
 var menu_abierto := false
 var valor_sonido = 0
