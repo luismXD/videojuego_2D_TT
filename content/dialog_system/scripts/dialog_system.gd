@@ -7,7 +7,7 @@ signal dialog_finished(emotions_log: Array)
 # --- Config ---
 @export var backend_url: String = "https://adorable-peace-production-a183.up.railway.app"
 #@export var emotions_url: String = "https://ttbackend-production-10b3.up.railway.app"
-@export var emotions_url: String = "http://127.0.0.1:8001"
+@export var emotions_url: String = "https://ttbackend-production-10b3.up.railway.app"
 # --- Estado ---
 var is_active: bool = false
 var is_typing: bool = false

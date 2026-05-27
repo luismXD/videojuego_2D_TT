@@ -9,10 +9,10 @@ func _ready():
 	pressed.connect(_on_boton_generar_reporte_pressed)
 	
 	
-	http_request.request_completed.connect(_holapapu)
+	http_request.request_completed.connect(_on_request_completed)
 
 func _on_boton_generar_reporte_pressed():
-
+	print("=== BOTON PRESIONADO ===")
 	var correo = ControladorPartidaGlobal.partida.jugador["correo_electronico"]
 	var analisis = ControladorPartidaGlobal.partida.jugador["analisis"]
 
@@ -22,6 +22,8 @@ func _on_boton_generar_reporte_pressed():
 	}
 
 	var json = JSON.stringify(datos)
+	
+	print("JSON enviado: ", json)
 
 	var headers = ["Content-Type: application/json"]
 	print("Correo:", ControladorPartidaGlobal.partida.jugador["correo_electronico"])
