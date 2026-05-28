@@ -46,6 +46,8 @@ size = Vector2(105, 20)
 script = ExtResource("1_q2jvf")
 metadata/_custom_type_script = "uid://fg6aean1ylsx"
 
+[node name="NPCs_escena_1" parent="." unique_id=1807922257 instance=ExtResource("11_n43aq")]
+
 [node name="Tilemap" type="TileMap" parent="." unique_id=1794465246]
 y_sort_enabled = true
 rotation = 0.0037081235
@@ -180,5 +182,3 @@ position = Vector2(0, 26)
 shape = SubResource("RectangleShape2D_yy44i")
 
 [node name="escena_2" parent="." unique_id=1637569400 instance=ExtResource("10_yi1ys")]
-
-[node name="NPCs_escena_1" parent="." unique_id=1807922257 instance=ExtResource("11_n43aq")]

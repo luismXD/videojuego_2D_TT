@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_hi80i"]
 [ext_resource type="Texture2D" uid="uid://dmcxw874h6yba" path="res://content/map/enemigos/faces/SpriteSheetluna.png" id="2_g5rmm"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_g5rmm"]
+[ext_resource type="Texture2D" uid="uid://c8h0vkd6dugv" path="res://system/environment/fx/cloud.png" id="4_p4h7s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
 radius = 6.0
@@ -24,12 +25,18 @@ z_index = 1
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_k052x")
 
-[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
+[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864 node_paths=PackedStringArray("indicador")]
 collision_mask = 16
 script = ExtResource("3_g5rmm")
 npc_id = "luna"
 npc_name = "Luna"
 portrait = SubResource("CompressedTexture2D_g5rmm")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=570418818]
+position = Vector2(4.7683716e-07, -15)
+scale = Vector2(0.32812506, 0.27083334)
+texture = ExtResource("4_p4h7s")

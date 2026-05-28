@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qj42rocfcq3"
-path="res://.godot/imported/Faceset_Hunter.png-a138b362a7cf26ab9ccf37f1b9b4c475.ctex"
+uid="uid://ds6dsl53f3l84"
+path="res://.godot/imported/icons8-círculo-de-carga-50.apng.png-74d43babce750e14fa29f86719a18cdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/character/NPCs/Hunter/Faceset_Hunter.png"
-dest_files=["res://.godot/imported/Faceset_Hunter.png-a138b362a7cf26ab9ccf37f1b9b4c475.ctex"]
+source_file="res://puramamada/icons8-círculo-de-carga-50.apng.png"
+dest_files=["res://.godot/imported/icons8-círculo-de-carga-50.apng.png-74d43babce750e14fa29f86719a18cdc.ctex"]
 
 [params]
 
