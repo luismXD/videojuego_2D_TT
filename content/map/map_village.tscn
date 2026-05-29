@@ -284,13 +284,15 @@ speed = 100
 [node name="BehaviorFollow" type="Node2D" parent="Tilemap/Pig" index="2" unique_id=1792226089 node_paths=PackedStringArray("target")]
 position = Vector2(-8, 5)
 script = ExtResource("9_pof52")
-target = NodePath("../../SamuraiGreen")
+target = NodePath("../../NinjaBlue")
 
 [node name="SamuraiGreen" parent="Tilemap" index="7" unique_id=986707613 instance=ExtResource("9_o5s1p")]
+visible = false
 position = Vector2(-8, 5)
 team = ExtResource("8_47kgx")
 
 [node name="BehaviorFollow" type="Node2D" parent="Tilemap/SamuraiGreen" index="3" unique_id=514333105 node_paths=PackedStringArray("target")]
+visible = false
 script = ExtResource("9_pof52")
 target = NodePath("../../NinjaBlue")
 
@@ -298,11 +300,11 @@ target = NodePath("../../NinjaBlue")
 position = Vector2(-100, -131)
 curve = SubResource("Curve2D_6dhpb")
 
-[node name="SamuraiBlue" parent="Tilemap" index="9" unique_id=429521345 instance=ExtResource("10_kdwhh")]
+[node name="luna" parent="Tilemap" index="9" unique_id=429521345 instance=ExtResource("10_kdwhh")]
 position = Vector2(-88, -123)
 speed = 50.0
 
-[node name="BehaviorFollowPath" type="Node2D" parent="Tilemap/SamuraiBlue" index="3" unique_id=580812570 node_paths=PackedStringArray("path")]
+[node name="BehaviorFollowPath" type="Node2D" parent="Tilemap/luna" index="3" unique_id=580812570 node_paths=PackedStringArray("path")]
 script = ExtResource("9_vk7bb")
 path = NodePath("../../Path2D")
 wait_time = 3.0

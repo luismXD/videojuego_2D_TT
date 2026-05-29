@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c3c0mqgotbitq"]
+
+[ext_resource type="Script" uid="uid://cnlt8r3034m7u" path="res://canvas_layer_pantalla_carga_global.gd" id="1_vi1lc"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="2_3ism0"]
+
+[node name="CanvasLayer_pantalla_carga" type="CanvasLayer" unique_id=1348844496 node_paths=PackedStringArray("panel", "label_puntos")]
+layer = 2
+script = ExtResource("1_vi1lc")
+panel = NodePath("MarginContainer/Panel_cargando")
+label_puntos = NodePath("MarginContainer/Panel_cargando/VBoxContainer/Label2")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1456920370]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=5800985]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -183.0
+offset_right = 489.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=781227285]
+layout_mode = 2
+color = Color(0, 0, 0, 0.8784314)
+
+[node name="Panel_cargando" type="PanelContainer" parent="MarginContainer" unique_id=2040077495]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel_cargando" unique_id=147409065]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel_cargando/VBoxContainer" unique_id=119538568]
+layout_mode = 2
+theme = ExtResource("2_3ism0")
+theme_override_font_sizes/font_size = 80
+text = "CARGANDO   PARTIDA"
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel_cargando/VBoxContainer" unique_id=2089799782]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3ism0")
+theme_override_font_sizes/font_size = 80
+text = "."
