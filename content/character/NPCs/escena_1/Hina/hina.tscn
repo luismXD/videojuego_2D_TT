@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://xjlbmbimxaaq" path="res://content/team/npc_team.tres" id="2_i58hv"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_ohx8s"]
 [ext_resource type="Texture2D" uid="uid://lqglrikgd0ac" path="res://content/character/NPCs/escena_1/Hina/Faceset_masked_hina.png" id="5_a732y"]
-[ext_resource type="Texture2D" uid="uid://c8h0vkd6dugv" path="res://system/environment/fx/cloud.png" id="6_a732y"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="6_a732y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
 radius = 16.0
@@ -24,12 +24,12 @@ script = ExtResource("2_ohx8s")
 npc_id = "hina_aprendiz"
 npc_name = "Hina, la Aprendiz"
 portrait = ExtResource("5_a732y")
-indicador = NodePath("Sprite2D2")
+indicador = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
 
-[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1888770322]
-position = Vector2(4.7683716e-07, -15)
-scale = Vector2(0.32812506, 0.27083334)
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1239126565]
+position = Vector2(0, -18.000002)
+scale = Vector2(0.22, 0.222)
 texture = ExtResource("6_a732y")
