@@ -69,7 +69,7 @@ func _on_boton_generar_reporte_pressed():
 	var json = JSON.stringify(datos)
 	var headers = ["Content-Type: application/json"]
 	http_request.request(
-		"http://127.0.0.1:8002/generar-reporte/",
+		"https://merry-adaptation-production-274e.up.railway.app/generar-reporte/",
 		headers,
 		HTTPClient.METHOD_POST,
 		json
