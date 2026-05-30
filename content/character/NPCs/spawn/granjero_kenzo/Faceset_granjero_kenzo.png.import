@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i4t38of8lyte"
-path="res://.godot/imported/Faceset_maestr_ceremonias.png-68d4786fa9bb5d495c420d1c8780e221.ctex"
+uid="uid://c4gljycsomn06"
+path="res://.godot/imported/Faceset_granjero_kenzo.png-5accf9ebeee74ab441a9b2b8f68b42ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/Faceset_maestr_ceremonias.png"
-dest_files=["res://.godot/imported/Faceset_maestr_ceremonias.png-68d4786fa9bb5d495c420d1c8780e221.ctex"]
+source_file="res://content/character/NPCs/spawn/granjero_kenzo/Faceset_granjero_kenzo.png"
+dest_files=["res://.godot/imported/Faceset_granjero_kenzo.png-5accf9ebeee74ab441a9b2b8f68b42ef.ctex"]
 
 [params]
 

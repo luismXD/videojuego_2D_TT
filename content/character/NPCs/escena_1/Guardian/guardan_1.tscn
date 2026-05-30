@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://xjlbmbimxaaq" path="res://content/team/npc_team.tres" id="2_0qu3a"]
 [ext_resource type="Texture2D" uid="uid://cq106io6vrp8i" path="res://content/character/NPCs/escena_1/Guardian/SpriteSheet_guardian.png" id="2_r2ixa"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_gb5ra"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="5_r2ixa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k052x"]
 radius = 6.0
@@ -28,12 +29,18 @@ z_index = 1
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_k052x")
 
-[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864]
+[node name="InteractionArea" type="Area2D" parent="." index="4" unique_id=961141864 node_paths=PackedStringArray("indicador")]
 collision_mask = 16
 script = ExtResource("3_gb5ra")
 npc_id = "guardian_jefe"
 npc_name = "Jefe Guardian"
 portrait = SubResource("CompressedTexture2D_eqn0j")
+indicador = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1759157912]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("5_r2ixa")

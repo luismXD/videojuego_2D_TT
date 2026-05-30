@@ -2,7 +2,6 @@
 extends CharacterBody2D
 class_name Character
 
-
 enum State{IDLE}
 
 
@@ -28,6 +27,7 @@ signal teleported
 		team = v
 		
 func _ready() -> void:
+	
 	if not es_jugador:
 		return
 	var pos_guardada = ControladorPartidaGlobal.partida.jugador["posicion"]

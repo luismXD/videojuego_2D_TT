@@ -2,13 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://c02qfp6h5ud5a" path="res://system/character/animal.tscn" id="1_xt1ub"]
 [ext_resource type="Texture2D" uid="uid://cir7t2mluuc7s" path="res://content/character/pig/pig.png" id="2_wo3q8"]
-[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_chk85"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f5xkj"]
-load_path = "res://.godot/imported/Faceset_guardian.png-f74fa8b2d995ee952a059c578d3945d2.ctex"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hqyfp"]
-radius = 16.0
 
 [node name="Pig" unique_id=808093885 instance=ExtResource("1_xt1ub")]
 
@@ -18,13 +11,3 @@ position = Vector2(0, 0)
 [node name="Sprite" parent="." index="1" unique_id=310989560]
 texture = ExtResource("2_wo3q8")
 offset = Vector2(0, -5)
-
-[node name="InteractionArea" type="Area2D" parent="." index="2" unique_id=1974567264]
-collision_mask = 16
-script = ExtResource("3_chk85")
-npc_id = "guardian_jefe"
-npc_name = "Jefe Guardian"
-portrait = SubResource("CompressedTexture2D_f5xkj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1192232886]
-shape = SubResource("CircleShape2D_hqyfp")

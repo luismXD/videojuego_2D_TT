@@ -2,10 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_pjjrh"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_0t4s5"]
-[ext_resource type="Texture2D" uid="uid://cnfl1c2r18rph" path="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/Faceset_maestr_ceremonias.png" id="3_mmu7d"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3swav"]
-load_path = "res://.godot/imported/SpriteSheet_maestro_ceremonias.png-ba053b1e8d8dbe9c7d5fb0f2b2428874.ctex"
+[ext_resource type="Texture2D" uid="uid://cfwr5ex1hsehx" path="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/SpriteSheet_maestro_ceremonias.png" id="2_mmu7d"]
+[ext_resource type="Texture2D" uid="uid://i4t38of8lyte" path="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/Faceset_maestr_ceremonias.png" id="3_mmu7d"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="4_0t4s5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
 radius = 16.0
@@ -15,14 +14,20 @@ speed = 40.0
 acceleration = 100.0
 
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
-texture = SubResource("CompressedTexture2D_3swav")
+texture = ExtResource("2_mmu7d")
 
-[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864]
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
 collision_mask = 16
 script = ExtResource("2_0t4s5")
 npc_id = "maestro_ceremonias"
 npc_name = "El Maestro de Ceremonias"
 portrait = ExtResource("3_mmu7d")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1493161383]
+position = Vector2(0, -18.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("4_0t4s5")

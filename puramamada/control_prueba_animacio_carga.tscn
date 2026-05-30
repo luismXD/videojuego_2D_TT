@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dgsjsqrv1itog"]
+
+[ext_resource type="Script" uid="uid://dwamxnvlles8u" path="res://canvas_layer_prueba_aimacion.gd" id="1_h8520"]
+
+[node name="Control" type="Control" unique_id=1567736105]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1583605731 node_paths=PackedStringArray("pantalla_cargando", "label_puntos")]
+script = ExtResource("1_h8520")
+pantalla_cargando = NodePath(".")
+label_puntos = NodePath("VBoxContainer/Label2")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=615488768]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1638684101]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -830.0
+offset_top = -56.5
+offset_right = 830.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=659931596]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 100
+text = "ME   ESTOY   CORRIENDO   BIEN   DURO"
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1091896556]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "."

@@ -14,7 +14,8 @@ extends Node
 
 signal menu_toggled(visible: bool)
 signal volumen_cambiado(valor: float)
-signal flujo_conversacional(valor: bool)
+signal jugador_en_rango
+signal jugador_salio_de_rango
 
 var menu_abierto := false
 var valor_sonido = 0
@@ -27,6 +28,11 @@ func toggle_menu():
 func set_volumen(valor: float):
 	volumen_cambiado.emit(valor)
 
+func jugador_interaction_en_rango():
+	jugador_en_rango.emit()
+
+func jugador_interaction_fuera_rango():
+	jugador_salio_de_rango.emit()
 
 #
 #func cerrar_menu():

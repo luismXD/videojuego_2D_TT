@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qj42rocfcq3"
-path="res://.godot/imported/Faceset_Hunter.png-a138b362a7cf26ab9ccf37f1b9b4c475.ctex"
+uid="uid://cfjt5flq6c2jb"
+path="res://.godot/imported/SpriteSheet_granjero_kenzo.png-fa6ab1be3f3dd0525bf2d4c8ca3d0900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/character/NPCs/Hunter/Faceset_Hunter.png"
-dest_files=["res://.godot/imported/Faceset_Hunter.png-a138b362a7cf26ab9ccf37f1b9b4c475.ctex"]
+source_file="res://content/character/NPCs/spawn/granjero_kenzo/SpriteSheet_granjero_kenzo.png"
+dest_files=["res://.godot/imported/SpriteSheet_granjero_kenzo.png-fa6ab1be3f3dd0525bf2d4c8ca3d0900.ctex"]
 
 [params]
 

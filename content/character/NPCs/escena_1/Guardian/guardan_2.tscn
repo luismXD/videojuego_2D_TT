@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_cxsk7"]
 [ext_resource type="Texture2D" uid="uid://cq106io6vrp8i" path="res://content/character/NPCs/escena_1/Guardian/SpriteSheet_guardian.png" id="2_u0jnn"]
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_84web"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="4_u0jnn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eqn0j"]
 load_path = "res://.godot/imported/Faceset_guardian.png-f74fa8b2d995ee952a059c578d3945d2.ctex"
@@ -17,12 +18,18 @@ acceleration = 100.0
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
 texture = ExtResource("2_u0jnn")
 
-[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864]
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
 collision_mask = 16
 script = ExtResource("3_84web")
 npc_id = "guardian_menor"
 npc_name = "Guardián Menor"
 portrait = SubResource("CompressedTexture2D_eqn0j")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1096440360]
+position = Vector2(0, -17)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("4_u0jnn")
