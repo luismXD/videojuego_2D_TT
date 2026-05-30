@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cdu8tmx6kkeql"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_hlbnx"]
+[ext_resource type="Texture2D" uid="uid://cfjt5flq6c2jb" path="res://content/character/NPCs/spawn/granjero_kenzo/SpriteSheet_granjero_kenzo.png" id="2_g7ych"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_n6i1u"]
+[ext_resource type="Texture2D" uid="uid://c4gljycsomn06" path="res://content/character/NPCs/spawn/granjero_kenzo/Faceset_granjero_kenzo.png" id="4_bva7k"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="5_i0umo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="granjero_genzo" unique_id=750470882 instance=ExtResource("1_hlbnx")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = ExtResource("2_g7ych")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("3_n6i1u")
+npc_id = "granjero_genzo"
+npc_name = "Genzo, el Granjero"
+portrait = ExtResource("4_bva7k")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1695326313]
+position = Vector2(0, -17.000006)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("5_i0umo")

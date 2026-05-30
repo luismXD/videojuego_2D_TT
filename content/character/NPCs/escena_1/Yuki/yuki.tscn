@@ -24,12 +24,12 @@ script = ExtResource("3_of73t")
 npc_id = "yuki_tejedora"
 npc_name = "Yuki, la Tejedora"
 portrait = ExtResource("3_a6d3l")
-indicador = NodePath("")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." index="4" unique_id=1695326313]
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1695326313]
 position = Vector2(0, -15.000004)
 scale = Vector2(0.22, 0.222)
 texture = ExtResource("4_1vnje")

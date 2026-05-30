@@ -24,7 +24,7 @@ texture = SubResource("CompressedTexture2D_sik7p")
 collision_mask = 16
 script = ExtResource("2_0o3q0")
 portrait = SubResource("CompressedTexture2D_wflc0")
-indicador = NodePath("")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")

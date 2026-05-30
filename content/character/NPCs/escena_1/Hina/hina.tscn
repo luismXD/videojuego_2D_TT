@@ -24,7 +24,7 @@ script = ExtResource("2_ohx8s")
 npc_id = "hina_aprendiz"
 npc_name = "Hina, la Aprendiz"
 portrait = ExtResource("5_a732y")
-indicador = NodePath("")
+indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i4t38of8lyte"
-path="res://.godot/imported/Faceset_maestr_ceremonias.png-68d4786fa9bb5d495c420d1c8780e221.ctex"
+uid="uid://brkynb2lqjngk"
+path="res://.godot/imported/Faceset_ermitano_tobei.png-a6ffe218991c3185194bf720bf5f75f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/character/NPCs/escena_1/Maestro_de_ceremonias/Faceset_maestr_ceremonias.png"
-dest_files=["res://.godot/imported/Faceset_maestr_ceremonias.png-68d4786fa9bb5d495c420d1c8780e221.ctex"]
+source_file="res://content/character/NPCs/spawn/ermitano/Faceset_ermitano_tobei.png"
+dest_files=["res://.godot/imported/Faceset_ermitano_tobei.png-a6ffe218991c3185194bf720bf5f75f3.ctex"]
 
 [params]
 

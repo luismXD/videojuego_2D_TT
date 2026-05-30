@@ -35,12 +35,12 @@ script = ExtResource("3_gb5ra")
 npc_id = "guardian_jefe"
 npc_name = "Jefe Guardian"
 portrait = SubResource("CompressedTexture2D_eqn0j")
-indicador = NodePath("")
+indicador = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")
 
-[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1759157912]
+[node name="Sprite2D" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1759157912]
 position = Vector2(0, -17.000002)
 scale = Vector2(0.22, 0.222)
 texture = ExtResource("5_r2ixa")

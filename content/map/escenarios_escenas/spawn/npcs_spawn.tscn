@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bp8fhbpcwbqgd"]
+
+[ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_l6dku"]
+[ext_resource type="PackedScene" uid="uid://boqwpkjh6ptay" path="res://content/character/NPCs/spawn/ermitano/ermitano_tobei.tscn" id="3_2dpjc"]
+[ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="4_4n7sl"]
+[ext_resource type="PackedScene" uid="uid://cdu8tmx6kkeql" path="res://content/character/NPCs/spawn/granjero_kenzo/granjero_kenzo.tscn" id="5_7en6r"]
+
+[sub_resource type="Curve2D" id="Curve2D_jdlqj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -31, -164, 0, 0, 0, 0, -125, -169, 0, 0, 0, 0, -184, -243, 0, 0, 0, 0, -158, -200, 0, 0, 0, 0, -58, -149, 0, 0, 0, 0, 97, -129, 0, 0, 0, 0, 249, -129, 0, 0, 0, 0, 301, -151, 0, 0, 0, 0, 152, -131, 0, 0, 0, 0, 143, -167, 0, 0, 0, 0, 134, -130, 0, 0, 0, 0, -22, -128, 0, 0, 0, 0, -58, -3, 0, 0, 0, 0, -238, -7, 0, 0, 0, 0, -239, -108, 0, 0, 0, 0, -238, -68, 0, 0, 0, 0, -247, -12, 0, 0, 0, 0, -89, 5, 0, 0, 0, 0, -16, -90, 0, 0, 0, 0, -38, -226, 0, 0, 0, 0, -31, -141)
+}
+point_count = 21
+
+[sub_resource type="Curve2D" id="Curve2D_bnkf2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -28, -142, 0, 0, 0, 0, 299, -136, 0, 0, 0, 0, 295, -163, 0, 0, 0, 0, 286, -124, 0, 0, 0, 0, 146, -163, 0, 0, 0, 0, -47, -131, 0, 0, 0, 0, -36, -6, 0, 0, 0, 0, 87, 42, 0, 0, 0, 0, 102, 11, 0, 0, 0, 0, 180, -13, 0, 0, 0, 0, 181, -85, 0, 0, 0, 0, 182, -43, 0, 0, 0, 0, 187, 5, 0, 0, 0, 0, 186, 57, 0, 0, 0, 0, 375, 57, 0, 0, 0, 0, 380, 7, 0, 0, 0, 0, 376, -42, 0, 0, 0, 0, 182, -41, 0, 0, 0, 0, 119, 15, 0, 0, 0, 0, 86, 171, 0, 0, 0, 0, 9, 308, 0, 0, 0, 0, -119, 311, 0, 0, 0, 0, -134, 237, 0, 0, 0, 0, -257, 247, 0, 0, 0, 0, -138, 240, 0, 0, 0, 0, -131, 289, 0, 0, 0, 0, -138, 340, 0, 0, 0, 0, -134, 399, 0, 0, 0, 0, -342, 389, 0, 0, 0, 0, -507, 390, 0, 0, 0, 0, -217, 394, 0, 0, 0, 0, -132, 401, 0, 0, 0, 0, -129, 312, 0, 0, 0, 0, 100, 164, 0, 0, 0, 0, 100, 11, 0, 0, 0, 0, -32, -1, 0, 0, 0, 0, -32, -130, 0, 0, 0, 0, -141, -198, 0, 0, 0, 0, -180, -244, 0, 0, 0, 0, -21, -126)
+}
+point_count = 40
+
+[node name="npcs_spawn" type="Node2D" unique_id=1393530681]
+script = ExtResource("1_l6dku")
+metadata/_custom_type_script = "uid://fg6aean1ylsx"
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1078732968]
+format = 2
+
+[node name="ermitano_tobei" parent="." unique_id=750470882 instance=ExtResource("3_2dpjc")]
+position = Vector2(-30, -210)
+speed = 25.0
+
+[node name="BehaviorFollowPath" type="Node2D" parent="ermitano_tobei" unique_id=677226159 node_paths=PackedStringArray("path")]
+script = ExtResource("4_4n7sl")
+path = NodePath("../../Path2D_ermitano_tobei")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="granjero_kenzo" parent="." unique_id=1037978373 instance=ExtResource("5_7en6r")]
+position = Vector2(139, -140)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="granjero_kenzo" unique_id=323854431 node_paths=PackedStringArray("path")]
+script = ExtResource("4_4n7sl")
+path = NodePath("../../Path2Dgranjero_kenzo")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2D_ermitano_tobei" type="Path2D" parent="." unique_id=82149283]
+curve = SubResource("Curve2D_jdlqj")
+
+[node name="Path2Dgranjero_kenzo" type="Path2D" parent="." unique_id=265071038]
+curve = SubResource("Curve2D_bnkf2")
