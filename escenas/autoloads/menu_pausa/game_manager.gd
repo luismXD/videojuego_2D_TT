@@ -16,6 +16,7 @@ signal menu_toggled(visible: bool)
 signal volumen_cambiado(valor: float)
 signal jugador_en_rango
 signal jugador_salio_de_rango
+signal ocultar_dialogo_signal
 
 var menu_abierto := false
 var valor_sonido = 0
@@ -24,6 +25,10 @@ func toggle_menu():
 	#print(menu_abierto)
 	menu_toggled.emit(menu_abierto)
 	get_tree().paused = menu_abierto
+
+func ocultar_dialogo():
+	ocultar_dialogo_signal.emit()
+
 
 func set_volumen(valor: float):
 	volumen_cambiado.emit(valor)

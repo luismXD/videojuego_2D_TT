@@ -43,6 +43,7 @@ var http: HTTPRequest
 
 
 func _ready() -> void:
+
 	if Engine.is_editor_hint():
 		if get_viewport() is Window:
 			get_parent().remove_child(self)
@@ -59,7 +60,7 @@ func _ready() -> void:
 	keep_talking_button.pressed.connect(_on_keep_talking_pressed)
 	farewell_button.pressed.connect(_on_farewell_pressed)
 
-
+	GameManager.ocultar_dialogo_signal.connect(hide_dialog)
 	if boton_salir_x:
 		boton_salir_x.pressed.connect(hide_dialog)
 

@@ -7,11 +7,13 @@ extends Button
 @export var ventana_popup_envio_error: PanelContainer
 @export var ventana_popup_cargando: PanelContainer
 @export var ventana_popup_disclaimer: PanelContainer
+@export var ventana_popup_error_null: PanelContainer
 
 @export var boton_aceptar_correo_exito: Button
 @export var boton_aceptar_correo_error: Button
 @export var boton_aceptar_disclaimer: Button
 @export var boton_cancelar_disclaimer: Button
+@export var boton_aceptar_error_null: Button
 
 @export var subviewport_container: SubViewportContainer
 
@@ -28,15 +30,18 @@ var timer_cargando: Timer
 
 
 func _ready():
-	
+
 	if popup_notificacion_correo:
 		popup_notificacion_correo.hide()
 	
 	if subviewport_container:
 		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	
+
+
 	pressed.connect(_mostrar_disclaimer)
+	if boton_aceptar_error_null:
+		boton_aceptar_error_null.pressed.connect(_on_boton_aceptar_nombre_y_correo)
 	if boton_aceptar_disclaimer:
 		boton_aceptar_disclaimer.pressed.connect(_on_boton_boton_aceptar_disclaimer)
 	if boton_cancelar_disclaimer:
@@ -52,17 +57,24 @@ func _ready():
 
 
 func _mostrar_disclaimer():
-
-	ventana_popup_disclaimer.show()
-	label_correo_exito.text = "EL   REPORTE   EMOCIONAL   CONTIENE   INFORMACION\nPERSONAL   SE   ENVIARA   AL   CORREO\n" + ControladorPartidaGlobal.partida.jugador["correo_electronico"]
-	if subviewport_container:
-		subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
-
 	if popup_notificacion_correo:
 		popup_notificacion_correo.show()
-	ventana_popup_cargando.hide()
-	ventana_popup_envio_exito.hide()
-	ventana_popup_envio_error.hide()
+	if ControladorPartidaGlobal.partida.jugador["analisis"].is_empty():
+		ventana_popup_error_null.show()
+		if subviewport_container:
+			subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
+
+	else:
+		ventana_popup_error_null.hide()
+		ventana_popup_disclaimer.show()
+		label_correo_exito.text = "EL   REPORTE   EMOCIONAL   CONTIENE   INFORMACION\nPERSONAL   SE   ENVIARA   AL   CORREO\n" + ControladorPartidaGlobal.partida.jugador["correo_electronico"]
+		if subviewport_container:
+			subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
+		#if popup_notificacion_correo:
+			#popup_notificacion_correo.show()
+		ventana_popup_cargando.hide()
+		ventana_popup_envio_exito.hide()
+		ventana_popup_envio_error.hide()
 
 func _on_boton_boton_aceptar_disclaimer():
 	_on_boton_generar_reporte_pressed()
