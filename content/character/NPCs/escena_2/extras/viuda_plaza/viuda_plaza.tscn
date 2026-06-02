@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b2lu2i5yspqua"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_16t7r"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_bqhob"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_b5xrv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cnvo0"]
+load_path = "res://.godot/imported/SpriteSheet_viuda_plaza.png-e8fe2f48b3a2c57125b16c9d3be1e696.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uknl2"]
+load_path = "res://.godot/imported/Faceset_viuda_plaza.png-69817e9f235ee45ae55d6ff758f92241.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="viuda_plaza" unique_id=750470882 instance=ExtResource("1_16t7r")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_cnvo0")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_bqhob")
+npc_id = "viuda_plaza"
+npc_name = "Viuda en la Plaza"
+portrait = SubResource("CompressedTexture2D_uknl2")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_b5xrv")

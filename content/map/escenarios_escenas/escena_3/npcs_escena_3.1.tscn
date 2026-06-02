@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://c1gq57bk8x1x"]
+
+[ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_86qp2"]
+[ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_j4l5x"]
+[ext_resource type="PackedScene" uid="uid://10rg8a2tjbb7" path="res://content/character/NPCs/escena_3/custodio_armas_rotas/custodio_de_armas.tscn" id="3_q4a7b"]
+[ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="4_hqsp6"]
+[ext_resource type="PackedScene" uid="uid://b1x2rml5sois8" path="res://content/character/NPCs/escena_3/heroe_olvidado/heroe_olvidado.tscn" id="5_e0q30"]
+[ext_resource type="PackedScene" uid="uid://cyfhqw2afh0ov" path="res://content/character/NPCs/escena_3/juez_supremo/juez_supremo.tscn" id="6_3x8rg"]
+[ext_resource type="PackedScene" uid="uid://dta8xhlmtg262" path="res://content/character/NPCs/escena_3/sangre_pura/sangre_pura.tscn" id="7_awi2q"]
+
+[sub_resource type="Curve2D" id="Curve2D_ajent"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -47, 22, 0, 0, 0, 0, 71, 19, 0, 0, 0, 0, 68, -52, 0, 0, 0, 0, 4, -66, 0, 0, 0, 0, 20, -23, 0, 0, 0, 0, -53, 21, 0, 0, 0, 0, -33, 19, 0, 0, 0, 0, -149, 9, 0, 0, 0, 0, -156, -58, 0, 0, 0, 0, -95, -65, 0, 0, 0, 0, -98, 1, 0, 0, 0, 0, -44, 15, 0, 0, 0, 0, 37, 14, 0, 0, 0, 0, -42, 18, 0, 0, 0, 0, 916, -16, 0, 0, 0, 0, 915, -73, 0, 0, 0, 0, 825, -72, 0, 0, 0, 0, 788, -61, 0, 0, 0, 0, 724, -61, 0, 0, 0, 0, 805, -61, 0, 0, 0, 0, 850, -18, 0, 0, 0, 0, 767, -9, 0, 0, 0, 0, 776, 31, 0, 0, 0, 0, 854, 35, 0, 0, 0, 0, 917, -9, 0, 0, 0, 0, 857, -61)
+}
+point_count = 26
+
+[sub_resource type="Curve2D" id="Curve2D_76ynu"]
+
+[sub_resource type="Curve2D" id="Curve2D_bv5xj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 14, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, -30, 14, 0, 0, 0, 0, -12, 16, 0, 0, 0, 0, -16, -6, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 26, -7, 0, 0, 0, 0, 32, 13, 0, 0, 0, 0, 1, 4)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_ryhrl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 27, 26, 0, 0, 0, 0, 27, -10, 0, 0, 0, 0, -15, -11, 0, 0, 0, 0, -15, 24, 0, 0, 0, 0, -61, 25, 0, 0, 0, 0, -65, -6, 0, 0, 0, 0, 79, 23, 0, 0, 0, 0, 27, -7, 0, 0, 0, 0, 78, -7, 0, 0, 0, 0, -15, 25, 0, 0, 0, 0, 7, 8)
+}
+point_count = 11
+
+[node name="npcs_3" type="Node2D" unique_id=219756505]
+script = ExtResource("1_86qp2")
+metadata/_custom_type_script = "uid://fg6aean1ylsx"
+
+[node name="Tilemap" type="TileMap" parent="." unique_id=910803629]
+y_sort_enabled = true
+tile_set = ExtResource("2_j4l5x")
+format = 2
+layer_0/name = "Wall"
+layer_0/y_sort_enabled = true
+layer_0/y_sort_origin = -5
+layer_0/navigation_enabled = false
+layer_1/name = "Wall2"
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = -5
+layer_2/name = "FloorDetail"
+layer_2/y_sort_enabled = true
+layer_2/z_index = -1
+layer_2/navigation_enabled = false
+layer_3/name = "Floor"
+layer_3/z_index = -2
+layer_3/navigation_enabled = false
+
+[node name="custodio_de_armas" parent="." unique_id=750470882 instance=ExtResource("3_q4a7b")]
+position = Vector2(2366, -6108)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="custodio_de_armas" unique_id=1371990471 node_paths=PackedStringArray("path")]
+script = ExtResource("4_hqsp6")
+path = NodePath("")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="heroe_olvidado" parent="." unique_id=1732337160 instance=ExtResource("5_e0q30")]
+position = Vector2(3224, -6126)
+
+[node name="BehaviorFollowPath2" type="Node2D" parent="heroe_olvidado" unique_id=1187840905 node_paths=PackedStringArray("path")]
+script = ExtResource("4_hqsp6")
+path = NodePath("")
+loop = true
+wait_mode = 1
+wait_time = 3.5
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="juez_supremo" parent="." unique_id=1509543961 instance=ExtResource("6_3x8rg")]
+position = Vector2(4727, -6146)
+
+[node name="BehaviorFollowPath3" type="Node2D" parent="juez_supremo" unique_id=1355103885 node_paths=PackedStringArray("path")]
+script = ExtResource("4_hqsp6")
+path = NodePath("")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="sangre_pura" parent="." unique_id=1421517640 instance=ExtResource("7_awi2q")]
+position = Vector2(4721, -6080)
+
+[node name="BehaviorFollowPath4" type="Node2D" parent="sangre_pura" unique_id=813744927 node_paths=PackedStringArray("path")]
+script = ExtResource("4_hqsp6")
+path = NodePath("")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2D_custodio_armas" type="Path2D" parent="." unique_id=558224119]
+position = Vector2(2366, -6108)
+curve = SubResource("Curve2D_ajent")
+
+[node name="Path2D_heroe_olvidado" type="Path2D" parent="." unique_id=1154271650]
+position = Vector2(3224, -6126)
+curve = SubResource("Curve2D_76ynu")
+
+[node name="Path2D_juez_supremo" type="Path2D" parent="." unique_id=502176900]
+position = Vector2(4727, -6146)
+curve = SubResource("Curve2D_bv5xj")
+
+[node name="Path2D_sangre_pura" type="Path2D" parent="." unique_id=837885001]
+position = Vector2(4721, -6080)
+curve = SubResource("Curve2D_ryhrl")

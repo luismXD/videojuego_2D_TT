@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://o2dkvi7bvsfs"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_edecj"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_ls1tw"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_vmv5n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_whmm4"]
+load_path = "res://.godot/imported/SpriteSheet_goro.png-ca84d0239c1b9739af90e4b748ecdc19.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qih8u"]
+load_path = "res://.godot/imported/Faceset_goro.png-578ee8e28c3681b6fbd7ccf80bdd9ac2.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="goro" unique_id=750470882 instance=ExtResource("1_edecj")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_whmm4")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_ls1tw")
+npc_id = "goro_anfitrion"
+npc_name = "Goro, el Anfitrión"
+portrait = SubResource("CompressedTexture2D_qih8u")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_vmv5n")

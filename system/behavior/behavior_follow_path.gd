@@ -21,7 +21,8 @@ enum WaitMode{AT_END,EACH_POINT,RANDOMLY,NEVER}
 		if Engine.is_editor_hint():
 			return
 		if !active:
-			parent.move_vector = Vector2.ZERO
+			if is_node_ready() and parent:
+				parent.move_vector = Vector2.ZERO
 		update_process()
 @export var path:Path2D:
 	set(v):
@@ -32,7 +33,9 @@ enum WaitMode{AT_END,EACH_POINT,RANDOMLY,NEVER}
 		point_count = path.curve.point_count
 		point_id = get_closest_point()
 		if is_point_reached():
-			next_point()
+			
+			if is_node_ready(): 
+				next_point()
 @export var precision := 5
 @export var loop := false
 @export var wait_mode :WaitMode = WaitMode.AT_END:
@@ -91,6 +94,8 @@ func _ready() -> void:
 	wait_timer.one_shot = true
 	if wait_time:
 		wait_timer.wait_time = wait_time
+	if path and is_point_reached():   # ← AGREGAR ESTO
+		next_point()
 
 
 func update_process():

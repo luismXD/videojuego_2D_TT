@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cc5nq2ikkq6qs"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_seuvi"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_gxefu"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_3ejsq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rql7"]
+load_path = "res://.godot/imported/SpriteSheet_herrero_apurado.png-8824f8418eda2c3c95814a1df668aed6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fpbf5"]
+load_path = "res://.godot/imported/Faceset_herrero_apurado.png-f9d2237d30b1791e15e04405421aa854.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="herrero_apurado" unique_id=750470882 instance=ExtResource("1_seuvi")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_7rql7")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_gxefu")
+npc_id = "herrero_apurado"
+npc_name = "Herrero Apurado"
+portrait = SubResource("CompressedTexture2D_fpbf5")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_3ejsq")
