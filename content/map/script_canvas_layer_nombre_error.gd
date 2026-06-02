@@ -65,6 +65,7 @@ func _on_reanudar_pressed() -> void:
 
 func salir_a_menu():
 	#controlador_partida.borrar_partida()
+	GameManager.ocultar_dialogo()
 	GameManager.toggle_menu()
 	get_tree().change_scene_to_file("res://escenas/menu_principal/menu_jugar/escena_menu_jugar.tscn")
 

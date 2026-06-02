@@ -99,6 +99,7 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("4_e3pai")
 theme_override_font_sizes/font_size = 98
+disabled = true
 text = "CARGAR  PARTIDA"
 script = ExtResource("5_grlea")
 
