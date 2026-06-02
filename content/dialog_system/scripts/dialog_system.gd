@@ -120,10 +120,16 @@ func _on_chat_response(_result, code, _headers, body) -> void:
 		_set_input_state(true)
 		return
 	var data: Dictionary = JSON.parse_string(body.get_string_from_utf8())
-	_display_message(data.get("npc_message", ""))
+	var npc_message: String = data.get("npc_message", "")
+	_display_message(npc_message)
+	
+	# completar el último análisis guardado con la respuesta del NPC
+	var analisis: Array = ControladorPartidaGlobal.partida.jugador["analisis"]
+	if analisis.size() > 0:
+		analisis[analisis.size() - 1]["npc_response"] = npc_message
+		ControladorPartidaGlobal.guardar_partida()
 	
 	if data.get("should_end", false):
-		# El NPC corta la conversación (ej. detectó enojo)
 		await get_tree().create_timer(2.0).timeout
 		_request_end()
 		return
