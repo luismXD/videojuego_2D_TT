@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dl538clcgdbdn"]
+
+[ext_resource type="Script" uid="uid://fg6aean1ylsx" path="res://system/map/map.gd" id="1_0jp5p"]
+[ext_resource type="TileSet" uid="uid://tir0rfjtiwma" path="res://content/map/tileset.tres" id="2_d148c"]
+[ext_resource type="PackedScene" uid="uid://o2dkvi7bvsfs" path="res://content/character/NPCs/escena_4/goro/goro.tscn" id="3_74roa"]
+[ext_resource type="Script" uid="uid://42si4s2y45c4" path="res://system/behavior/behavior_follow_path.gd" id="4_u4wx4"]
+[ext_resource type="PackedScene" uid="uid://7k1sxmj4dckd" path="res://content/character/NPCs/escena_4/mei/mei.tscn" id="5_sm7ud"]
+
+[sub_resource type="Curve2D" id="Curve2D_y4tdp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 85, -3, 0, 0, 0, 0, 85, 94, 0, 0, 0, 0, 47, 94, 0, 0, 0, 0, 92, 91, 0, 0, 0, 0, 88, 142, 0, 0, 0, 0, 89, 215, 0, 0, 0, 0, 88, 267, 0, 0, 0, 0, 43, 282, 0, 0, 0, 0, -1, 303, 0, 0, 0, 0, 19, 323, 0, 0, 0, 0, 138, 323, 0, 0, 0, 0, 141, 302, 0, 0, 0, 0, 85, 263, 0, 0, 0, 0, 86, 198, 0, 0, 0, 0, 127, 185, 0, 0, 0, 0, 79, 148, 0, 0, 0, 0, 90, 78, 0, 0, 0, 0, 36, 76, 0, 0, 0, 0, 92, 77, 0, 0, 0, 0, 86, 264, 0, 0, 0, 0, 21, 294, 0, 0, 0, 0, 38, 325, 0, 0, 0, 0, 79, 327, 0, 0, 0, 0, 132, 322, 0, 0, 0, 0, 110, 274)
+}
+point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_5unxv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -66, -2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 2, 50, 0, 0, 0, 0, 3, 112, 0, 0, 0, 0, -3, 153, 0, 0, 0, 0, -5, 186, 0, 0, 0, 0, -63, 214, 0, 0, 0, 0, -57, 245, 0, 0, 0, 0, -6, 246, 0, 0, 0, 0, 35, 243, 0, 0, 0, 0, 34, 213, 0, 0, 0, 0, 1, 180, 0, 0, 0, 0, 2, 85, 0, 0, 0, 0, -3, -88, 0, 0, 0, 0, -116, -79, 0, 0, 0, 0, -258, -80, 0, 0, 0, 0, -388, -92, 0, 0, 0, 0, -470, -48, 0, 0, 0, 0, -502, 17, 0, 0, 0, 0, -703, 27, 0, 0, 0, 0, -833, 39, 0, 0, 0, 0, -857, 102, 0, 0, 0, 0, -815, 29, 0, 0, 0, 0, -727, 30, 0, 0, 0, 0, -567, 30, 0, 0, 0, 0, -484, 36, 0, 0, 0, 0, -449, -66, 0, 0, 0, 0, -347, -78, 0, 0, 0, 0, -40, -74, 0, 0, 0, 0, -5, -25, 0, 0, 0, 0, -1, 60, 0, 0, 0, 0, 4, 103, 0, 0, 0, 0, 40, 107, 0, 0, 0, 0, -5, 114, 0, 0, 0, 0, -4, 160, 0, 0, 0, 0, -4, 188, 0, 0, 0, 0, -70, 214, 0, 0, 0, 0, -60, 248, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 46, 244, 0, 0, 0, 0, 28, 211, 0, 0, 0, 0, -2, 172)
+}
+point_count = 42
+
+[node name="npcs_escena_4" type="Node2D" unique_id=1172909582]
+script = ExtResource("1_0jp5p")
+metadata/_custom_type_script = "uid://fg6aean1ylsx"
+
+[node name="Tilemap" type="TileMap" parent="." unique_id=2030741039]
+y_sort_enabled = true
+position = Vector2(8, -5)
+tile_set = ExtResource("2_d148c")
+format = 2
+layer_0/name = "Wall"
+layer_0/y_sort_enabled = true
+layer_0/y_sort_origin = -5
+layer_0/navigation_enabled = false
+layer_1/name = "Wall2"
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = -5
+layer_2/name = "FloorDetail"
+layer_2/y_sort_enabled = true
+layer_2/z_index = -1
+layer_2/navigation_enabled = false
+layer_3/name = "Floor"
+layer_3/z_index = -2
+layer_3/navigation_enabled = false
+
+[node name="goro" parent="." unique_id=750470882 instance=ExtResource("3_74roa")]
+position = Vector2(3519, -641)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="goro" unique_id=233355590 node_paths=PackedStringArray("path")]
+script = ExtResource("4_u4wx4")
+path = NodePath("../../Path2D_goro")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="mei" parent="." unique_id=1290699105 instance=ExtResource("5_sm7ud")]
+position = Vector2(3607, -562)
+
+[node name="BehaviorFollowPath" type="Node2D" parent="mei" unique_id=147848348 node_paths=PackedStringArray("path")]
+script = ExtResource("4_u4wx4")
+path = NodePath("../../Path2D_mei")
+loop = true
+wait_mode = 1
+wait_time = 3.0
+wait_chance = 50
+metadata/_custom_type_script = "uid://42si4s2y45c4"
+
+[node name="Path2D_goro" type="Path2D" parent="." unique_id=718825491]
+position = Vector2(3519, -641)
+curve = SubResource("Curve2D_y4tdp")
+
+[node name="Path2D_mei" type="Path2D" parent="." unique_id=499297197]
+position = Vector2(3607, -563)
+curve = SubResource("Curve2D_5unxv")

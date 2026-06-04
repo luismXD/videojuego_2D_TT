@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://10rg8a2tjbb7"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_6eokp"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_ohiqj"]
+[ext_resource type="Texture2D" uid="uid://bqmsnd6cdohis" path="res://content/character/NPCs/escena_3/custodio_armas_rotas/Faceset_custodio_armas.png" id="3_bs5fl"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="4_cgs53"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jmsa0"]
+load_path = "res://.godot/imported/SpriteSheet_custodio_armas.png-7bd74c39ea4a938204e5a5f241abe7cb.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="custodio_de_armas" unique_id=750470882 instance=ExtResource("1_6eokp")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_jmsa0")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_ohiqj")
+npc_id = "custodio_armas_rotas"
+npc_name = "El Custodio de las Armas Rotas"
+portrait = ExtResource("3_bs5fl")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("4_cgs53")

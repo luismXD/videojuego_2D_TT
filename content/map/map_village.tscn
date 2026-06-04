@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://c7vlu3uu47bb5" path="res://audio/music/theme_dream.ogg" id="15_4dufa"]
 [ext_resource type="PackedScene" uid="uid://dp4jr7vakesk4" path="res://content/map/terreno_escena.tscn" id="15_alfly"]
 [ext_resource type="Script" uid="uid://cnuxju0tl6cry" path="res://system/teleporter/teleporter.gd" id="18_rh3ex"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="21_5ds62"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="22_ewt8g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e35uw"]
 bg_color = Color(0.6606753, 0.4493779, 0.330072, 1)
@@ -73,6 +75,9 @@ meteo_list = Array[int]([5])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qsb7"]
 size = Vector2(20, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jmmlh"]
+radius = 16.0
 
 [node name="MapVillage" unique_id=1106048378 instance=ExtResource("1_6r46d")]
 metadata/_edit_horizontal_guides_ = [-177.0]
@@ -263,7 +268,7 @@ layer_3/tile_data = PackedInt32Array(-3473351, 196609, 12, -3407815, 262145, 12,
 [node name="Map" parent="Tilemap" index="4" unique_id=563215348 instance=ExtResource("15_alfly")]
 
 [node name="NinjaBlue" parent="Tilemap" index="5" unique_id=350986384 instance=ExtResource("7_n8vb2")]
-position = Vector2(56, 53)
+position = Vector2(6, -139)
 
 [node name="PlayerAssignor" type="Node" parent="Tilemap/NinjaBlue" index="4" unique_id=2112529109]
 script = ExtResource("8_8tm86")
@@ -348,3 +353,419 @@ direction = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter2" index="1" unique_id=1925534305]
 shape = SubResource("RectangleShape2D_2qsb7")
+
+[node name="InteractionCartel_direccion" type="Area2D" parent="." index="7" unique_id=84597441 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(32, 324)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_aldea_mascaras")
+boton_aceptar_cartel = NodePath("../CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionCartel_direccion" index="0" unique_id=1452359270]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionCartel_direccion" index="1" unique_id=872231811]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionDireccion_vinedo" type="Area2D" parent="." index="8" unique_id=1344277135 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(-81, 273)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_vinedo")
+boton_aceptar_cartel = NodePath("../CanvasLayer_vinedo/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDireccion_vinedo" index="0" unique_id=458604659]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionDireccion_vinedo" index="1" unique_id=1629080957]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionCiudad_tokoshima" type="Area2D" parent="." index="9" unique_id=1821229268 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(1099, 1591)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_ciudad_tokoshima")
+boton_aceptar_cartel = NodePath("../CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionCiudad_tokoshima" index="0" unique_id=1637498753]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionCiudad_tokoshima" index="1" unique_id=435022382]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionCiudad_tokoshima2" type="Area2D" parent="." index="10" unique_id=351051165 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(1498, 1606)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_ciudad_tokoshima")
+boton_aceptar_cartel = NodePath("../CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionCiudad_tokoshima2" index="0" unique_id=68878516]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionCiudad_tokoshima2" index="1" unique_id=1502474122]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionCiudad_tokoshima3" type="Area2D" parent="." index="11" unique_id=210834246 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(2187, 1386)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_ciudad_tokoshima")
+boton_aceptar_cartel = NodePath("../CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionCiudad_tokoshima3" index="0" unique_id=649463776]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionCiudad_tokoshima3" index="1" unique_id=339455705]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionTorres_juicio" type="Area2D" parent="." index="12" unique_id=1605770535 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(1530, 1510)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_torres_del_juicio")
+boton_aceptar_cartel = NodePath("../CanvasLayer_torres_del_juicio/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTorres_juicio" index="0" unique_id=1676573367]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionTorres_juicio" index="1" unique_id=569306900]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionPueblo_tottori" type="Area2D" parent="." index="13" unique_id=1615998945 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(2139, 1353)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_pueblo_tottori")
+boton_aceptar_cartel = NodePath("../CanvasLayer_pueblo_tottori/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionPueblo_tottori" index="0" unique_id=1248365954]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionPueblo_tottori" index="1" unique_id=615185448]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="InteractionTorre_del_juicio" type="Area2D" parent="." index="14" unique_id=198725173 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
+position = Vector2(2139, 1353)
+collision_mask = 16
+script = ExtResource("21_5ds62")
+indicador = NodePath("Sprite2D")
+es_cartel = true
+canvas_layer_cartel = NodePath("../CanvasLayer_torres_del_juicio2")
+boton_aceptar_cartel = NodePath("../CanvasLayer_torres_del_juicio2/MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTorre_del_juicio" index="0" unique_id=1937552512]
+shape = SubResource("CircleShape2D_jmmlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="InteractionTorre_del_juicio" index="1" unique_id=491477785]
+position = Vector2(0, -17.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("22_ewt8g")
+
+[node name="CanvasLayer_aldea_mascaras" type="CanvasLayer" parent="." index="15" unique_id=591978513]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_aldea_mascaras" index="0" unique_id=1922062225]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_aldea_mascaras/MarginContainer" index="0" unique_id=1857482572]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_aldea_mascaras/MarginContainer" index="1" unique_id=1220375210]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre" index="0" unique_id=1494968951]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=1383160900]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "DIRECCION:
+ALDEA  DE   LAS   MASCARAS"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=1148535457]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1
+
+[node name="CanvasLayer_vinedo" type="CanvasLayer" parent="." index="16" unique_id=1106449986]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_vinedo" index="0" unique_id=878554895]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_vinedo/MarginContainer" index="0" unique_id=1854753057]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_vinedo/MarginContainer" index="1" unique_id=1018609033]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_vinedo/MarginContainer/Panel_nombre" index="0" unique_id=405886828]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_vinedo/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=1853463232]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "VIÑEDO"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_vinedo/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=776554310]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1
+
+[node name="CanvasLayer_ciudad_tokoshima" type="CanvasLayer" parent="." index="17" unique_id=974582242]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_ciudad_tokoshima" index="0" unique_id=357776015]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_ciudad_tokoshima/MarginContainer" index="0" unique_id=1117401502]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_ciudad_tokoshima/MarginContainer" index="1" unique_id=226443073]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre" index="0" unique_id=744409629]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=417435770]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "DIRECCION:
+CIUDAD   TAKASHIMA"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_ciudad_tokoshima/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=1312482070]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1
+
+[node name="CanvasLayer_torres_del_juicio" type="CanvasLayer" parent="." index="18" unique_id=733859778]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_torres_del_juicio" index="0" unique_id=1930896962]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_torres_del_juicio/MarginContainer" index="0" unique_id=1641218833]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_torres_del_juicio/MarginContainer" index="1" unique_id=1427699141]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_torres_del_juicio/MarginContainer/Panel_nombre" index="0" unique_id=327809984]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_torres_del_juicio/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=1566550333]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "DIRECCION:
+TORRE   DEL   JUICIO"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_torres_del_juicio/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=480549357]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1
+
+[node name="CanvasLayer_torres_del_juicio2" type="CanvasLayer" parent="." index="19" unique_id=314107432]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_torres_del_juicio2" index="0" unique_id=491053410]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_torres_del_juicio2/MarginContainer" index="0" unique_id=697906959]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_torres_del_juicio2/MarginContainer" index="1" unique_id=142985018]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_torres_del_juicio2/MarginContainer/Panel_nombre" index="0" unique_id=1925141971]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_torres_del_juicio2/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=1581889243]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "TORRE   DEL   JUICIO"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_torres_del_juicio2/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=1106248615]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1
+
+[node name="CanvasLayer_pueblo_tottori" type="CanvasLayer" parent="." index="20" unique_id=1117096258]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_pueblo_tottori" index="0" unique_id=912981488]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_pueblo_tottori/MarginContainer" index="0" unique_id=646419602]
+layout_mode = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_pueblo_tottori/MarginContainer" index="1" unique_id=1250128278]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e35uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_pueblo_tottori/MarginContainer/Panel_nombre" index="0" unique_id=21600344]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_pueblo_tottori/MarginContainer/Panel_nombre/VBoxContainer" index="0" unique_id=211762178]
+layout_mode = 2
+theme = ExtResource("3_alfly")
+theme_override_font_sizes/font_size = 100
+text = "DIRECCION:
+PUEBLO   TOTTORI"
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_pueblo_tottori/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=1622603846]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_alfly")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "REGRESAR"
+icon_alignment = 1

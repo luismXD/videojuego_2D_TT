@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ddx63w5mlp57a"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_3x3gs"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_acwdk"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_w33od"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6k4v7"]
+load_path = "res://.godot/imported/SpriteSheet_nino_perdido.png-d7496e0b7d54f9c1544299da469d52ee.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wp1mr"]
+load_path = "res://.godot/imported/Faceset_nino_perdido.png-cbfb74c33fdb6f09ce01a4e07f41e69b.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="nino_perdido" unique_id=750470882 instance=ExtResource("1_3x3gs")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_6k4v7")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_acwdk")
+npc_id = "nino_perdido"
+npc_name = "El Niño Perdido"
+portrait = SubResource("CompressedTexture2D_wp1mr")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_w33od")

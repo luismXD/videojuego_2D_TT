@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cnbwhbn8lvydj"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_lfstd"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_2edd7"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_cs20k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aphhd"]
+load_path = "res://.godot/imported/SpriteSheet_soldado_guardia.png-f1d7e4214258e2bd54ac3c934a0e1cbc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8qr6u"]
+load_path = "res://.godot/imported/Faceset_soldado_guardia.png-9ad25149f0ce9d313f5123e68a798525.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="soldado_guardia" unique_id=750470882 instance=ExtResource("1_lfstd")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_aphhd")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_2edd7")
+npc_id = "soldado_guardia"
+npc_name = "El Soldado de Guardia"
+portrait = SubResource("CompressedTexture2D_8qr6u")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_cs20k")

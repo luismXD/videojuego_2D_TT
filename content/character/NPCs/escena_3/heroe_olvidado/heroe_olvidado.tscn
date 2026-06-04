@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b1x2rml5sois8"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_g5fed"]
+[ext_resource type="Texture2D" uid="uid://i4wbwrrc2erq" path="res://content/character/NPCs/escena_3/heroe_olvidado/SpriteSheet_heroe_olvidado.png" id="2_b2wjh"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="3_ajjbj"]
+[ext_resource type="Texture2D" uid="uid://c14nit5bubcue" path="res://content/character/NPCs/escena_3/heroe_olvidado/Faceset_heroe_olvidado.png" id="4_ai641"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="5_2qsj5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="heroe_olvidado" unique_id=750470882 instance=ExtResource("1_g5fed")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = ExtResource("2_b2wjh")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("3_ajjbj")
+npc_id = "heroe_olvidado"
+npc_name = "El Héroe Olvidado"
+portrait = ExtResource("4_ai641")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("5_2qsj5")

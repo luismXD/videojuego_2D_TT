@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://fwnpjmeqvm4v"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_mwhny"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_6q8pb"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_p23te"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cn0hl"]
+load_path = "res://.godot/imported/yuki_corregido_anciana_cruce.png-d2022c1b7beb8a11ebf3b956af50e6f2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ty0v"]
+load_path = "res://.godot/imported/Faceset_anciana_cruce.png-dfaac302285a2496f3a0dfd0144833f0.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="anciana_cruce" unique_id=750470882 instance=ExtResource("1_mwhny")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_cn0hl")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_6q8pb")
+npc_id = "anciana_cruce"
+npc_name = "La Anciana del Cruce"
+portrait = SubResource("CompressedTexture2D_5ty0v")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_p23te")

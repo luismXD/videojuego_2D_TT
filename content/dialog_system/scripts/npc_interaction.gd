@@ -38,34 +38,126 @@
 		#if not DialogSystem.is_active:
 			#DialogSystem.start_conversation(npc_id, npc_name, portrait)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#class_name NPCInteraction extends Area2D
+#
+#@export var npc_id: String = "aldeana_mascara_azul"
+#@export var npc_name: String = "Aldeana de Máscara Azul"
+#@export var portrait: Texture2D
+#@export var indicador: Sprite2D # hijo directo de este NPC
+#
+#@export var es_cartel: bool = false
+#@export var canvas_layer_cartel: CanvasLayer
+#
+#var player_in_range: bool = false
+#
+#func _ready() -> void:
+	#indicador.hide()
+	#if canvas_layer_cartel:
+		#canvas_layer_cartel.visible = false  # arranca oculto
+	#body_entered.connect(_on_body_entered)
+	#body_exited.connect(_on_body_exited)
+#
+#
+#func _on_body_entered(body: Node2D) -> void:
+	#if body.is_in_group("player"):
+		#player_in_range = true
+		#indicador.show()  # solo muestra el de ESTE npc
+		#GameManager.jugador_interaction_en_rango()
+#
+##func _on_body_exited(body: Node2D) -> void:
+	##if body.is_in_group("player"):
+		##player_in_range = false
+		##indicador.hide()  # solo oculta el de ESTE npc
+		##GameManager.jugador_interaction_fuera_rango()
+#func _on_body_exited(body: Node2D) -> void:
+	#if body.is_in_group("player"):
+		#player_in_range = false
+		#indicador.hide()
+		#if es_cartel and canvas_layer_cartel:
+			#canvas_layer_cartel.visible = false  # si te alejas, se cierra
+		#GameManager.jugador_interaction_fuera_rango()
+#
+#func _unhandled_input(event: InputEvent) -> void:
+	#if player_in_range and event.is_action_pressed("interact"):
+		#if not DialogSystem.is_active:
+			#DialogSystem.start_conversation(npc_id, npc_name, portrait)
+
+
+
+
 class_name NPCInteraction extends Area2D
 
 @export var npc_id: String = "aldeana_mascara_azul"
 @export var npc_name: String = "Aldeana de Máscara Azul"
 @export var portrait: Texture2D
-
 @export var indicador: Sprite2D # hijo directo de este NPC
+
+@export var es_cartel: bool = false
+@export var canvas_layer_cartel: CanvasLayer
+@export var boton_aceptar_cartel: Button
 
 var player_in_range: bool = false
 
 func _ready() -> void:
-	indicador.hide()  # solo oculta el de ESTE npc
+	indicador.hide()
+	if es_cartel:
+		# este nodo debe seguir recibiendo input aunque el árbol esté pausado
+		process_mode = Node.PROCESS_MODE_ALWAYS
+		if canvas_layer_cartel:
+			canvas_layer_cartel.visible = false  # arranca oculto
+			# la UI también debe vivir durante la pausa (el botón y sus hijos
+			# heredan este modo automáticamente)
+			canvas_layer_cartel.process_mode = Node.PROCESS_MODE_ALWAYS
+		if boton_aceptar_cartel:
+			boton_aceptar_cartel.pressed.connect(_on_boton_aceptar_pressed)
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
-		indicador.show()  # solo muestra el de ESTE npc
+		indicador.show()
 		GameManager.jugador_interaction_en_rango()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
-		indicador.hide()  # solo oculta el de ESTE npc
+		indicador.hide()
 		GameManager.jugador_interaction_fuera_rango()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if player_in_range and event.is_action_pressed("interact"):
-		if not DialogSystem.is_active:
+		if es_cartel:
+			_abrir_cartel()
+		elif not DialogSystem.is_active:
 			DialogSystem.start_conversation(npc_id, npc_name, portrait)
+
+func _abrir_cartel() -> void:
+	if canvas_layer_cartel:
+		canvas_layer_cartel.visible = true
+		get_tree().paused = true  # congela al jugador (y todo lo demás)
+
+func _on_boton_aceptar_pressed() -> void:
+	if canvas_layer_cartel:
+		canvas_layer_cartel.visible = false
+	get_tree().paused = false  # reanuda

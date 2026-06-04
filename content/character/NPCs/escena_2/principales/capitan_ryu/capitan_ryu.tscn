@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://crxqyslevpfxw"]
+
+[ext_resource type="PackedScene" uid="uid://skrlnoimlhsv" path="res://system/character/character.tscn" id="1_fcoo2"]
+[ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_fqv0h"]
+[ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_au7mg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8f45d"]
+load_path = "res://.godot/imported/SpriteSheet_capitan_ryu.png-51fca3338ba98f55448915e5020f4e62.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yr3xd"]
+load_path = "res://.godot/imported/Faceset_capitan_ryu.png-4a632c32e981cce03980f5e8b5a556c7.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
+radius = 16.0
+
+[node name="capitan_ryu" unique_id=750470882 instance=ExtResource("1_fcoo2")]
+speed = 40.0
+acceleration = 100.0
+
+[node name="Sprite" parent="." index="2" unique_id=1923305892]
+texture = SubResource("CompressedTexture2D_8f45d")
+
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+collision_mask = 16
+script = ExtResource("2_fqv0h")
+npc_id = "ryu_capitan"
+npc_name = "Capitán Ryu"
+portrait = SubResource("CompressedTexture2D_yr3xd")
+indicador = NodePath("Sprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
+shape = SubResource("CircleShape2D_p4h7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="InteractionArea" index="1" unique_id=1116377788]
+position = Vector2(0, -16.000002)
+scale = Vector2(0.22, 0.222)
+texture = ExtResource("3_au7mg")
