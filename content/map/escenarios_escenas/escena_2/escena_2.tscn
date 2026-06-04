@@ -40,6 +40,7 @@ _data = {
 point_count = 13
 
 [node name="escena_2" type="Node2D" unique_id=1637569400]
+position = Vector2(3355, 0)
 script = ExtResource("1_ywhpb")
 metadata/_custom_type_script = "uid://fg6aean1ylsx"
 
