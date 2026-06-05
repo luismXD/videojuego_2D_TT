@@ -158,7 +158,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="nino_perdido" parent="." unique_id=1617670032 instance=ExtResource("10_a02mp")]
-position = Vector2(1972, 1463)
+position = Vector2(2087, 1402)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="nino_perdido" unique_id=287592869 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -210,5 +210,5 @@ position = Vector2(1671, 1669)
 curve = SubResource("Curve2D_ewcmc")
 
 [node name="Path2D_nino_perdido" type="Path2D" parent="." unique_id=103605783]
-position = Vector2(1972, 1463)
+position = Vector2(2087, 1402)
 curve = SubResource("Curve2D_06ubr")
