@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="juego_tt_emotional_tonio"
+config/name="Emotional"
 run/main_scene="uid://bcmfkei4dysnf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://prueba_fisicas/icon.svg"
+boot_splash/stretch_mode=0
+boot_splash/image="uid://b1gn7iacu8q0c"
+config/icon="uid://b1gn7iacu8q0c"
 
 [autoload]
 

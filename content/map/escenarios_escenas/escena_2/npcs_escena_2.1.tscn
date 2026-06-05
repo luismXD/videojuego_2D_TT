@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5qoqtn6fpctg" path="res://content/character/NPCs/escena_2/extras/comerciante_panes/comerciante_panes.tscn" id="5_bw78k"]
 [ext_resource type="PackedScene" uid="uid://cc5nq2ikkq6qs" path="res://content/character/NPCs/escena_2/extras/herrero_apurado/herrero_apurado.tscn" id="6_r60t8"]
 [ext_resource type="PackedScene" uid="uid://b2lu2i5yspqua" path="res://content/character/NPCs/escena_2/extras/viuda_plaza/viuda_plaza.tscn" id="7_dfj7g"]
-[ext_resource type="PackedScene" uid="uid://fwnpjmeqvm4v" path="res://content/character/NPCs/escena_2/principales/anciana_cruce/anciana_cruce.tscn" id="8_ump7f"]
 [ext_resource type="PackedScene" uid="uid://crxqyslevpfxw" path="res://content/character/NPCs/escena_2/principales/capitan_ryu/capitan_ryu.tscn" id="9_jgrk5"]
-[ext_resource type="PackedScene" uid="uid://ddx63w5mlp57a" path="res://content/character/NPCs/escena_2/principales/nino_perdido/nino_perdido.tscn" id="10_a02mp"]
 [ext_resource type="PackedScene" uid="uid://cnbwhbn8lvydj" path="res://content/character/NPCs/escena_2/principales/soldado_guardia/soldado_guardia.tscn" id="11_u8kg2"]
 
 [sub_resource type="Curve2D" id="Curve2D_elk8a"]
@@ -47,18 +45,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 33, -132, 0, 0, 0, 0, -46, -119, 0, 0, 0, 0, -57, -51, 0, 0, 0, 0, -106, 55, 0, 0, 0, 0, -86, 99, 0, 0, 0, 0, -20, 51, 0, 0, 0, 0, 8, -60, 0, 0, 0, 0, 10, -131, 0, 0, 0, 0, 46, -48, 0, 0, 0, 0, 88, -42, 0, 0, 0, 0, 15, -24, 0, 0, 0, 0, 11, 41, 0, 0, 0, 0, -76, 24, 0, 0, 0, 0, -93, -47, 0, 0, 0, 0, -73, -107, 0, 0, 0, 0, -16, -124, 0, 0, 0, 0, -10, -81, 0, 0, 0, 0, -69, -73)
 }
 point_count = 18
-
-[sub_resource type="Curve2D" id="Curve2D_ewcmc"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -35, -52, 0, 0, 0, 0, 29, -72, 0, 0, 0, 0, 70, -24, 0, 0, 0, 0, -49, -27, 0, 0, 0, 0, -53, 15, 0, 0, 0, 0, 67, 14, 0, 0, 0, 0, 70, -24)
-}
-point_count = 7
-
-[sub_resource type="Curve2D" id="Curve2D_06ubr"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -10, -31, 0, 0, 0, 0, 28, -24, 0, 0, 0, 0, -10, -34, 0, 0, 0, 0, -15, -2, 0, 0, 0, 0, -15, 38, 0, 0, 0, 0, -15, 74, 0, 0, 0, 0, 9, 91, 0, 0, 0, 0, 23, 66, 0, 0, 0, 0, -10, 85, 0, 0, 0, 0, -13, 105, 0, 0, 0, 0, 40, 104, 0, 0, 0, 0, 46, 84, 0, 0, 0, 0, 80, 26, 0, 0, 0, 0, 68, -1, 0, 0, 0, 0, -10, -29, 0, 0, 0, 0, 15, 11, 0, 0, 0, 0, 39, 45, 0, 0, 0, 0, 31, 1, 0, 0, 0, 0, 63, -4, 0, 0, 0, 0, 63, 49)
-}
-point_count = 20
 
 [node name="npcs_escena_2" type="Node2D" unique_id=1637569400]
 script = ExtResource("1_w8fjw")
@@ -133,18 +119,6 @@ wait_time = 6.0
 wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
-[node name="anciana_cruce" parent="." unique_id=1406563177 instance=ExtResource("8_ump7f")]
-position = Vector2(1671, 1669)
-
-[node name="BehaviorFollowPath" type="Node2D" parent="anciana_cruce" unique_id=220814153 node_paths=PackedStringArray("path")]
-script = ExtResource("4_13mvf")
-path = NodePath("../../Path2D_anciana_cruce")
-loop = true
-wait_mode = 1
-wait_time = 4.0
-wait_chance = 50
-metadata/_custom_type_script = "uid://42si4s2y45c4"
-
 [node name="capitan_ryu" parent="." unique_id=9258754 instance=ExtResource("9_jgrk5")]
 position = Vector2(3136, 1146)
 
@@ -154,18 +128,6 @@ path = NodePath("../../Path2D_capitan_ryu")
 loop = true
 wait_mode = 1
 wait_time = 3.0
-wait_chance = 50
-metadata/_custom_type_script = "uid://42si4s2y45c4"
-
-[node name="nino_perdido" parent="." unique_id=1617670032 instance=ExtResource("10_a02mp")]
-position = Vector2(2087, 1402)
-
-[node name="BehaviorFollowPath" type="Node2D" parent="nino_perdido" unique_id=287592869 node_paths=PackedStringArray("path")]
-script = ExtResource("4_13mvf")
-path = NodePath("../../Path2D_nino_perdido")
-loop = true
-wait_mode = 1
-wait_time = 2.5
 wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
@@ -204,11 +166,3 @@ curve = SubResource("Curve2D_14k0g")
 [node name="Path2D_soldado_guardia" type="Path2D" parent="." unique_id=538632908]
 position = Vector2(2477, 1490)
 curve = SubResource("Curve2D_gdqyo")
-
-[node name="Path2D_anciana_cruce" type="Path2D" parent="." unique_id=171286767]
-position = Vector2(1671, 1669)
-curve = SubResource("Curve2D_ewcmc")
-
-[node name="Path2D_nino_perdido" type="Path2D" parent="." unique_id=103605783]
-position = Vector2(2087, 1402)
-curve = SubResource("Curve2D_06ubr")

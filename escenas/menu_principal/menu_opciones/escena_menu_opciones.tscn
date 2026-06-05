@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d3dqipc0px7lw" path="res://escenas/menu_principal/menu_opciones/boton_ventana.gd" id="4_sgq6h"]
 [ext_resource type="Script" uid="uid://bqo66j6apsnqi" path="res://escenas/menu_principal/menu_opciones/boton_correo_electronico.gd" id="5_fs1jq"]
 [ext_resource type="Script" uid="uid://c72bx85wg1nlr" path="res://escenas/menu_principal/menu_opciones/boton_regresar.gd" id="6_bjvxm"]
+[ext_resource type="StyleBox" uid="uid://ckjkluogsjuur" path="res://theme/box_style_perro.tres" id="8_bjvxm"]
 
 [sub_resource type="Gradient" id="Gradient_fs1jq"]
 offsets = PackedFloat32Array(0, 0.4993046, 1)
@@ -28,24 +29,6 @@ glow_intensity = 1.2
 glow_strength = 0.6
 glow_bloom = 0.35
 glow_hdr_scale = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs1jq"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 25
-border_width_top = 25
-border_width_right = 25
-border_width_bottom = 25
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
-corner_detail = 20
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-shadow_size = 15
 
 [node name="Menu_opciones" type="Control" unique_id=1457210266]
 layout_mode = 3
@@ -147,18 +130,22 @@ size_flags_vertical = 4
 theme_override_constants/separation = 23
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1918699756]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="sonido" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=49807399 node_paths=PackedStringArray("http_request")]
+[node name="sonido" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=49807399 node_paths=PackedStringArray("popup_sonido", "panel_popup_sonido", "boton_salir", "barra_sonido_ajuste", "progress_bar_sonido", "subviewport_container")]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 100
 text = "SONIDO"
 script = ExtResource("3_t8ov6")
-http_request = NodePath("../../../../HTTPRequest_reporte")
+popup_sonido = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido")
+panel_popup_sonido = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido")
+boton_salir = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer/salir")
+barra_sonido_ajuste = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer/PanelContainer/HSlider")
+progress_bar_sonido = NodePath("../../../../WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer/PanelContainer/ProgressBar")
+subviewport_container = NodePath("../../../../WorldEnvironment/SubViewportContainer")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1788362742]
 layout_mode = 2
@@ -242,10 +229,10 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2015370108]
+[node name="CanvasLayer_sonido" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2015370108]
 visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer" unique_id=289630024]
+[node name="MarginContainer" type="MarginContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido" unique_id=289630024]
 clip_contents = true
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 15
@@ -256,48 +243,49 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=324205414]
+[node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer" unique_id=324205414]
 layout_mode = 2
 color = Color(0, 0, 0, 0.7019608)
 
-[node name="Panel_nombre" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer" unique_id=1255449697]
+[node name="Panel_sonido" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer" unique_id=1255449697]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_fs1jq")
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre" unique_id=955581729]
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido" unique_id=955581729]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=133268525]
+[node name="Label" type="Label" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer" unique_id=133268525]
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 105
 text = "VOLUMEN"
 horizontal_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=362979102]
+[node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer" unique_id=362979102]
 layout_mode = 2
 
-[node name="HSlider" type="HSlider" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer/PanelContainer" unique_id=1760973771]
+[node name="HSlider" type="HSlider" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer/PanelContainer" unique_id=1760973771]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
-min_value = -30.0
+min_value = -60.0
 max_value = 0.0
+step = 0.6
 value = -10.0
 
-[node name="ProgressBar" type="ProgressBar" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer/PanelContainer" unique_id=1105128106]
+[node name="ProgressBar" type="ProgressBar" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer/PanelContainer" unique_id=1105128106]
 layout_mode = 2
 mouse_behavior_recursive = 1
 theme = ExtResource("4_bjvxm")
-min_value = -30.0
+min_value = -60.0
 max_value = 0.0
-step = 1.0
+step = 0.6
 
-[node name="salir" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer/MarginContainer/Panel_nombre/VBoxContainer" unique_id=524197651]
+[node name="salir" type="Button" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_sonido/MarginContainer/Panel_sonido/VBoxContainer" unique_id=524197651]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -309,6 +297,7 @@ icon_alignment = 1
 
 [node name="CanvasLayer_reporte_notificacion" type="CanvasLayer" parent="WorldEnvironment/SubViewportContainer/SubViewport" unique_id=2052322171]
 layer = 2
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion" unique_id=1257551103]
 anchors_preset = 15
@@ -342,6 +331,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo_exito" unique_id=955113082]
 layout_mode = 2
@@ -366,6 +356,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_correo_error" unique_id=433944410]
 layout_mode = 2
@@ -390,6 +381,7 @@ text = "ACEPTAR"
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_cargando" unique_id=1201398452]
 layout_mode = 2
@@ -408,8 +400,8 @@ theme_override_font_sizes/font_size = 80
 text = "."
 
 [node name="Panel_disclaimer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer" unique_id=818672044]
-visible = false
 layout_mode = 2
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_disclaimer" unique_id=2110963253]
 layout_mode = 2
@@ -437,7 +429,9 @@ theme = ExtResource("4_bjvxm")
 text = "CANCELAR"
 
 [node name="Panel_null" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer" unique_id=1606609468]
+visible = false
 layout_mode = 2
+theme_override_styles/panel = ExtResource("8_bjvxm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_reporte_notificacion/MarginContainer/Panel_null" unique_id=543344660]
 layout_mode = 2
@@ -448,7 +442,7 @@ size_flags_vertical = 4
 layout_mode = 2
 theme = ExtResource("4_bjvxm")
 theme_override_font_sizes/font_size = 57
-text = "NO   ES   HAY   INFORMACION   PARA   REALIZAR   
+text = "NO  HAY   INFORMACION   PARA   REALIZAR   
 UN   REPORTE   EMOCIONAL"
 horizontal_alignment = 1
 

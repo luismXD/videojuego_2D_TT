@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dovn6myk7xvdu" path="res://escenas/menu_principal/opciones_usuario/boton_cambiar_nombre.gd" id="3_k0hs4"]
 [ext_resource type="Script" uid="uid://l5kejpgajyu2" path="res://escenas/menu_principal/opciones_usuario/boton_cambiar_correo.gd" id="4_a8fvn"]
 [ext_resource type="Script" uid="uid://camjagyi6tuc3" path="res://escenas/menu_principal/opciones_usuario/boton_regresar_jugar.gd" id="4_te2k6"]
+[ext_resource type="StyleBox" uid="uid://ckjkluogsjuur" path="res://theme/box_style_perro.tres" id="6_k0hs4"]
 
 [sub_resource type="Gradient" id="Gradient_a8fvn"]
 offsets = PackedFloat32Array(0, 0.4993046, 1)
@@ -151,6 +152,7 @@ color = Color(0, 0, 0, 0.88000005)
 
 [node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer" unique_id=1935936533]
 layout_mode = 2
+theme_override_styles/panel = ExtResource("6_k0hs4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre/MarginContainer/PanelContainer" unique_id=1033904823]
 layout_mode = 2
@@ -228,6 +230,7 @@ color = Color(0, 0, 0, 0.88000005)
 
 [node name="PanelContainer" type="PanelContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer" unique_id=144665374]
 layout_mode = 2
+theme_override_styles/panel = ExtResource("6_k0hs4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo/MarginContainer/PanelContainer" unique_id=903596630]
 layout_mode = 2
@@ -295,6 +298,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("6_k0hs4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_nombre_error/MarginContainer/Panel_nombre" unique_id=1994715793]
 layout_mode = 2
@@ -339,6 +343,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("6_k0hs4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WorldEnvironment/SubViewportContainer/SubViewport/CanvasLayer_correo_error/MarginContainer/Panel_correo" unique_id=1860488986]
 layout_mode = 2

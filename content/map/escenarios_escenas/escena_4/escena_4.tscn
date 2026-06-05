@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dl538clcgdbdn" path="res://content/map/escenarios_escenas/escena_4/npcs_escena_4.tscn" id="3_pesv5"]
 
 [node name="escena_4" type="Node2D" unique_id=1172909582]
+position = Vector2(36, -1146)
 script = ExtResource("1_0klam")
 metadata/_custom_type_script = "uid://fg6aean1ylsx"
 

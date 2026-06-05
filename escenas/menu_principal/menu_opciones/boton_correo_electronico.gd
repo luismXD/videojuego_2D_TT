@@ -38,7 +38,6 @@ func _ready():
 		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
-
 	pressed.connect(_mostrar_disclaimer)
 	if boton_aceptar_error_null:
 		boton_aceptar_error_null.pressed.connect(_on_boton_aceptar_nombre_y_correo)

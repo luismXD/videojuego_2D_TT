@@ -1,53 +1,57 @@
 extends Button
 
-@export var icon_izq: TextureRect
-@export var icon_der: TextureRect
-@export var http_request: HTTPRequest
+#boton opciones
+@export var popup_sonido: CanvasLayer
+@export var panel_popup_sonido: PanelContainer
+
+@export var boton_salir:Button
+
+@export var barra_sonido_ajuste: HSlider
+@export var progress_bar_sonido: ProgressBar
+
+@export var subviewport_container: SubViewportContainer
 
 
 func _ready():
+	if popup_sonido:
+		popup_sonido.hide()
+
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	pressed.connect(_on_pressed_sonido)
 	
-	pressed.connect(_on_boton_generar_reporte_pressed)
-	
-	
-	http_request.request_completed.connect(_on_request_completed)
+	if boton_salir:
+		boton_salir.pressed.connect(_on_pressed_salir)
 
-func _on_boton_generar_reporte_pressed():
-	print("=== BOTON PRESIONADO ===")
-	var correo = ControladorPartidaGlobal.partida.jugador["correo_electronico"]
-	var analisis = ControladorPartidaGlobal.partida.jugador["analisis"]
+	barra_sonido_ajuste.value = ControladorPartidaGlobal.partida.jugador["volumen"]
+	progress_bar_sonido.value = barra_sonido_ajuste.value
 
-	var datos = {
-		"email": correo,
-		"analisis": analisis
-	}
+	if barra_sonido_ajuste:
+		barra_sonido_ajuste.value_changed.connect(_on_barra_sonido_ajuste_value_changed)
 
-	var json = JSON.stringify(datos)
-	
-	print("JSON enviado: ", json)
 
-	var headers = ["Content-Type: application/json"]
-	print("Correo:", ControladorPartidaGlobal.partida.jugador["correo_electronico"])
-	print("Analisis:", ControladorPartidaGlobal.partida.jugador["analisis"])
-	http_request.request(
-	"https://merry-adaptation-production-274e.up.railway.app/generar-reporte/",
-	headers,
-	HTTPClient.METHOD_POST,
-	json
-)
 
-func _holapapu():
-	print("hola papu");
+func _on_pressed_sonido():
+	if popup_sonido:
+		popup_sonido.show()
 
-func _on_request_completed(result, response_code, headers, body):
-	print("codigo:", response_code)
-	var respuesta = body.get_string_from_utf8()
-	print("Respuesta del servidor:", respuesta)
-	
-	if response_code == 200:
-		print("[Reporte] Enviado al correo")
-		# Opcional: limpiar analisis después de enviar para no duplicar en siguiente reporte
-		# ControladorPartidaGlobal.partida.jugador["analisis"] = []
-		# ControladorPartidaGlobal.guardar_partida()
-	else:
-		push_warning("[Reporte] Falló con código %d" % response_code)
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
+
+func _on_pressed_salir():
+	if popup_sonido:
+		popup_sonido.hide()
+
+	if subviewport_container:
+		subviewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _on_barra_sonido_ajuste_value_changed(value: float) -> void:
+	print("Valor de la barra de sonido: ", value + 100)
+	progress_bar_sonido.value = value
+	ControladorPartidaGlobal.partida.jugador["volumen"] = value
+	ControladorPartidaGlobal.guardar_partida()
+	barra_sonido(value)
+
+func barra_sonido(valor: float):
+	GameManager.set_volumen(valor)
