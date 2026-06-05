@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cmqkt2sa66ls5" path="res://content/map/escenarios_escenas/escena_1/escena_1.tscn" id="3_41njb"]
 [ext_resource type="Script" uid="uid://cnuxju0tl6cry" path="res://system/teleporter/teleporter.gd" id="4_1713r"]
 [ext_resource type="PackedScene" uid="uid://bp8fhbpcwbqgd" path="res://content/map/escenarios_escenas/spawn/npcs_spawn.tscn" id="4_ap1bu"]
+[ext_resource type="PackedScene" uid="uid://o05u186x4ge1" path="res://content/map/escenarios_escenas/escena_1/Caminos/camino1.tscn" id="6_6vifq"]
+[ext_resource type="PackedScene" uid="uid://cvefppa32dt88" path="res://content/map/escenarios_escenas/escena_1/Caminos/camino2.tscn" id="7_1713r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrnwy"]
 size = Vector2(397, 45)
@@ -99,3 +101,7 @@ metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter_torres_output" unique_id=1068563003]
 position = Vector2(32.84375, 40)
 shape = SubResource("RectangleShape2D_rye8e")
+
+[node name="Camino1" parent="." unique_id=1396832079 instance=ExtResource("6_6vifq")]
+
+[node name="Camino2" parent="." unique_id=576854323 instance=ExtResource("7_1713r")]

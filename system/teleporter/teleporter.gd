@@ -70,3 +70,7 @@ func update_arrow_direction():
 			arrow_direction.texture = load("res://system/teleporter/teleporter_arrow.png")
 			add_child(arrow_direction)
 		arrow_direction.rotation = direction.angle()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
