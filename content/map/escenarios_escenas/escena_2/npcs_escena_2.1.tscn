@@ -72,7 +72,7 @@ layer_3/z_index = -2
 layer_3/navigation_enabled = false
 
 [node name="borracho_fuente" parent="." unique_id=750470882 instance=ExtResource("3_f8o2q")]
-position = Vector2(3081, 1553)
+position = Vector2(6434, 1555)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="borracho_fuente" unique_id=157983844 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -84,7 +84,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="comerciante_panes" parent="." unique_id=1901768838 instance=ExtResource("5_bw78k")]
-position = Vector2(2949, 1615)
+position = Vector2(6302, 1617)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="comerciante_panes" unique_id=793442180 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -96,7 +96,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="herrero_apurado" parent="." unique_id=2059200851 instance=ExtResource("6_r60t8")]
-position = Vector2(3449, 1399)
+position = Vector2(6802, 1401)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="herrero_apurado" unique_id=2054000560 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -108,7 +108,7 @@ wait_chance = 80
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="viuda_plaza" parent="." unique_id=911683248 instance=ExtResource("7_dfj7g")]
-position = Vector2(3035, 1447)
+position = Vector2(6388, 1449)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="viuda_plaza" unique_id=681947075 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -120,7 +120,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="capitan_ryu" parent="." unique_id=9258754 instance=ExtResource("9_jgrk5")]
-position = Vector2(3136, 1146)
+position = Vector2(6489, 1148)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="capitan_ryu" unique_id=1258615307 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -132,7 +132,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="soldado_guardia" parent="." unique_id=1045898509 instance=ExtResource("11_u8kg2")]
-position = Vector2(2477, 1490)
+position = Vector2(5830, 1492)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="soldado_guardia" unique_id=589798664 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
@@ -144,25 +144,25 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="Path2D_borracho_fuente" type="Path2D" parent="." unique_id=1927797965]
-position = Vector2(3081, 1553)
+position = Vector2(6434, 1555)
 curve = SubResource("Curve2D_elk8a")
 
 [node name="Path2D_comerciante_panes" type="Path2D" parent="." unique_id=164447941]
-position = Vector2(2949, 1615)
+position = Vector2(6302, 1617)
 curve = SubResource("Curve2D_11j2m")
 
 [node name="Path2D_herrero_apurado" type="Path2D" parent="." unique_id=1429564551]
-position = Vector2(3449, 1399)
+position = Vector2(6802, 1401)
 curve = SubResource("Curve2D_duacj")
 
 [node name="Path2D_viuda_plaza" type="Path2D" parent="." unique_id=1404455640]
-position = Vector2(3035, 1447)
+position = Vector2(6388, 1449)
 curve = SubResource("Curve2D_etel6")
 
 [node name="Path2D_capitan_ryu" type="Path2D" parent="." unique_id=1962004481]
-position = Vector2(3136, 1146)
+position = Vector2(6489, 1148)
 curve = SubResource("Curve2D_14k0g")
 
 [node name="Path2D_soldado_guardia" type="Path2D" parent="." unique_id=538632908]
-position = Vector2(2477, 1490)
+position = Vector2(5830, 1492)
 curve = SubResource("Curve2D_gdqyo")

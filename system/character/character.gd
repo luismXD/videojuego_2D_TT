@@ -64,13 +64,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func teleport(target_teleporter:Teleporter,offset_position:Vector2):
+#func teleport(target_teleporter:Teleporter,offset_position:Vector2):
+	#if just_teleport:
+		#return
+	#global_position = target_teleporter.global_position+offset_position+(target_teleporter.direction*Vector2(25,25))
+	#just_teleport = true
+	#for camera in get_tree().get_nodes_in_group("camera"):
+		#camera.teleport_to(global_position)
+	#await get_tree().create_timer(0.1,false).timeout
+	#just_teleport = false
+	#teleported.emit()
+func teleport(target_teleporter: Teleporter) -> void:
 	if just_teleport:
 		return
-	global_position = target_teleporter.global_position+offset_position+(target_teleporter.direction*Vector2(25,25))
+	# Solo usa la dirección para sacar al jugador del collider, sin offset
+	global_position = target_teleporter.global_position + (target_teleporter.direction * 32)
 	just_teleport = true
 	for camera in get_tree().get_nodes_in_group("camera"):
 		camera.teleport_to(global_position)
-	await get_tree().create_timer(0.1,false).timeout
+	await get_tree().create_timer(0.1, false).timeout
 	just_teleport = false
 	teleported.emit()
