@@ -576,7 +576,7 @@ collision_mask = 16
 script = ExtResource("21_5ds62")
 indicador = NodePath("Sprite2D")
 es_cartel = true
-canvas_layer_cartel = NodePath("../CanvasLayer_pantalla_final")
+canvas_layer_cartel = NodePath("../CanvasLayer_pueblo_y_torre")
 boton_aceptar_cartel = NodePath("../CanvasLayer_pueblo_y_torre/MarginContainer/Panel_nombre/VBoxContainer/salir")
 boton_aceptar_final = NodePath("../CanvasLayer_pantalla_final/MarginContainer/Panel_nombre/VBoxContainer/salir")
 

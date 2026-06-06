@@ -113,13 +113,16 @@ class_name NPCInteraction extends Area2D
 @export var indicador: Sprite2D # hijo directo de este NPC
 
 @export var es_cartel: bool = false
+
 @export var canvas_layer_cartel: CanvasLayer
 @export var boton_aceptar_cartel: Button
-
+@export var boton_aceptar_final: Button
 var player_in_range: bool = false
 
 func _ready() -> void:
 	indicador.hide()
+
+		
 	if es_cartel:
 		# este nodo debe seguir recibiendo input aunque el árbol esté pausado
 		process_mode = Node.PROCESS_MODE_ALWAYS
@@ -130,8 +133,26 @@ func _ready() -> void:
 			canvas_layer_cartel.process_mode = Node.PROCESS_MODE_ALWAYS
 		if boton_aceptar_cartel:
 			boton_aceptar_cartel.pressed.connect(_on_boton_aceptar_pressed)
+		if boton_aceptar_final:
+			boton_aceptar_final.pressed.connect(_on_boton_aceptar_final)
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+
+func _on_boton_aceptar_final() -> void:
+	if canvas_layer_cartel:
+		canvas_layer_cartel.visible = false
+	get_tree().paused = false  # reanuda
+	GameManager.guardar_posicion()
+#
+#func salir_a_menu():
+	##controlador_partida.borrar_partida()
+	#GameManager.ocultar_dialogo()
+	#GameManager.toggle_menu()
+	#get_tree().change_scene_to_file("res://escenas/menu_principal/menu_jugar/escena_menu_jugar.tscn")
+	#ControladorPartidaGlobal.part
+	#ControladorPartidaGlobal.partida.jugador["posicion"] = parent.global_position
+	#ControladorPartidaGlobal.guardar_partida()
+	get_tree().change_scene_to_file("res://escenas/menu_principal/menu_jugar/escena_menu_jugar.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

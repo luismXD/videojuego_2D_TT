@@ -17,6 +17,7 @@ signal volumen_cambiado(valor: float)
 signal jugador_en_rango
 signal jugador_salio_de_rango
 signal ocultar_dialogo_signal
+signal guardar_posicion_signal
 
 var menu_abierto := false
 var valor_sonido = 0
@@ -38,6 +39,18 @@ func jugador_interaction_en_rango():
 
 func jugador_interaction_fuera_rango():
 	jugador_salio_de_rango.emit()
+
+func guardar_posicion():
+	guardar_posicion_signal.emit()
+
+#func guardar_posicion():
+	#ControladorPartidaGlobal.partida.jugador["posicion"] = parent.global_position
+	#ControladorPartidaGlobal.guardar_partida()
+
+#func toggle_menu():
+	#guardar_posicion()
+	#GameManager.toggle_menu()
+
 
 #
 #func cerrar_menu():

@@ -8,13 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://cyfhqw2afh0ov" path="res://content/character/NPCs/escena_3/juez_supremo/juez_supremo.tscn" id="6_3x8rg"]
 [ext_resource type="PackedScene" uid="uid://dta8xhlmtg262" path="res://content/character/NPCs/escena_3/sangre_pura/sangre_pura.tscn" id="7_awi2q"]
 
+[sub_resource type="Curve2D" id="Curve2D_q4a7b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 916, -16, 0, 0, 0, 0, 915, -73, 0, 0, 0, 0, 825, -72, 0, 0, 0, 0, 788, -61, 0, 0, 0, 0, 724, -61, 0, 0, 0, 0, 805, -61, 0, 0, 0, 0, 850, -18, 0, 0, 0, 0, 767, -9, 0, 0, 0, 0, 776, 31, 0, 0, 0, 0, 854, 35, 0, 0, 0, 0, 917, -9, 0, 0, 0, 0, 857, -61)
+}
+point_count = 12
+
 [sub_resource type="Curve2D" id="Curve2D_ajent"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -47, 22, 0, 0, 0, 0, 71, 19, 0, 0, 0, 0, 68, -52, 0, 0, 0, 0, 4, -66, 0, 0, 0, 0, 20, -23, 0, 0, 0, 0, -53, 21, 0, 0, 0, 0, -33, 19, 0, 0, 0, 0, -149, 9, 0, 0, 0, 0, -156, -58, 0, 0, 0, 0, -95, -65, 0, 0, 0, 0, -98, 1, 0, 0, 0, 0, -44, 15, 0, 0, 0, 0, 37, 14, 0, 0, 0, 0, -42, 18, 0, 0, 0, 0, 916, -16, 0, 0, 0, 0, 915, -73, 0, 0, 0, 0, 825, -72, 0, 0, 0, 0, 788, -61, 0, 0, 0, 0, 724, -61, 0, 0, 0, 0, 805, -61, 0, 0, 0, 0, 850, -18, 0, 0, 0, 0, 767, -9, 0, 0, 0, 0, 776, 31, 0, 0, 0, 0, 854, 35, 0, 0, 0, 0, 917, -9, 0, 0, 0, 0, 857, -61)
+"points": PackedVector2Array(0, 0, 0, 0, -47, 22, 0, 0, 0, 0, 71, 19, 0, 0, 0, 0, 68, -52, 0, 0, 0, 0, 4, -66, 0, 0, 0, 0, 20, -23, 0, 0, 0, 0, -53, 21, 0, 0, 0, 0, -33, 19, 0, 0, 0, 0, -149, 9, 0, 0, 0, 0, -156, -58, 0, 0, 0, 0, -95, -65, 0, 0, 0, 0, -98, 1, 0, 0, 0, 0, -44, 15, 0, 0, 0, 0, 37, 14, 0, 0, 0, 0, -42, 18)
 }
-point_count = 26
-
-[sub_resource type="Curve2D" id="Curve2D_76ynu"]
+point_count = 14
 
 [sub_resource type="Curve2D" id="Curve2D_bv5xj"]
 _data = {
@@ -56,7 +60,7 @@ position = Vector2(2366, -6108)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="custodio_de_armas" unique_id=1371990471 node_paths=PackedStringArray("path")]
 script = ExtResource("4_hqsp6")
-path = NodePath("")
+path = NodePath("../../Path2D_custodio_armas")
 loop = true
 wait_mode = 1
 wait_time = 3.0
@@ -68,7 +72,7 @@ position = Vector2(3224, -6126)
 
 [node name="BehaviorFollowPath2" type="Node2D" parent="heroe_olvidado" unique_id=1187840905 node_paths=PackedStringArray("path")]
 script = ExtResource("4_hqsp6")
-path = NodePath("")
+path = NodePath("../../Path2D_heroe_olvidado")
 loop = true
 wait_mode = 1
 wait_time = 3.5
@@ -80,7 +84,7 @@ position = Vector2(4727, -6146)
 
 [node name="BehaviorFollowPath3" type="Node2D" parent="juez_supremo" unique_id=1355103885 node_paths=PackedStringArray("path")]
 script = ExtResource("4_hqsp6")
-path = NodePath("")
+path = NodePath("../../Path2D_juez_supremo")
 loop = true
 wait_mode = 1
 wait_time = 3.0
@@ -92,20 +96,20 @@ position = Vector2(4721, -6080)
 
 [node name="BehaviorFollowPath4" type="Node2D" parent="sangre_pura" unique_id=813744927 node_paths=PackedStringArray("path")]
 script = ExtResource("4_hqsp6")
-path = NodePath("")
+path = NodePath("../../Path2D_sangre_pura")
 loop = true
 wait_mode = 1
 wait_time = 3.0
 wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
+[node name="Path2D_heroe_olvidado" type="Path2D" parent="." unique_id=1683117284]
+position = Vector2(2366, -6108)
+curve = SubResource("Curve2D_q4a7b")
+
 [node name="Path2D_custodio_armas" type="Path2D" parent="." unique_id=558224119]
 position = Vector2(2366, -6108)
 curve = SubResource("Curve2D_ajent")
-
-[node name="Path2D_heroe_olvidado" type="Path2D" parent="." unique_id=1154271650]
-position = Vector2(3224, -6126)
-curve = SubResource("Curve2D_76ynu")
 
 [node name="Path2D_juez_supremo" type="Path2D" parent="." unique_id=502176900]
 position = Vector2(4727, -6146)

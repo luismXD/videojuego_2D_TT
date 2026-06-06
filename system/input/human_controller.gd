@@ -21,6 +21,8 @@ func _ready() -> void:
 	parent = get_parent()
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	update_process()
+	GameManager.guardar_posicion_signal.connect(guardar_posicion)
+
 
 func update_process():
 	if active:
@@ -35,8 +37,11 @@ func _process(delta: float) -> void:
 		print("presionado menu")
 		toggle_menu()
 
-
-func toggle_menu():
+func guardar_posicion():
 	ControladorPartidaGlobal.partida.jugador["posicion"] = parent.global_position
 	ControladorPartidaGlobal.guardar_partida()
+	#GameManager.guardar_posicion()
+
+func toggle_menu():
+	guardar_posicion()
 	GameManager.toggle_menu()
