@@ -110,4 +110,4 @@ metadata/_custom_type_script = "uid://cnuxju0tl6cry"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter6" unique_id=472845160]
 shape = SubResource("RectangleShape2D_5vskx")
 
-[node name="npcs_3" parent="." unique_id=244488821 instance=ExtResource("4_ngves")]
+[node name="npcs_3" parent="." unique_id=713579019 instance=ExtResource("4_ngves")]

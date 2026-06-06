@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://fg6aean1ylsx"
 
 [node name="Tilemap" type="TileMap" parent="." unique_id=2030741039]
 y_sort_enabled = true
-position = Vector2(8, -5)
+position = Vector2(44, -1152)
 tile_set = ExtResource("2_d148c")
 format = 2
 layer_0/name = "Wall"
@@ -43,7 +43,7 @@ layer_3/z_index = -2
 layer_3/navigation_enabled = false
 
 [node name="goro" parent="." unique_id=750470882 instance=ExtResource("3_74roa")]
-position = Vector2(3519, -641)
+position = Vector2(3555, -1788)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="goro" unique_id=233355590 node_paths=PackedStringArray("path")]
 script = ExtResource("4_u4wx4")
@@ -55,7 +55,7 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="mei" parent="." unique_id=1290699105 instance=ExtResource("5_sm7ud")]
-position = Vector2(3607, -562)
+position = Vector2(3643, -1709)
 
 [node name="BehaviorFollowPath" type="Node2D" parent="mei" unique_id=147848348 node_paths=PackedStringArray("path")]
 script = ExtResource("4_u4wx4")
@@ -67,9 +67,9 @@ wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
 [node name="Path2D_goro" type="Path2D" parent="." unique_id=718825491]
-position = Vector2(3519, -641)
+position = Vector2(3550, -1788)
 curve = SubResource("Curve2D_y4tdp")
 
 [node name="Path2D_mei" type="Path2D" parent="." unique_id=499297197]
-position = Vector2(3607, -563)
+position = Vector2(3643, -1710)
 curve = SubResource("Curve2D_5unxv")
