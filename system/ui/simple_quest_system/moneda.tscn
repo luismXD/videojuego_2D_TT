@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://daqcw4cljjryk"]
+
+[ext_resource type="Texture2D" uid="uid://d2l1q2lw1ygk3" path="res://system/ui/simple_quest_system/CoinSpritesheet.png" id="1_6gcc4"]
+[ext_resource type="Script" uid="uid://bct7t1vglcl0h" path="res://system/ui/simple_quest_system/moneda.gd" id="1_bgbi0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgbi0"]
+radius = 15.132746
+
+[node name="Moneda" type="Area2D" unique_id=176117845]
+script = ExtResource("1_bgbi0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=6895593]
+shape = SubResource("CircleShape2D_bgbi0")
+
+[node name="CoinSpritesheet" type="Sprite2D" parent="." unique_id=1664617405]
+texture = ExtResource("1_6gcc4")
+hframes = 16

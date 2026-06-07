@@ -85,3 +85,4 @@ func teleport(target_teleporter: Teleporter) -> void:
 	await get_tree().create_timer(0.1, false).timeout
 	just_teleport = false
 	teleported.emit()
+	

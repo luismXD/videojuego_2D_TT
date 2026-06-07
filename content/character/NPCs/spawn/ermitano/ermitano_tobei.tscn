@@ -16,13 +16,15 @@ acceleration = 100.0
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
 texture = ExtResource("2_faotx")
 
-[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
+[node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador", "quest", "positionMoneda")]
 collision_mask = 16
 script = ExtResource("3_h1xmg")
 npc_id = "ermitano_tobei"
 npc_name = "Tobei_El Ermitaño"
 portrait = ExtResource("4_ojrjm")
 indicador = NodePath("Sprite2D2")
+quest = NodePath("")
+positionMoneda = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
 shape = SubResource("CircleShape2D_p4h7s")

@@ -118,6 +118,10 @@ class_name NPCInteraction extends Area2D
 @export var boton_aceptar_cartel: Button
 @export var boton_aceptar_final: Button
 var player_in_range: bool = false
+# Pa las misiones
+@export var quest: Quest
+var moneda:= load("res://system/ui/simple_quest_system/moneda.tscn")
+@export var positionMoneda: Marker2D
 
 func _ready() -> void:
 	indicador.hide()
@@ -159,6 +163,7 @@ func _on_body_entered(body: Node2D) -> void:
 		player_in_range = true
 		indicador.show()
 		GameManager.jugador_interaction_en_rango()
+	
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

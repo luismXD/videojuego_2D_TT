@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cppqwvb32i1go"]
+
+[node name="Misions" type="Node2D" unique_id=1884822636 groups=["misions_ui"]]
+
+[node name="QuestBox" type="CanvasLayer" parent="." unique_id=2005831755]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="QuestBox" unique_id=2145977264]
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox" unique_id=330748625]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox" unique_id=1322405127]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UI_stats" type="CanvasLayer" parent="." unique_id=1173750314]
+
+[node name="Gold" type="Label" parent="UI_stats" unique_id=725638308]
+offset_right = 40.0
+offset_bottom = 18.0
+
+[node name="XP" type="Label" parent="UI_stats" unique_id=199187841]
+offset_right = 40.0
+offset_bottom = 18.0
+
+[node name="XPLabel" type="Label" parent="UI_stats" unique_id=615507006]
+offset_right = 40.0
+offset_bottom = 18.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI_stats" unique_id=1824777429]
