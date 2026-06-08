@@ -141,18 +141,46 @@ func _on_chat_response(_result, code, _headers, body) -> void:
 	else:
 		_set_input_state(true)
 
-
 func _request_end() -> void:
+	_display_message("[i]...[/i]")  # ← feedback visual inmediato
+	if boton_salir_x:
+		boton_salir_x.disabled = true
 	var url := "%s/conversation/end" % backend_url
 	var headers := ["Content-Type: application/json"]
 	var body := JSON.stringify({"session_id": session_id})
 	http.request_completed.connect(_on_end_response, CONNECT_ONE_SHOT)
 	http.request(url, headers, HTTPClient.METHOD_POST, body)
+#func _request_end() -> void:
+	#var url := "%s/conversation/end" % backend_url
+	#var headers := ["Content-Type: application/json"]
+	#var body := JSON.stringify({"session_id": session_id})
+	#http.request_completed.connect(_on_end_response, CONNECT_ONE_SHOT)
+	#http.request(url, headers, HTTPClient.METHOD_POST, body)
 
+#func _on_end_response(_result, code, _headers, body) -> void:
+	## Aunque el backend falle, el diálogo DEBE cerrarse del lado del jugador,
+	## si no, se queda atorado para siempre.
+	#
+	#if code == 200:
+		#var data = JSON.parse_string(body.get_string_from_utf8())
+		#if data is Dictionary:
+			#var emotions_log: Array = data.get("emotions_log", [])
+			#accumulated_emotions.append({
+				#"npc_id": current_npc_id,
+				#"log": emotions_log
+			#})
+			#var farewell: String = data.get("farewell", "")
+			#if farewell != "":
+				#_display_message(farewell)
+				#await get_tree().create_timer(3.0).timeout
+	#else:
+		## Error del backend (500, 502, etc.). Avisamos y cerramos igual.
+		#push_warning("[DialogSystem] /conversation/end falló con código %d. Cerrando diálogo." % code)
+		#_display_message("[i](la conversación terminó)[/i]")
+		#await get_tree().create_timer(1.5).timeout
+	#
+	#hide_dialog()
 func _on_end_response(_result, code, _headers, body) -> void:
-	# Aunque el backend falle, el diálogo DEBE cerrarse del lado del jugador,
-	# si no, se queda atorado para siempre.
-	
 	if code == 200:
 		var data = JSON.parse_string(body.get_string_from_utf8())
 		if data is Dictionary:
@@ -163,17 +191,22 @@ func _on_end_response(_result, code, _headers, body) -> void:
 			})
 			var farewell: String = data.get("farewell", "")
 			if farewell != "":
+				if boton_salir_x:
+					boton_salir_x.disabled = true   # ← se desactiva al empezar
 				_display_message(farewell)
-				await get_tree().create_timer(3.0).timeout
+				while is_typing:
+					await get_tree().process_frame
+				if boton_salir_x:
+					boton_salir_x.disabled = false  # ← se reactiva al terminar
+					await boton_salir_x.pressed
 	else:
-		# Error del backend (500, 502, etc.). Avisamos y cerramos igual.
 		push_warning("[DialogSystem] /conversation/end falló con código %d. Cerrando diálogo." % code)
 		_display_message("[i](la conversación terminó)[/i]")
-		await get_tree().create_timer(1.5).timeout
+		if boton_salir_x:
+			boton_salir_x.disabled = false
+			await boton_salir_x.pressed
 	
 	hide_dialog()
-
-
 # =========================================================
 # Flujo UI
 # =========================================================
