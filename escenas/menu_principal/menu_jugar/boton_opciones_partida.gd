@@ -3,9 +3,11 @@ extends Button
 
 
 func _ready():
-
-	ready
-	pressed.connect(_menu_usuario)
+	if ControladorPartidaGlobal.partida.jugador["nombre"].is_empty():
+		disabled = true
+	else:
+		disabled = false
+		pressed.connect(_menu_usuario)
 	
 
 func _menu_usuario():

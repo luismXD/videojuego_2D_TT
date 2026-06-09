@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dht46tqrklu31"]
+
+[ext_resource type="Script" uid="uid://cjcs18hj1ensp" path="res://escenas/menu_principal/menu_jugar/canvas_layer_recomendacion.gd" id="1_uk6rb"]
+[ext_resource type="Theme" uid="uid://dmtu2qb1et3sp" path="res://temas_y_estilos/Boton_menu/theme_1remaster.tres" id="1_vmmaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twuko"]
+bg_color = Color(0.6606753, 0.4493779, 0.330072, 1)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0.47885817, 0.31507787, 0.22423008, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 20
+expand_margin_left = 50.0
+expand_margin_top = 50.0
+expand_margin_right = 50.0
+expand_margin_bottom = 50.0
+shadow_size = 35
+
+[node name="Control" type="Control" unique_id=985715328]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer_aldea_mascaras" type="CanvasLayer" parent="." unique_id=394441663 node_paths=PackedStringArray("label_recomendacion", "boton_aceptar_recomendacion")]
+script = ExtResource("1_uk6rb")
+label_recomendacion = NodePath("MarginContainer/Panel_nombre/VBoxContainer/Label")
+boton_aceptar_recomendacion = NodePath("MarginContainer/Panel_nombre/VBoxContainer/salir")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_aldea_mascaras" unique_id=462229935]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer_aldea_mascaras/MarginContainer" unique_id=1600750690]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel_nombre" type="PanelContainer" parent="CanvasLayer_aldea_mascaras/MarginContainer" unique_id=1278324601]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_twuko")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre" unique_id=880802684]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre/VBoxContainer" unique_id=1873361067]
+layout_mode = 2
+theme = ExtResource("1_vmmaq")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="salir" type="Button" parent="CanvasLayer_aldea_mascaras/MarginContainer/Panel_nombre/VBoxContainer" unique_id=1414506013]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_vmmaq")
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 80
+text = "ACEPTAR"
+icon_alignment = 1

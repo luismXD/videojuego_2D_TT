@@ -126,4 +126,4 @@ func _on_boton_aceptar_nombre_y_correo():
 func _cambiar_escena(escena: bool):
 	#controlador_partida.borrar_partida()
 	if escena == true:
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://escenas/menu_principal/menu_jugar/escena_experiencia_usuario.tscn")

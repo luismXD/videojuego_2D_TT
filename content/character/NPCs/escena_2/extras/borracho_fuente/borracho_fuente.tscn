@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://dvc4ehe4xeeue" path="res://content/dialog_system/scripts/npc_interaction.gd" id="2_22och"]
 [ext_resource type="Texture2D" uid="uid://457q2634a74k" path="res://content/character/NPCs/interaccion_E_1.png" id="3_u41od"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7bok6"]
-load_path = "res://.godot/imported/SpriteSheet.png-231cbc7902cf44d3472adc3dded06e4c.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ye3j"]
+load_path = "res://.godot/imported/SpriteSheet_borracho.png-3e895bf86a03e08a2a6c452352b2d27f.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8j0gv"]
-load_path = "res://.godot/imported/Faceset.png-2e91524df116ffdd9f425f8a96c9dab5.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_22och"]
+load_path = "res://.godot/imported/Faceset_borracho.png-a29cb3e565ea84f7261017e1d7f44fbc.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
 radius = 16.0
@@ -18,14 +18,14 @@ speed = 40.0
 acceleration = 100.0
 
 [node name="Sprite" parent="." index="2" unique_id=1923305892]
-texture = SubResource("CompressedTexture2D_7bok6")
+texture = SubResource("CompressedTexture2D_0ye3j")
 
 [node name="InteractionArea" type="Area2D" parent="." index="3" unique_id=961141864 node_paths=PackedStringArray("indicador")]
 collision_mask = 16
 script = ExtResource("2_22och")
 npc_id = "borracho_fuente"
 npc_name = "Borracho de la Fuente"
-portrait = SubResource("CompressedTexture2D_8j0gv")
+portrait = SubResource("CompressedTexture2D_22och")
 indicador = NodePath("Sprite2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" index="0" unique_id=1395527833]
