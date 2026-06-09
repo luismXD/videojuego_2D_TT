@@ -14,6 +14,7 @@ script = ExtResource("1_ky034")
 
 [node name="ReceptacleBar" type="Control" parent="." unique_id=2067393617]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(48, 16)
 anchors_preset = 0
 offset_left = 3.0

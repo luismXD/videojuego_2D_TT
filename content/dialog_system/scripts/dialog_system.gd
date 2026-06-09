@@ -89,7 +89,15 @@ func start_conversation(npc_id: String, npc_name: String, portrait: Texture2D) -
 func _request_start(npc_id: String) -> void:
 	var url := "%s/conversation/start" % backend_url
 	var headers := ["Content-Type: application/json"]
-	var body := JSON.stringify({"npc_id": npc_id})
+	
+	# Leer memoria local del NPC
+	var memory = _load_npc_memory(npc_id)
+	
+	var body := JSON.stringify({
+		"npc_id": npc_id,
+		"player_id": ControladorPartidaGlobal.partida.jugador["nombre"],
+		"npc_memory": memory  # null si es primera vez
+	})
 	http.request_completed.connect(_on_start_response, CONNECT_ONE_SHOT)
 	http.request(url, headers, HTTPClient.METHOD_POST, body)
 
@@ -183,7 +191,8 @@ func _request_end() -> void:
 func _on_end_response(_result, code, _headers, body) -> void:
 	if code == 200:
 		var data = JSON.parse_string(body.get_string_from_utf8())
-		if data is Dictionary:
+		if data is Dictionary:  # ← el check PRIMERO
+			_save_npc_memory(current_npc_id, data.get("npc_memory", {}))
 			var emotions_log: Array = data.get("emotions_log", [])
 			accumulated_emotions.append({
 				"npc_id": current_npc_id,
@@ -207,6 +216,20 @@ func _on_end_response(_result, code, _headers, body) -> void:
 			await boton_salir_x.pressed
 	
 	hide_dialog()
+
+func _load_npc_memory(npc_id: String) -> Variant:
+	var path := "user://memoria/%s.json" % npc_id
+	if not FileAccess.file_exists(path):
+		return null
+	var f := FileAccess.open(path, FileAccess.READ)
+	return JSON.parse_string(f.get_as_text())
+
+func _save_npc_memory(npc_id: String, memory: Dictionary) -> void:
+	DirAccess.make_dir_recursive_absolute("user://memoria")
+	var path := "user://memoria/%s.json" % npc_id
+	var f := FileAccess.open(path, FileAccess.WRITE)
+	f.store_string(JSON.stringify(memory))
+	
 # =========================================================
 # Flujo UI
 # =========================================================
