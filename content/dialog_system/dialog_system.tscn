@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://f3okcanssc6y" path="res://content/dialog_system/scripts/dialog_system.gd" id="1_lbvu4"]
 [ext_resource type="Texture2D" uid="uid://dhqocvbo4ap7f" path="res://content/dialog_system/sprites/text-bubble.png" id="2_7bhfa"]
-[ext_resource type="FontFile" uid="uid://ed021aftj8ji" path="res://content/dialog_system/fonts/Abaddon Light.ttf" id="3_fkwd8"]
 [ext_resource type="FontFile" uid="uid://dah14cd5x78eg" path="res://content/dialog_system/fonts/Abaddon Bold.ttf" id="4_lonjw"]
 [ext_resource type="Texture2D" uid="uid://c8qnjoulombgn" path="res://theme_1/checked_disabled.png" id="5_ln48x"]
 [ext_resource type="Texture2D" uid="uid://jagplgpr2cly" path="res://content/dialog_system/sprites/portraits/npc_portrait_01.png" id="5_lonjw"]
@@ -129,14 +128,18 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogUI/PanelContainer" unique_id=1068315208]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.4392157, 0.39607844, 0.32156864, 1)
-theme_override_fonts/normal_font = ExtResource("3_fkwd8")
+theme_override_fonts/normal_font = ExtResource("4_lonjw")
 theme_override_fonts/bold_font = ExtResource("4_lonjw")
+theme_override_fonts/bold_italics_font = ExtResource("4_lonjw")
+theme_override_fonts/italics_font = ExtResource("4_lonjw")
+theme_override_fonts/mono_font = ExtResource("4_lonjw")
 theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
 bbcode_enabled = true
+scroll_following_visible_characters = true
 
 [node name="NameLabel" type="Label" parent="DialogUI" unique_id=820779765]
 layout_mode = 1
@@ -231,10 +234,12 @@ anchor_bottom = 0.93
 [node name="PlayerInput" type="LineEdit" parent="DialogUI/InputContainer" unique_id=1669158358]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
 
 [node name="SendButton" type="Button" parent="DialogUI/InputContainer" unique_id=1963582140]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
 text = "Enviar"
 
@@ -250,11 +255,13 @@ anchor_bottom = 0.93
 [node name="KeepTalkingButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=1589345794]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
 text = "Seguir platicando"
 
 [node name="FarewellButton" type="Button" parent="DialogUI/FarewellContainer" unique_id=454182985]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_lonjw")
 theme_override_font_sizes/font_size = 50
 text = "Despedirme"

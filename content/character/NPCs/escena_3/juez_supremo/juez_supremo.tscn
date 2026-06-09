@@ -11,7 +11,7 @@ load_path = "res://.godot/imported/SpriteSheet_juez_supremo.png-cd87d4761e10d13c
 load_path = "res://.godot/imported/Faceset_juez_supremo.png-d0ba965e29ced0c9c292e860fa66179b.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4h7s"]
-radius = 21.0
+radius = 28.0
 
 [node name="juez_supremo" unique_id=750470882 instance=ExtResource("1_q27t6")]
 speed = 40.0

@@ -973,7 +973,7 @@ theme = ExtResource("3_alfly")
 theme_override_font_sizes/font_size = 100
 text = "DIRECCION:
 PUEBLO   TOTTORI   Y
-CIUDAD   TOKASHIMA"
+CIUDAD   TOKOSHIMA"
 horizontal_alignment = 1
 
 [node name="salir" type="Button" parent="CanvasLayer_pueblo_y_tokoshima/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=17704448]
