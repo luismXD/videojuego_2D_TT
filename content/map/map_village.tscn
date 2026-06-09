@@ -455,7 +455,7 @@ scale = Vector2(0.22, 0.222)
 texture = ExtResource("22_ewt8g")
 
 [node name="InteractionCiudad_tokoshima2" type="Area2D" parent="." index="11" unique_id=351051165 node_paths=PackedStringArray("indicador", "canvas_layer_cartel", "boton_aceptar_cartel")]
-position = Vector2(1498, 1606)
+position = Vector2(1489, 1608)
 collision_mask = 16
 script = ExtResource("21_5ds62")
 indicador = NodePath("Sprite2D")
@@ -973,7 +973,7 @@ theme = ExtResource("3_alfly")
 theme_override_font_sizes/font_size = 100
 text = "DIRECCION:
 PUEBLO   TOTTORI   Y
-CIUDAD   TOKOSHIMA"
+CIUDAD   TAKASHIMA"
 horizontal_alignment = 1
 
 [node name="salir" type="Button" parent="CanvasLayer_pueblo_y_tokoshima/MarginContainer/Panel_nombre/VBoxContainer" index="1" unique_id=17704448]

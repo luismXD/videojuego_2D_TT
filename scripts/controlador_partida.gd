@@ -4,16 +4,13 @@ extends Node
 
 @export var partida: DatosPartida
 
+
+	
 var _ruta_jugador: String = "user://datos_jugador.tres"
 
 func _ready():
 	cargar_partida()
-	#if partida == null:
-		#partida = DatosPartida.new()
 
-#func guardar_partida():
-	#var guardar_partida = partida.jugador
-	#ResourceSaver.save(guardar_partida, _ruta_jugador)
 func guardar_partida():
 	ResourceSaver.save(partida, _ruta_jugador)
 	print("Partida guardada")
@@ -24,10 +21,7 @@ func cargar_partida():
 		partida = ResourceLoader.load(_ruta_jugador)
 	else:
 		partida = DatosPartida.new()
-		#print("Datos cargados")
-		#print(partida.jugador["nombre"])
-		#print(partida.jugador["correo_electronico"])
-		#print(partida.jugador["analisis"])
+
 func borrar_datos():
 	partida = DatosPartida.new()
 	

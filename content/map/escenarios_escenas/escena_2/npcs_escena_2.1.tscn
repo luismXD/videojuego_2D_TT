@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5qoqtn6fpctg" path="res://content/character/NPCs/escena_2/extras/comerciante_panes/comerciante_panes.tscn" id="5_bw78k"]
 [ext_resource type="PackedScene" uid="uid://cc5nq2ikkq6qs" path="res://content/character/NPCs/escena_2/extras/herrero_apurado/herrero_apurado.tscn" id="6_r60t8"]
 [ext_resource type="PackedScene" uid="uid://b2lu2i5yspqua" path="res://content/character/NPCs/escena_2/extras/viuda_plaza/viuda_plaza.tscn" id="7_dfj7g"]
-[ext_resource type="PackedScene" uid="uid://crxqyslevpfxw" path="res://content/character/NPCs/escena_2/principales/capitan_ryu/capitan_ryu.tscn" id="9_jgrk5"]
+[ext_resource type="PackedScene" uid="uid://rep0coe2kis0" path="res://content/character/NPCs/escena_2/principales/guardian/escribano.tscn" id="8_ia748"]
 [ext_resource type="PackedScene" uid="uid://cnbwhbn8lvydj" path="res://content/character/NPCs/escena_2/principales/soldado_guardia/soldado_guardia.tscn" id="11_u8kg2"]
 
 [sub_resource type="Curve2D" id="Curve2D_elk8a"]
@@ -119,15 +119,13 @@ wait_time = 6.0
 wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
-[node name="capitan_ryu" parent="." unique_id=9258754 instance=ExtResource("9_jgrk5")]
+[node name="escribano" parent="." unique_id=1064437245 instance=ExtResource("8_ia748")]
 position = Vector2(6489, 1148)
 
-[node name="BehaviorFollowPath" type="Node2D" parent="capitan_ryu" unique_id=1258615307 node_paths=PackedStringArray("path")]
+[node name="BehaviorFollowPath" type="Node2D" parent="escribano" unique_id=434234699 node_paths=PackedStringArray("path")]
 script = ExtResource("4_13mvf")
-path = NodePath("../../Path2D_capitan_ryu")
-loop = true
-wait_mode = 1
-wait_time = 3.0
+path = NodePath("../../Path2D_escribano_torre")
+wait_time = 1.0
 wait_chance = 50
 metadata/_custom_type_script = "uid://42si4s2y45c4"
 
@@ -159,7 +157,7 @@ curve = SubResource("Curve2D_duacj")
 position = Vector2(6388, 1449)
 curve = SubResource("Curve2D_etel6")
 
-[node name="Path2D_capitan_ryu" type="Path2D" parent="." unique_id=1962004481]
+[node name="Path2D_escribano_torre" type="Path2D" parent="." unique_id=1962004481]
 position = Vector2(6489, 1148)
 curve = SubResource("Curve2D_14k0g")
 
