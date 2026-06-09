@@ -16,6 +16,7 @@ var current_npc_id: String = ""
 var can_extend: bool = true
 var accumulated_emotions: Array = []
 var pending_player_msg: String = ""  # mensaje en espera de emoción
+var _closing_forced: bool = false
 
 # --- Nodos UI ---
 @onready var dialog_ui: Control = $DialogUI
@@ -62,8 +63,13 @@ func _ready() -> void:
 
 	GameManager.ocultar_dialogo_signal.connect(hide_dialog)
 	if boton_salir_x:
-		boton_salir_x.pressed.connect(hide_dialog)
+		boton_salir_x.pressed.connect(_on_boton_x_pressed)
 
+func _on_boton_x_pressed() -> void:
+	if session_id != "":
+		_request_end()  # deja que _on_end_response maneje el cierre
+	else:
+		hide_dialog()   # no hay sesión, cierra directo
 
 # =========================================================
 # API PÚBLICA — esto es lo que los NPC llaman
@@ -191,7 +197,7 @@ func _request_end() -> void:
 func _on_end_response(_result, code, _headers, body) -> void:
 	if code == 200:
 		var data = JSON.parse_string(body.get_string_from_utf8())
-		if data is Dictionary:  # ← el check PRIMERO
+		if data is Dictionary:
 			_save_npc_memory(current_npc_id, data.get("npc_memory", {}))
 			var emotions_log: Array = data.get("emotions_log", [])
 			accumulated_emotions.append({
@@ -201,15 +207,14 @@ func _on_end_response(_result, code, _headers, body) -> void:
 			var farewell: String = data.get("farewell", "")
 			if farewell != "":
 				if boton_salir_x:
-					boton_salir_x.disabled = true   # ← se desactiva al empezar
+					boton_salir_x.disabled = false  # ← siempre habilitado
 				_display_message(farewell)
 				while is_typing:
 					await get_tree().process_frame
 				if boton_salir_x:
-					boton_salir_x.disabled = false  # ← se reactiva al terminar
-					await boton_salir_x.pressed
+					await boton_salir_x.pressed  # ← espera el PRÓXIMO press
 	else:
-		push_warning("[DialogSystem] /conversation/end falló con código %d. Cerrando diálogo." % code)
+		push_warning("[DialogSystem] /conversation/end falló con código %d." % code)
 		_display_message("[i](la conversación terminó)[/i]")
 		if boton_salir_x:
 			boton_salir_x.disabled = false
@@ -225,6 +230,9 @@ func _load_npc_memory(npc_id: String) -> Variant:
 	return JSON.parse_string(f.get_as_text())
 
 func _save_npc_memory(npc_id: String, memory: Dictionary) -> void:
+	if npc_id.is_empty():  # ← guard
+		push_warning("[DialogSystem] npc_id vacío, no se guarda memoria.")
+		return
 	DirAccess.make_dir_recursive_absolute("user://memoria")
 	var path := "user://memoria/%s.json" % npc_id
 	var f := FileAccess.open(path, FileAccess.WRITE)
