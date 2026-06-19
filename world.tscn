@@ -1,23 +1,23 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7j4hgkdbtapk"]
+[gd_scene format=3 uid="uid://c7j4hgkdbtapk"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_804hp"]
+[ext_resource type="Script" uid="uid://jbw7ej07ry14" path="res://world.gd" id="1_804hp"]
 [ext_resource type="PackedScene" uid="uid://c83pfkmwxrf3p" path="res://content/map/map_village.tscn" id="2_7kl5b"]
 [ext_resource type="Resource" uid="uid://uditl1ns5wqe" path="res://content/weapon/club/club.tres" id="3_gy5i3"]
-[ext_resource type="Script" path="res://system/camera/camera_grid.gd" id="4_am12t"]
+[ext_resource type="Script" uid="uid://d1cign6w25aqt" path="res://system/camera/camera_grid.gd" id="4_am12t"]
 [ext_resource type="Texture2D" uid="uid://bs4uxpqfesgko" path="res://system/environment/fx/rain.png" id="8_5w8v0"]
 [ext_resource type="Texture2D" uid="uid://b6qbpkjaljvvr" path="res://system/environment/fx/snow.png" id="8_a6yej"]
 [ext_resource type="Texture2D" uid="uid://d0kl1xfdvdsjg" path="res://system/environment/fx/rain_on_floor.png" id="8_necrh"]
-[ext_resource type="Script" path="res://system/music.gd" id="10_4llys"]
+[ext_resource type="Script" uid="uid://bw10guuc1xuuc" path="res://system/music.gd" id="10_4llys"]
 [ext_resource type="Texture2D" uid="uid://c8h0vkd6dugv" path="res://system/environment/fx/cloud.png" id="10_qyq2n"]
 [ext_resource type="Texture2D" uid="uid://dd2kmn7tta5gu" path="res://system/environment/fx/leaf.png" id="11_36wdo"]
-[ext_resource type="Script" path="res://system/environment/fog.gd" id="11_w52t8"]
+[ext_resource type="Script" uid="uid://bnirh71d2uam1" path="res://system/environment/fog.gd" id="11_w52t8"]
 [ext_resource type="Texture2D" uid="uid://cpcojki7owcjg" path="res://system/environment/fx/raylight.png" id="15_uyose"]
 [ext_resource type="PackedScene" uid="uid://ck8bsyolnkr5h" path="res://system/ui/player_ui.tscn" id="15_wger8"]
-[ext_resource type="Shader" path="res://system/shader/shader_moving_texture.gdshader" id="16_fmd6i"]
+[ext_resource type="Shader" uid="uid://bx4y5jno6aefx" path="res://system/shader/shader_moving_texture.gdshader" id="16_fmd6i"]
 [ext_resource type="Texture2D" uid="uid://dxic1avnc53ct" path="res://system/environment/fx/fog.png" id="16_wcll6"]
-[ext_resource type="Script" path="res://system/transition/transition.gd" id="20_5rxny"]
+[ext_resource type="Script" uid="uid://csxp8ciln6js2" path="res://system/transition/transition.gd" id="20_5rxny"]
 [ext_resource type="Material" uid="uid://d388iuq2hfgth" path="res://system/color_correction/material.tres" id="28_nkm27"]
-[ext_resource type="Script" path="res://system/color_correction/color_correction.gd" id="29_12dcn"]
+[ext_resource type="Script" uid="uid://da6et316v0dn7" path="res://system/color_correction/color_correction.gd" id="29_12dcn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dfye"]
 shader = ExtResource("16_fmd6i")
@@ -162,15 +162,15 @@ colors = PackedColorArray(0, 0, 0, 1, 0.57992, 0.278237, 0.497348, 1, 1, 1, 1, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_gsap2"]
 gradient = SubResource("Gradient_kshit")
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" unique_id=1294534446]
 script = ExtResource("1_804hp")
 starting_map = ExtResource("2_7kl5b")
 stating_weapon = ExtResource("3_gy5i3")
 
-[node name="Pivot" type="Node2D" parent="."]
+[node name="Pivot" type="Node2D" parent="." unique_id=1056071514]
 unique_name_in_owner = true
 
-[node name="Fog" type="TextureRect" parent="Pivot"]
+[node name="Fog" type="TextureRect" parent="Pivot" unique_id=966092608]
 unique_name_in_owner = true
 z_index = 10
 material = SubResource("ShaderMaterial_6dfye")
@@ -183,92 +183,92 @@ texture = ExtResource("16_wcll6")
 stretch_mode = 1
 script = ExtResource("11_w52t8")
 
-[node name="CameraGrid" type="Camera2D" parent="."]
+[node name="CameraGrid" type="Camera2D" parent="." unique_id=700380912]
 unique_name_in_owner = true
 offset = Vector2(24, 16)
 zoom = Vector2(4, 4)
 process_callback = 0
 script = ExtResource("4_am12t")
 
-[node name="Snow" type="GPUParticles2D" parent="CameraGrid"]
+[node name="Snow" type="GPUParticles2D" parent="CameraGrid" unique_id=1117383864]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_7vdq6")
 emitting = false
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_dagba")
 texture = ExtResource("8_a6yej")
 fixed_fps = 0
 draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_dagba")
 
-[node name="Rain" type="GPUParticles2D" parent="CameraGrid"]
+[node name="Rain" type="GPUParticles2D" parent="CameraGrid" unique_id=185702234]
 unique_name_in_owner = true
 emitting = false
 amount = 30
 sub_emitter = NodePath("../RainOnFloor")
-process_material = SubResource("ParticleProcessMaterial_jwal2")
 texture = ExtResource("8_5w8v0")
 fixed_fps = 0
 draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_jwal2")
 
-[node name="RainOnFloor" type="GPUParticles2D" parent="CameraGrid"]
+[node name="RainOnFloor" type="GPUParticles2D" parent="CameraGrid" unique_id=2102886594]
 material = SubResource("CanvasItemMaterial_33vl3")
 emitting = false
 amount = 30
-process_material = SubResource("ParticleProcessMaterial_dxn4q")
 texture = ExtResource("8_necrh")
 lifetime = 0.5
 fixed_fps = 0
 draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_dxn4q")
 
-[node name="Cloud" type="GPUParticles2D" parent="CameraGrid"]
+[node name="Cloud" type="GPUParticles2D" parent="CameraGrid" unique_id=1112246352]
 unique_name_in_owner = true
 emitting = false
 amount = 6
-process_material = SubResource("ParticleProcessMaterial_5wo8h")
 texture = ExtResource("10_qyq2n")
 lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_5wo8h")
 
-[node name="Leaf" type="GPUParticles2D" parent="CameraGrid"]
+[node name="Leaf" type="GPUParticles2D" parent="CameraGrid" unique_id=1139680791]
 unique_name_in_owner = true
 z_index = 3
 material = SubResource("CanvasItemMaterial_ph2h4")
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_immpv")
 texture = ExtResource("11_36wdo")
 lifetime = 3.0
 fixed_fps = 0
 draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_immpv")
 
-[node name="Raylight" type="GPUParticles2D" parent="CameraGrid"]
+[node name="Raylight" type="GPUParticles2D" parent="CameraGrid" unique_id=2100181328]
 unique_name_in_owner = true
 z_index = 6
 material = SubResource("CanvasItemMaterial_2vdrr")
 emitting = false
 amount = 10
-process_material = SubResource("ParticleProcessMaterial_v4lnj")
 texture = ExtResource("15_uyose")
 lifetime = 5.0
 speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_v4lnj")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=481236797]
 unique_name_in_owner = true
 autoplay = true
 bus = &"Music"
 script = ExtResource("10_4llys")
 
-[node name="Hud" type="CanvasLayer" parent="."]
+[node name="Hud" type="CanvasLayer" parent="." unique_id=670717030]
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
 
-[node name="PlayerUi" parent="Hud" instance=ExtResource("15_wger8")]
+[node name="PlayerUi" parent="Hud" unique_id=908470188 instance=ExtResource("15_wger8")]
 unique_name_in_owner = true
 
-[node name="ScreenFxLayer" type="CanvasLayer" parent="."]
+[node name="ScreenFxLayer" type="CanvasLayer" parent="." unique_id=2138150223]
 layer = 10
 visible = false
 
-[node name="Transition" type="ColorRect" parent="ScreenFxLayer"]
+[node name="Transition" type="ColorRect" parent="ScreenFxLayer" unique_id=530721066]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,7 +279,7 @@ mouse_filter = 2
 color = Color(0.0784314, 0.105882, 0.105882, 1)
 script = ExtResource("20_5rxny")
 
-[node name="ColorCorrection" type="ColorRect" parent="ScreenFxLayer"]
+[node name="ColorCorrection" type="ColorRect" parent="ScreenFxLayer" unique_id=1255775979]
 unique_name_in_owner = true
 z_index = 3
 material = ExtResource("28_nkm27")
