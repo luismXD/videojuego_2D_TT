@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bxrs2airhxmpd"
-path="res://.godot/imported/Beyond Wonderland.ttf-7325930943a6ef1c62711927ad8e796a.fontdata"
+uid="uid://cdj77bpq6qc5n"
+path="res://.godot/imported/JMH Typewriter-Thin.ttf-d5281537a6272ca0bf00e4d050e683f1.fontdata"
 
 [deps]
 
-source_file="res://temas_y_estilos/ignoren_esto/trajanusbricks/beyond_wonderland/Beyond Wonderland.ttf"
-dest_files=["res://.godot/imported/Beyond Wonderland.ttf-7325930943a6ef1c62711927ad8e796a.fontdata"]
+source_file="res://temas_y_estilos/fuentes/jmh_typewriter/JMH Typewriter-Thin.ttf"
+dest_files=["res://.godot/imported/JMH Typewriter-Thin.ttf-d5281537a6272ca0bf00e4d050e683f1.fontdata"]
 
 [params]
 
