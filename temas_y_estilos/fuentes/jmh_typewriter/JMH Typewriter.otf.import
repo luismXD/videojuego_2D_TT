@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cso4bw5x5f2c4"
-path="res://.godot/imported/JMH Typewriter.ttf-ccfd3eca6bbac40df2ce89a451cee9e6.fontdata"
+uid="uid://dpt8g7hqvknjh"
+path="res://.godot/imported/JMH Typewriter.otf-bd349376a5a2d222f18dafe174c7d611.fontdata"
 
 [deps]
 
-source_file="res://temas_y_estilos/ignoren_esto/jmh_typewriter/JMH Typewriter.ttf"
-dest_files=["res://.godot/imported/JMH Typewriter.ttf-ccfd3eca6bbac40df2ce89a451cee9e6.fontdata"]
+source_file="res://temas_y_estilos/fuentes/jmh_typewriter/JMH Typewriter.otf"
+dest_files=["res://.godot/imported/JMH Typewriter.otf-bd349376a5a2d222f18dafe174c7d611.fontdata"]
 
 [params]
 

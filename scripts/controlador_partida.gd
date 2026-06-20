@@ -5,7 +5,6 @@ extends Node
 @export var partida: DatosPartida
 
 
-	
 var _ruta_jugador: String = "user://datos_jugador.tres"
 
 func _ready():
@@ -28,27 +27,3 @@ func borrar_datos():
 	if ResourceLoader.exists(_ruta_jugador):
 		DirAccess.remove_absolute(_ruta_jugador)
 		print("Archivo de guardado eliminado")
-
-
-#func deteccion_emocional():
-	#
-#func cargar_partida():
-	#if ResourceLoader.exists(_ruta):
-		#partida = load(_ruta)
-		#ContadorVictoriasGlobal.wins = partida.wins
-		#
-		#ContadorVictoriasGlobal.win_update.emit("X", partida.wins["X"])
-		#ContadorVictoriasGlobal.win_update.emit("O", partida.wins["O"])
-#
-#func borrar_partida():
-	#partida.wins["X"] = 0
-	#partida.wins["O"] = 0
-	#
-	#ContadorVictoriasGlobal.wins["X"] = 0
-	#ContadorVictoriasGlobal.wins["O"] = 0
-	#
-	#ResourceSaver.save(partida, _ruta)
-	#
-	## Forzar actualización del UI
-	#ContadorVictoriasGlobal.win_update.emit("X", 0)
-	#ContadorVictoriasGlobal.win_update.emit("O", 0)

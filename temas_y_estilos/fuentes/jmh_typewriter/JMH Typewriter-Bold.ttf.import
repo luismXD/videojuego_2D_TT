@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://godmpmcfk4pm"
-path="res://.godot/imported/JMH Typewriter-Bold.ttf-577d003d4c6d667983f71af12b401a90.fontdata"
+path="res://.godot/imported/JMH Typewriter-Bold.ttf-68b2c81b84eda507772edfb37de09e85.fontdata"
 
 [deps]
 
-source_file="res://temas_y_estilos/ignoren_esto/jmh_typewriter/JMH Typewriter-Bold.ttf"
-dest_files=["res://.godot/imported/JMH Typewriter-Bold.ttf-577d003d4c6d667983f71af12b401a90.fontdata"]
+source_file="res://temas_y_estilos/fuentes/jmh_typewriter/JMH Typewriter-Bold.ttf"
+dest_files=["res://.godot/imported/JMH Typewriter-Bold.ttf-68b2c81b84eda507772edfb37de09e85.fontdata"]
 
 [params]
 
